@@ -11,59 +11,28 @@ class PublicController extends Controller
         return view('welcome');
     }
 
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function about()
     {
-        //
+        return view('about');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function products()
     {
-        //
+        return view('products');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function services()
     {
-        //
+        return view('services');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function projects()
     {
-        //
+        return view('projects');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function contact()
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('contact');
     }
 }

@@ -43,7 +43,7 @@
 
         {{-- Area riservata + copyright --}}
         <div class="text-center mt-4 small">
-            <a href="#" class="text-decoration-none text-muted">Area riservata</a> ·
+            <a href="{{ route('login') }}" class="text-decoration-none text-muted">Area riservata</a> ·
             &copy; {{ date('Y') }} INFISSI S.R.L. – Tutti i diritti riservati
         </div>
     </div>

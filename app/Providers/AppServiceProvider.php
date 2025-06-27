@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
+use Laravel\Fortify\Contracts\LoginViewResponse;
+use App\Http\Responses\LoginViewResponse as CustomLoginViewResponse;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(LoginViewResponse::class, CustomLoginViewResponse::class);
     }
 
     /**
@@ -19,6 +23,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        RateLimiter::for('login', function ($request) {
+            return Limit::perMinute(5)->by($request->email . $request->ip());
+        });
+
+        RateLimiter::for('two-factor', function ($request) {
+            return Limit::perMinute(5)->by($request->session()->get('login.id'));
+        });
     }
 }
