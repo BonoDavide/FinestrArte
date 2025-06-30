@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-light fixed-top navCustom transition border">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center ps-3" href="{{ route('home') }}">
+        <a class="navbar-brand d-flex align-items-center ps-4" href="{{ route('home') }}">
             <img src="{{ asset('img/Logo.png') }}" alt="Logo" height="70" class="me-2">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -24,13 +24,13 @@
                 {{-- <li class="nav-item pe-5">
                     <a class="nav-link" href="{{ route('projects') }}">Progetti</a>
                 </li> --}}
-                <li class="nav-item pe-5">
+                <li class="nav-item ">
                     <a class="nav-link" href="{{ route('contact') }}">Contatti</a>
                 </li>
             </ul>
             {{-- Dropdown utente autenticato --}}
             @auth
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
