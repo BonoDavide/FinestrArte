@@ -1,0 +1,79 @@
+/* HEADER */
+
+.hero-header {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://picsum.photos/1920/1080');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.649);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 110%;
+    padding: 1rem;
+}
+
+.title-hero {
+    font-size: 12rem;
+    font-weight: 700;
+    color: white;
+}
+
+.subtitle-hero {
+    font-size: 3rem;
+    color: #f0f0f0;
+}
+
+/* .hero-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.7) 75%, #fff 100%);
+    z-index: 1;
+    pointer-events: none;
+} */
+
+/* NAVBAR */
+
+.navCustom {
+    background-color: white !important;
+    z-index: 2;
+}
+
+.transition {
+    transition: all .5s ease !important;
+}
+
+/* .wnav {
+    min-width: 12vh !important;
+} */
+
+.nav-scrolled {
+    margin: 5vh 5vw;
+    border: 2px solid rgb(36, 36, 36);
+    border-radius: 10px;
+    backdrop-filter: blur(7px);
+    background-color: rgba(255, 255, 255, 0.616) !important;
+    position: sticky;
+    top: 2vh;
+    z-index: 2;
+}
+
