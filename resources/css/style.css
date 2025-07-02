@@ -55,26 +55,24 @@
 /* NAVBAR */
 
 .navCustom {
+    /* Navbar con sfondo bianco di default */
     background-color: white !important;
-    z-index: 2;
+    z-index: 1000;
 }
 
 .transition {
-    transition: all .5s ease !important;
+    /* transizione di sfondo, filtro, margini e bordi */
+    transition: background-color .3s ease, backdrop-filter .3s ease,
+        margin .3s ease, border .3s ease, border-radius .3s ease;
 }
 
-/* .wnav {
-    min-width: 12vh !important;
-} */
-
 .nav-scrolled {
-    margin: 5vh 5vw;
+    margin: 0 5vw;
     border: 2px solid rgb(36, 36, 36);
     border-radius: 10px;
     backdrop-filter: blur(7px);
-    background-color: rgba(255, 255, 255, 0.616) !important;
+    background-color: rgba(255, 255, 255, 0.649) !important;
     position: sticky;
     top: 2vh;
-    z-index: 2;
+    z-index: 1000;
 }
-

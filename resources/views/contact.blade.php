@@ -1,12 +1,8 @@
 <x-layout>
-    <section class="pt-5">
+    <section>
 
-        {{-- div per dare spazio --}}
-        <div class="pt-1">
-
-        </div>
         {{-- (Facoltativa) Immagine decorativa in alto --}}
-        <div class="mb-5 pb-5 pt-5 text-center">
+        <div class="mb-5 pb-5 text-center">
             <img src="https://picsum.photos/1920/600?grayscale" alt="Contattaci" class="img-fluid">
         </div>
 
@@ -24,6 +20,7 @@
 
                 {{-- Colonna Form --}}
                 <div class="col-md-6 pb-5">
+                    <h2 class="pb-3">Scrivici</h2>
                     <livewire:contact-form />
                 </div>
             </div>

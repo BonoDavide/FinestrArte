@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-light fixed-top navCustom transition border">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top navCustom transition">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center ps-4" href="{{ route('home') }}">
             <img src="{{ asset('img/Logo.png') }}" alt="Logo" height="70" class="me-2">
@@ -9,26 +9,12 @@
         </button>
         <div class="collapse navbar-collapse ps-5" id="navbarSupportedContent">
             <ul class="navbar-nav ps-5 me-5 ms-auto mb-2 mb-lg-0">
-                <li class="nav-item pe-5">
-                    <a class="nav-link" href="{{ route('home') }}">Home</a>
-                </li>
-                <li class="nav-item pe-5">
-                    <a class="nav-link" href="{{route('prodotti.index')}}">Prodotti</a>
-                </li>
-                <li class="nav-item pe-5">
-                    <a class="nav-link" href="{{ route('services') }}">Servizi</a>
-                </li>
-                <li class="nav-item pe-5">
-                    <a class="nav-link" href="{{ route('about') }}">Chi siamo</a>
-                </li>
-                {{-- <li class="nav-item pe-5">
-                    <a class="nav-link" href="{{ route('projects') }}">Progetti</a>
-                </li> --}}
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{ route('contact') }}">Contatti</a>
-                </li>
+                <li class="nav-item pe-5"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+                <li class="nav-item pe-5"><a class="nav-link" href="{{ route('prodotti.index') }}">Prodotti</a></li>
+                <li class="nav-item pe-5"><a class="nav-link" href="{{ route('services') }}">Servizi</a></li>
+                <li class="nav-item pe-5"><a class="nav-link" href="{{ route('about') }}">Chi siamo</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contatti</a></li>
             </ul>
-            {{-- Dropdown utente autenticato --}}
             @auth
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
@@ -37,9 +23,7 @@
                             {{ Auth::user()->name ?? 'Profilo' }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a>
-                            </li>
+                            <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

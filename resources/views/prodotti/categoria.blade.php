@@ -1,16 +1,16 @@
 <x-layout>
-        <div class="pt-5 mt-5"><!-- Spazio per la navbar --></div>
-
-        <div class="position-relative text-white mb-5">
-            <img src="https://picsum.photos/seed/{{ $categoria->id }}-header/1920/500"
-                class="w-100 h-100 object-fit-cover" alt="{{ $categoria->name }}">
-            <div class="position-absolute top-50 start-50 translate-middle text-center p-3 rounded">
-                <h1 class="display-1">{{ $categoria->name }}</h1>
-                <h2 >Scegli la tipologia che fa per te</h2>
-            </div>
+    {{-- attenzione: se modifichi le dimensioni della pagina in altezza potrebbe spuntare un bordino bianco in alto --}}
+    <div class="position-relative text-white pb-5 my-0">
+        <img src="https://picsum.photos/seed/{{ $categoria->id }}-header/1920/600"
+            class="w-100 object-fit-cover my-0" alt="{{ $categoria->name }}">
+        <div class="position-absolute top-50 start-50 translate-middle text-center p-3 rounded">
+            <h1 class="display-1">{{ $categoria->name }}</h1>
+            <h2>Scegli la tipologia che fa per te</h2>
         </div>
+    </div>
 
-    <div class="container py-5">
+    <div class="container py-5"> 
+        <h3 class="text-center pb-3">Seleziona il materiale</h3>
         <div class="row g-4 justify-content-center">
             @foreach ($sottocategorie as $sottocategoria)
                 <div class="col-6 col-md-4 col-lg-3">

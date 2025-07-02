@@ -14,10 +14,10 @@
     <title>FinestrArte 3.0</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-    <x-navbar />
+<body class="d-flex flex-column min-vh-100 my-0 py-0">
+    <x-navbar class="my-0 py-0" />
 
-    <main class="flex-grow-1">
+    <main class="flex-grow-1 my-0 py-0">
         {{ $slot }}
     </main>
 
