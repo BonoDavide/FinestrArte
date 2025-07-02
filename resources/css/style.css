@@ -29,7 +29,7 @@
 }
 
 .title-hero {
-    font-size: 12rem;
+    font-size: 10rem;
     font-weight: 700;
     color: white;
 }
@@ -37,6 +37,7 @@
 .subtitle-hero {
     font-size: 3rem;
     color: #f0f0f0;
+    padding-bottom: 1rem;
 }
 
 /* .hero-header::after {
