@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
-use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\AdminContactController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -24,5 +25,8 @@ Route::get('/contatti', [PublicController::class, 'contact'])->name('contact');
 
 // admin
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
+    // dashboard admin
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    // contatti ricevuti
+    Route::get('/contatti', [AdminContactController::class, 'index'])->name('admin.contacts.index');
 });

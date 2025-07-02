@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-md-6 col-lg-4">
-                <a href="#" class="text-decoration-none">
+                <a href="{{ route('admin.contacts.index') }}" class="text-decoration-none">
                     <div class="card shadow-sm h-100">
                         <div class="card-body">
                             <h5 class="card-title">Contatti Ricevuti</h5>

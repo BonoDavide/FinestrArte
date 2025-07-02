@@ -2,12 +2,12 @@
     <section class="pt-5">
 
         {{-- div per dare spazio --}}
-        <div class="pt-5">
+        <div class="pt-1">
 
         </div>
         {{-- (Facoltativa) Immagine decorativa in alto --}}
         <div class="mb-5 pb-5 pt-5 text-center">
-            <img src="https://picsum.photos/1500/400?grayscale" alt="Contattaci" class="img-fluid rounded shadow">
+            <img src="https://picsum.photos/1920/600?grayscale" alt="Contattaci" class="img-fluid">
         </div>
 
         {{-- Contenuto centrale --}}
@@ -24,28 +24,14 @@
 
                 {{-- Colonna Form --}}
                 <div class="col-md-6 pb-5">
-                    <form>
-                        <div class="mb-3">
-                            <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Il tuo nome">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="La tua email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="messaggio" class="form-label">Messaggio</label>
-                            <textarea class="form-control" id="messaggio" rows="5" placeholder="Scrivi qui la tua domanda..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Invia</button>
-                    </form>
+                    <livewire:contact-form />
                 </div>
             </div>
         </div>
 
         {{-- Mappa Google --}}
         <div class="container mb-5 pt-5">
-            <div class="mx-auto" style="max-width: 900px;">
+            <div class="mx-auto" style="max-width: 1000px;">
                 <div class="ratio ratio-16x9 shadow rounded">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d742.5846732505905!2d12.566970369663848!3d41.885572596627924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f625ba4ef94c3%3A0xc364056b1ca8811a!2sPiazza%20dei%20Gerani%2C%2026%2C%2000172%20Roma%20RM!5e0!3m2!1sit!2sit!4v1751291255191!5m2!1sit!2sit"

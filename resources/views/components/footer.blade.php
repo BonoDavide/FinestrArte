@@ -4,7 +4,7 @@
 
             {{-- Descrizione azienda --}}
             <div class="col-md-3 mb-4 text-center">
-                <h5 class="text-uppercase">FinestrArte 3.0</h5>
+                <h5 class="text-uppercase">FinestrArte 3.0 SRLS</h5>
                 <p class="small">
                     Da oltre 20 anni, installiamo infissi in PVC, alluminio e legno per ogni esigenza abitativa e
                     professionale.
@@ -47,7 +47,7 @@
         {{-- Area riservata + copyright --}}
         <div class="text-center mt-4 small">
             <a href="{{ route('login') }}" class="text-decoration-none text-muted">Area riservata</a> ·
-            &copy; {{ date('Y') }} FinestrArte 3.0 – Tutti i diritti riservati
+            &copy; {{ date('Y') }} FinestrArte 3.0 SRLS – Tutti i diritti riservati
         </div>
     </div>
 </footer>

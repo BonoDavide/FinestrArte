@@ -9,6 +9,8 @@
     <link rel="icon" href="{{ asset('img/favicon.png') }}" type="image/png">
     {{-- VITE --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- LIVEWIRE --}}
+    @livewireStyles
     <title>FinestrArte 3.0</title>
 </head>
 
@@ -20,6 +22,9 @@
     </main>
 
     <x-footer />
+
+    {{-- LIVEWIRE --}}
+    @livewireScripts
 </body>
 
 </html>
