@@ -19,10 +19,11 @@ class ProductController extends Controller
     // Pagina categoria: mostra sottocategorie o direttamente i prodotti
     public function showCategoria(Category $categoria)
     {
-        $sottocategorie = $categoria->subcategories;
+        $sottocategorie = $categoria->subcategories->sortBy(function ($s) {
+            return $s->name === 'PVC' ? 0 : 1;
+        });
 
         if ($sottocategorie->isEmpty()) {
-            // Se non ha sottocategorie, mostra i prodotti direttamente (quando li avrai)
             return view('prodotti.prodotti', [
                 'categoria' => $categoria,
                 'products' => $categoria->products ?? [],

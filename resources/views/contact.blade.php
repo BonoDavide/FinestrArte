@@ -11,7 +11,7 @@
             <div class="row align-items-start">
                 {{-- Colonna Contatti --}}
                 <div class="col-md-6 mb-4">
-                    <h2 class="pb-3">Contatti</h2>
+                    <h2 class="pb-3 font-titolo">Contatti</h2>
                     <p><strong>Indirizzo:</strong> Piazza dei Gerani, 26 – 00172 Roma (RM)</p>
                     <p><strong>Email:</strong> <a href="mailto:info@finestrarte.it">info@finestrarte.it</a></p>
                     <p><strong>Telefono:</strong> <a href="tel:+3900000000">+39 000 0000000</a></p>
@@ -20,7 +20,7 @@
 
                 {{-- Colonna Form --}}
                 <div class="col-md-6 pb-5">
-                    <h2 class="pb-3">Scrivici</h2>
+                    <h2 class="pb-3 font-titolo">Scrivici</h2>
                     <livewire:contact-form />
                 </div>
             </div>
@@ -28,6 +28,9 @@
 
         {{-- Mappa Google --}}
         <div class="container mb-5 pt-5">
+            <div>
+                <h3 class="font-titolo text-center pb-4">Mappa</h3>
+            </div>
             <div class="mx-auto" style="max-width: 1000px;">
                 <div class="ratio ratio-16x9 shadow rounded">
                     <iframe

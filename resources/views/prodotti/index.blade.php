@@ -2,14 +2,14 @@
     <div class="position-relative text-white mb-5 mx-0">
         <img src="https://picsum.photos/seed/prodotti/1920/600" class="w-100 h-100 object-fit-cover" alt="Prodotti">
         <div class="position-absolute top-50 start-50 translate-middle text-center p-3 rounded">
-            <h1 class="display-1 pt-5">Scopri i nostri prodotti</h1>
+            <h1 class="display-1 pt-5 font-titolo">Scopri i nostri prodotti</h1>
             <h2>Soluzioni su misura per ogni esigenza di casa, sicurezza e design</h2>
         </div>
     </div>
 
     <div class="container py-5">
 
-        <h3 class="text-center pb-3">Seleziona una categoria</h3>
+        <h3 class="text-center pb-3 font-titolo">Seleziona una categoria</h3>
 
         <div class="row g-4 justify-content-center">
             @foreach ($categories as $category)

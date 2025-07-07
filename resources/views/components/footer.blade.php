@@ -6,8 +6,8 @@
             <div class="col-md-3 mb-4 text-center">
                 <h5 class="text-uppercase">FinestrArte 3.0 SRLS</h5>
                 <p class="small">
-                    Da oltre 20 anni, installiamo infissi in PVC, alluminio e legno per ogni esigenza abitativa e
-                    professionale.
+                    Realizziamo infissi su misura collaborando solo con
+                    i migliori produttori del settore.
                 </p>
             </div>
 
@@ -15,11 +15,11 @@
             <div class="col-md-3 mb-4 text-center">
                 <h6 class="text-uppercase">Navigazione</h6>
                 <ul class="list-unstyled small">
-                    <li><a href="#" class="text-reset text-decoration-none">Chi siamo</a></li>
-                    <li><a href="#" class="text-reset text-decoration-none">Prodotti</a></li>
-                    <li><a href="#" class="text-reset text-decoration-none">Servizi</a></li>
+                    <li><a href="{{ route('prodotti.index') }}" class="text-reset text-decoration-none">Prodotti</a></li>
+                    <li><a href="{{ route('about') }}" class="text-reset text-decoration-none">Chi siamo</a></li>
+                    {{-- <li><a href="#" class="text-reset text-decoration-none">Servizi</a></li> --}}
                     {{-- <li><a href="#" class="text-reset text-decoration-none">Progetti</a></li> --}}
-                    <li><a href="#" class="text-reset text-decoration-none">Contatti</a></li>
+                    <li><a href="{{ route('contact') }}" class="text-reset text-decoration-none">Contatti</a></li>
                 </ul>
             </div>
 
@@ -46,7 +46,7 @@
 
         {{-- Area riservata + copyright --}}
         <div class="text-center mt-4 small">
-            <a href="{{ route('login') }}" class="text-decoration-none text-muted">Area riservata</a> ·
+            {{-- <a href="{{ route('login') }}" class="text-decoration-none text-muted">Area riservata</a> · --}}
             &copy; {{ date('Y') }} FinestrArte 3.0 SRLS – Tutti i diritti riservati
         </div>
     </div>
