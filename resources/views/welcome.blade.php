@@ -55,24 +55,24 @@
             <div class="border"></div>
 
             {{-- Quarto blocco --}}
-            <h2 class="text-center mb-5 pt-5 font-titolo underline-thin" data-aos="fade-right">Perché sceglierci</h2>
+            <h2 class="text-center mb-5 pt-5 font-titolo underline-thin" data-aos="fade-right" data-aos-offset="800">Perché sceglierci</h2>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <div class="col text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="col text-center" data-aos="fade-up" data-aos-offset="800" data-aos-delay="200">
                     <i class="bi bi-tools fs-1 text-dark"></i>
                     <h5 class="mt-3">Lavoro su misura</h5>
                     <p>Ogni installazione è studiata e realizzata per adattarsi perfettamente al tuo spazio.</p>
                 </div>
-                <div class="col text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="col text-center" data-aos="fade-up" data-aos-offset="800" data-aos-delay="400">
                     <i class="bi bi-award fs-1 text-dark"></i>
                     <h5 class="mt-3">Prodotti certificati</h5>
                     <p>Collaboriamo con marchi affidabili e garantiti per qualità e durata nel tempo.</p>
                 </div>
-                <div class="col text-center" data-aos="fade-up" data-aos-delay="600">
+                <div class="col text-center" data-aos="fade-up" data-aos-offset="800" data-aos-delay="600">
                     <i class="bi bi-person-check fs-1 text-dark"></i>
                     <h5 class="mt-3">Supporto dedicato</h5>
                     <p>Ti seguiamo passo dopo passo, dalla consulenza iniziale fino all’assistenza post-vendita.</p>
                 </div>
-                <div class="col text-center" data-aos="fade-up" data-aos-delay="800">
+                <div class="col text-center" data-aos="fade-up" data-aos-offset="800" data-aos-delay="800">
                     <i class="bi bi-house-door fs-1 text-dark"></i>
                     <h5 class="mt-3">Ambienti valorizzati</h5>
                     <p>Infissi pensati per migliorare comfort, estetica e risparmio energetico.</p>
