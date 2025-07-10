@@ -1,34 +1,25 @@
 <x-layout>
-    <div class="position-relative text-white mb-5 mx-0">
-        <img src="https://picsum.photos/seed/prodotti/1920/600" class="w-100 h-100 object-fit-cover" alt="Prodotti">
-        <div class="position-absolute top-50 start-50 translate-middle text-center p-3 rounded">
-            <h1 class="display-1 pt-5 font-titolo">Scopri i nostri prodotti</h1>
-            <h2>Soluzioni su misura per ogni esigenza di casa, sicurezza e design</h2>
+    <div class="position-relative text-white mb-5 mx-0 prodotti-hero" style="height: 60vh; min-height: 250px;">
+        <img src="https://picsum.photos/seed/prodotti/1920/600" alt="Prodotti"
+            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
+        <div class="position-absolute top-50 start-50 translate-middle text-center p-3 rounded" style="width: 90%;">
+            <h1 class="display-5 font-titolo mb-2">Scopri i nostri prodotti</h1>
+            <p class="fs-5 m-0">Soluzioni su misura per casa, sicurezza e design</p>
         </div>
     </div>
 
+
     <div class="container py-5">
-
         <h3 class="text-center pb-3 font-titolo">Seleziona una categoria</h3>
-
         <div class="row g-4 justify-content-center">
             @foreach ($categories as $category)
                 <div class="col-6 col-md-4 col-lg-3">
                     <div class="card h-100 text-white border-0 position-relative overflow-hidden">
-                        {{-- Immagine di sfondo --}}
-                        {{-- <img src="{{ $category->image_url }}" class="w-100" style="height: 180px; object-fit: cover;"
-                            alt="{{ $category->name }}"> --}}
-
                         <img src="https://picsum.photos/seed/{{ $category->id }}/400/180" class="w-100"
                             style="height: 180px; object-fit: cover;" alt="{{ $category->name }}">
-
-
-                        {{-- Overlay con nome --}}
                         <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50 text-center py-2">
                             <h5 class="mb-0">{{ $category->name }}</h5>
                         </div>
-
-                        {{-- Link cliccabile su tutta la card --}}
                         <a href="{{ route('prodotti.categoria', $category->slug) }}" class="stretched-link"></a>
                     </div>
                 </div>

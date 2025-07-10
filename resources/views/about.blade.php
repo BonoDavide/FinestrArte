@@ -14,52 +14,59 @@
         </div>
     </div>
 
+
     {{-- Descrizione azienda --}}
-    <div class="container py-5 my-5 border-top border-bottom">
-        <div class="row justify-content-center">
+    <div class="container py-5 my-5">
+        {{-- border --}}
+        <div class="border"></div>
+        <div class="row justify-content-center pt-5">
             <div class="col-lg-10 text-center">
                 <h4 class="fw-light">
-                    Affidabilità, precisione e materiali eccellenti: realizziamo infissi su misura collaborando solo con
+                    Affidabilità, precisione e materiali eccellenti: realizziamo serramenti su misura collaborando solo
+                    con
                     i migliori produttori del settore. Ogni progetto è seguito con attenzione per garantire comfort,
                     durata e design in ogni ambiente.
                 </h4>
-                <h4 class="fw-light mt-4">
+                <h4 class="fw-light mt-4 pb-5">
                     Che si tratti di nuove costruzioni o ristrutturazioni, accompagniamo ogni cliente con competenza e
                     disponibilità.
                 </h4>
             </div>
         </div>
+        {{-- border --}}
+        <div class="border"></div>
     </div>
+
 
     {{-- Team aziendale --}}
     <div class="container pb-5 pt-5">
         <div class="row">
-            <div class="col text-center">
-                <h2 class="fw-bold font-titolo">Il nostro Team</h2>
+            <div class="col text-center" data-aos="fade-up">
+                <h2 class="fw-bold font-titolo underline-thin">Il nostro Team</h2>
             </div>
         </div>
 
         {{-- Persona 1 --}}
-        <div class="row align-items-center pt-5 gy-4">
-            <div class="col-md-4 text-center">
+        <div class="row align-items-center pb-5 pt-5 gy-4">
+            <div class="col-md-4 text-center" data-aos="fade-right" data-aos-offset="400">
                 <img src="https://picsum.photos/300/400?random=1" class="img-fluid rounded shadow-sm border"
                     alt="Marica">
             </div>
-            <div class="col-md-4 text-center text-md-start">
+            <div class="col-md-4 text-center text-md-start" data-aos="fade-up" data-aos-offset="400">
                 <h4 class="mb-1 font-titolo">Marica</h4>
                 <p class="text-muted">Ufficio Commerciale</p>
-                <p>Segue il cliente nella scelta degli infissi più adatti, proponendo soluzioni personalizzate e
+                <p>Segue il cliente nella scelta degli serramenti più adatti, proponendo soluzioni personalizzate e
                     preventivi su misura.</p>
             </div>
         </div>
 
         {{-- Persona 2 --}}
-        <div class="row align-items-center pt-5 gy-4">
-            <div class="col-md-4 text-center">
+        <div class="row align-items-center pb-5 pt-5 gy-4">
+            <div class="col-md-4 text-center" data-aos="fade-right" data-aos-offset="500">
                 <img src="https://picsum.photos/300/400?random=2" class="img-fluid rounded shadow-sm border"
                     alt="Marta">
             </div>
-            <div class="col-md-4 text-center text-md-start">
+            <div class="col-md-4 text-center text-md-start" data-aos="fade-up" data-aos-offset="500">
                 <h4 class="mb-1 font-titolo">Marta</h4>
                 <p class="text-muted">Ufficio Amministrativo</p>
                 <p>Gestisce pratiche, documenti e organizzazione interna con precisione e discrezione.</p>
@@ -67,12 +74,12 @@
         </div>
 
         {{-- Persona 3 --}}
-        <div class="row align-items-center pt-5 gy-4">
-            <div class="col-md-4 text-center">
+        <div class="row align-items-center pb-5 pt-5 gy-4">
+            <div class="col-md-4 text-center" data-aos="fade-right" data-aos-offset="700">
                 <img src="https://picsum.photos/300/400?random=3" class="img-fluid rounded shadow-sm border"
                     alt="Giovanni">
             </div>
-            <div class="col-md-4 text-center text-md-start">
+            <div class="col-md-4 text-center text-md-start" data-aos="fade-up" data-aos-offset="700">
                 <h4 class="mb-1 font-titolo">Giovanni</h4>
                 <p class="text-muted">Tecnico Rilevatore e Installatore</p>
                 <p>Effettua sopralluoghi, rilievi precisi e si occupa dell’installazione degli infissi con competenza
