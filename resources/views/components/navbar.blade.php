@@ -11,7 +11,6 @@
             <ul class="navbar-nav ps-5 me-5 ms-auto mb-2 mb-lg-0">
                 <li class="nav-item pe-5"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
                 <li class="nav-item pe-5"><a class="nav-link" href="{{ route('prodotti.index') }}">Prodotti</a></li>
-                {{-- <li class="nav-item pe-5"><a class="nav-link" href="{{ route('services') }}">Servizi</a></li> --}}
                 <li class="nav-item pe-5"><a class="nav-link" href="{{ route('about') }}">Chi siamo</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contatti</a></li>
             </ul>

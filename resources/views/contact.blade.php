@@ -11,7 +11,7 @@
         <div class="container py-5">
             <div class="row g-4">
                 {{-- Colonna Contatti --}}
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 pt-5">
                     <h2 class="pb-3 font-titolo underline-thin">Contatti</h2>
                     <p><strong>Indirizzo:</strong> Piazza dei Gerani, 26 – 00172 Roma (RM)</p>
                     <p><strong>Email:</strong> <a href="mailto:info@finestrarte.it">info@finestrarte.it</a></p>

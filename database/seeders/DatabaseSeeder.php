@@ -11,10 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // ✅ Avvia i seeder di categorie e sottocategorie
-        $this->call([
-            CategorySeeder::class,
-            SubcategorySeeder::class,
-        ]);
+        // 
     }
 }

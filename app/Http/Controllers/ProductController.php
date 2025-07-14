@@ -2,52 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Subcategory;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class ProductController extends Controller
 {
-    // Pagina iniziale: tutte le categorie
     public function index()
     {
-        $categories = Category::with('subcategories')->get();
-
-        return view('prodotti.index', compact('categories'));
+        return view('prodotti.index');
     }
 
-    // Pagina categoria: mostra sottocategorie o direttamente i prodotti
-    public function showCategoria(Category $categoria)
+    public function showCategoria($categoria)
     {
-        $sottocategorie = $categoria->subcategories->sortBy(function ($s) {
-            return $s->name === 'PVC' ? 0 : 1;
-        });
+        // Controllo se esiste la index della categoria
+        $view = "prodotti.static.{$categoria}.index";
 
-        if ($sottocategorie->isEmpty()) {
-            return view('prodotti.prodotti', [
-                'categoria' => $categoria,
-                'products' => $categoria->products ?? [],
-            ]);
+        if (View::exists($view)) {
+            return view($view, ['categoria' => ucfirst($categoria)]);
         }
 
-        return view('prodotti.categoria', [
-            'categoria' => $categoria,
-            'sottocategorie' => $sottocategorie,
-        ]);
+        // Fallback generico se vuoi
+        if (View::exists("prodotti.static.categoria")) {
+            return view("prodotti.static.categoria", ['categoria' => ucfirst($categoria)]);
+        }
+
+        abort(404);
     }
 
-    // Pagina sottocategoria: mostra i prodotti
-    public function showSottocategoria(Category $categoria, Subcategory $sottocategoria)
+    public function showSottocategoria($categoria, $sottocategoria)
     {
-        // Assicura che la sottocategoria appartenga alla categoria
-        abort_unless($sottocategoria->category_id === $categoria->id, 404);
+        $view = "prodotti.static.{$categoria}.{$sottocategoria}";
 
-        $products = $sottocategoria->products;
+        if (!View::exists($view)) {
+            abort(404);
+        }
 
-        return view('prodotti.prodotti', [
-            'categoria' => $categoria,
-            'sottocategoria' => $sottocategoria,
-            'products' => $products,
+        return view($view, [
+            'categoria' => ucfirst($categoria),
+            'sottocategoria' => ucfirst($sottocategoria),
         ]);
     }
 }
