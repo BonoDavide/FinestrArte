@@ -10,10 +10,10 @@
             <div class="row align-items-center mb-5 pt-5 g-4">
                 <div class="col-12 col-md-6 text-center text-md-start pt-5" data-aos="fade-right" data-aos-offset="200">
                     <h2 class="font-titolo">Benvenuti in FinestrArte</h2>
-                    <p class="px-3">Siamo una realtà specializzata nella fornitura e posa di infissi di alta qualità,
+                    <p>Siamo una realtà specializzata nella fornitura e posa di infissi di alta qualità,
                         progettati per integrarsi perfettamente in ogni tipo di ambiente. Crediamo nella cura del
                         dettaglio, nella funzionalità e in un rapporto diretto e trasparente con il cliente.</p>
-                    <a href="{{ route('about') }}" class="btn btn-color border border-dark mb-3">Scopri il Team</a>
+                    <a href="{{ route('about') }}" class="btn btn-scheda-home border border-dark mb-3">Scopri il Team</a>
                 </div>
                 <div class="col-12 col-md-6 text-center" data-aos="fade-left" data-aos-offset="200">
                     <img src="https://picsum.photos/600/400?random=1" alt="Immagine di esempio"
@@ -25,10 +25,10 @@
             <div class="row align-items-center mb-5 pt-5 g-4 flex-md-row-reverse">
                 <div class="col-12 col-md-6 text-center text-md-start" data-aos="fade-left" data-aos-offset="500">
                     <h2 class="font-titolo">I nostri Prodotti</h2>
-                    <p class="px-3">Collaboriamo con le migliori aziende produttrici di infissi per offrire soluzioni
+                    <p>Collaboriamo con le migliori aziende produttrici di infissi per offrire soluzioni
                         affidabili, belle e performanti. Lavoriamo su misura per ogni contesto abitativo o
                         professionale, con una gamma completa di proposte moderne e funzionali.</p>
-                    <a href="{{ route('prodotti.index') }}" class="btn btn-color border border-dark mb-3">Scopri i
+                    <a href="{{ route('prodotti.index') }}" class="btn btn-scheda-home border border-dark mb-3">Scopri i
                         nostri Prodotti</a>
                 </div>
                 <div class="col-12 col-md-6 text-center" data-aos="fade-right" data-aos-offset="500">
@@ -41,10 +41,10 @@
             <div class="row align-items-center mb-5 pt-5 pb-5 g-4">
                 <div class="col-12 col-md-6 text-center text-md-start" data-aos="fade-right" data-aos-offset="700">
                     <h2 class="font-titolo">Servizi su misura</h2>
-                    <p class="px-3">Ogni abitazione è diversa: per questo offriamo consulenza personalizzata, rilievi
+                    <p>Ogni abitazione è diversa: per questo offriamo consulenza personalizzata, rilievi
                         precisi e installazioni a regola d’arte. Il nostro obiettivo è valorizzare i tuoi spazi con
                         infissi efficienti, sicuri e ben integrati nell’ambiente.</p>
-                    <a href="{{ route('contact') }}" class="btn btn-color border border-dark mb-3">Contattaci ora</a>
+                    <a href="{{ route('contact') }}" class="btn btn-scheda-home border border-dark mb-3">Contattaci ora</a>
                 </div>
                 <div class="col-12 col-md-6 text-center" data-aos="fade-left" data-aos-offset="700">
                     <img src="https://picsum.photos/600/400?random=3" alt="Immagine di esempio"

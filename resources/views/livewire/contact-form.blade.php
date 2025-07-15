@@ -33,6 +33,6 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-color border border-dark">Invia</button>
+        <button type="submit" class="btn btn-scheda-4 border border-dark">Invia</button>
     </form>
 </div>

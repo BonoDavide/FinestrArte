@@ -89,12 +89,119 @@
 
 /* bottoni */
 .btn-color {
-
     background-color: rgb(255, 196, 0);
+}
+
+/* card */
+.btn-size-card {
+    width: 30%;
+    font-size: 0.8rem;
+}
+
+.card-prodotto {
+    background-color: #0000000b;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.181);
+}
+
+.card-prodotto .card-body {
+    padding: 2rem;
+}
+
+.card-prodotto .card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.card-prodotto ul {
+    font-size: 0.95rem;
+}
+
+.card-prodotto ul li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.card-prodotto ul li:last-child {
+    border-bottom: none;
+}
+
+.btn-scheda {
+    background: #ffc107;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 45%;
+}
+
+.btn-scheda:hover {
+    background: #e0a800;
+    color: #fff;
+}
+
+.btn-scheda-home {
+    background: #ffc107;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 35%;
+}
+
+.btn-scheda-home:hover {
+    background: #e0a800;
+    color: #fff;
+}
+
+.btn-scheda-3 {
+    background: #ffc107;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 25%;
+}
+
+.btn-scheda-3:hover {
+    background: #e0a800;
+    color: #fff;
+}
+
+.btn-scheda-4 {
+    background: #ffc107;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 15%;
+}
+
+.btn-scheda-4:hover {
+    background: #e0a800;
+    color: #fff;
+}
+
+.img-prodotto {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 /* fonts */
 /* Titoli */
+.paragrafo {
+    font-size: 1.5rem;
+}
+
+.titolo-card-prodotti {
+    font-size: 2rem;
+}
+
 .playfair-display {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;

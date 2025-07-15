@@ -26,3 +26,6 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
 Route::get('/prodotti', [ProductController::class, 'index'])->name('prodotti.index');
 Route::get('/prodotti/{categoria}', [ProductController::class, 'showCategoria'])->name('prodotti.categoria');
 Route::get('/prodotti/{categoria}/{sottocategoria}', [ProductController::class, 'showSottocategoria'])->name('prodotti.sottocategoria');
+
+// visualizzazione pdf
+Route::get('/prodotti/{categoria}/{sottocategoria}/{prodotto}/scheda', [ProductController::class, 'showScheda'])->name('prodotti.scheda');

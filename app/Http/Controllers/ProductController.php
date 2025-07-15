@@ -41,4 +41,15 @@ class ProductController extends Controller
             'sottocategoria' => ucfirst($sottocategoria),
         ]);
     }
+
+    public function showScheda($categoria, $sottocategoria, $prodotto)
+    {
+        $path = public_path("pdf/prodotti/{$categoria}/{$sottocategoria}/{$prodotto}.pdf");
+
+        if (!file_exists($path)) {
+            abort(404);
+        }
+
+        return response()->file($path);
+    }
 }
