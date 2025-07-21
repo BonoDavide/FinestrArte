@@ -1,6 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import * as bootstrap from 'bootstrap';
 
 // Navbar scroll effetto
 const navbar = document.querySelector(".navCustom");
@@ -21,8 +22,7 @@ window.addEventListener("scroll", handleNavbarScroll);
 window.addEventListener("resize", handleNavbarScroll);
 handleNavbarScroll();
 
-
-// Inizializza Swiper
+// carosello Swiper
 document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.swiper', {
         slidesPerView: 6,
@@ -51,4 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Gestione click sui rivestimenti
+    const rivestimenti = document.querySelectorAll('.img-rivestimento');
+    const modalImg = document.getElementById('rivestimentoImg');
+    const modalTitle = document.getElementById('rivestimentoNome');
+
+    rivestimenti.forEach(img => {
+        img.addEventListener('click', () => {
+            const src = img.getAttribute('src');
+            const nome = img.getAttribute('data-nome');
+
+            modalImg.setAttribute('src', src);
+            modalTitle.textContent = nome;
+
+            const modal = new bootstrap.Modal(document.getElementById('modalRivestimento'));
+            modal.show();
+        });
+    });
 });
+

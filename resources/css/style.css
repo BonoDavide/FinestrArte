@@ -14,7 +14,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.649);
+    background-color: rgba(0, 0, 0, 0.507);
 }
 
 .hero-content {
@@ -62,8 +62,24 @@
     pointer-events: none;
 } */
 
-/* NAVBAR */
+/* img categorie */
+.overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* puoi aumentare/diminuire */
+    z-index: 1;
+}
 
+.overlay-text {
+    z-index: 2;
+
+}
+
+/* NAVBAR */
 .navCustom {
     /* Navbar con sfondo bianco di default */
     background-color: white !important;
@@ -100,7 +116,7 @@
 
 .card-prodotto {
     background-color: #0000000b;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.181);
@@ -301,9 +317,7 @@
 
 
 
-
-
-
+/* media query schermi piccoli*/
 @media (max-width: 767.98px) {
     .hero-header {
         height: 100vh;
@@ -328,5 +342,161 @@
     .subtitle-hero {
         font-size: 1.2rem;
         max-width: 90%;
+    }
+
+    /* finestre pvc */
+    .card-prodotto {
+        flex-direction: column !important;
+        text-align: center;
+        padding-bottom: 1.5rem;
+        /* Spazio extra sotto la card */
+    }
+
+    .card-prodotto>.col-5 {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .card-prodotto img.img-prodotto {
+        border-radius: 15px 15px 0 0 !important;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .card-prodotto .card-title {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .card-prodotto ul {
+        text-align: left;
+        padding-left: 1.5rem;
+    }
+
+    .btn-scheda {
+        width: 80%;
+        margin: 1.5rem auto 0 auto;
+        /* Spazio sopra, centrato, e più distanziato dal fondo */
+    }
+
+    /* carosello rivestimenti */
+    .swiper-slide .img-rivestimento {
+        width: 60px !important;
+        height: 60px !important;
+        object-fit: cover;
+    }
+
+    .swiper {
+        padding: 10px 0 !important;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+    .swiper-button-prev {
+        left: -15px;
+        transform: translateX(-100%);
+    }
+
+    .swiper-button-next {
+        right: -15px;
+        transform: translateX(100%);
+    }
+
+    .carosello-rivestimenti-wrapper .card {
+        padding: 1rem 1.2rem;
+    }
+
+    .col-carosello {
+        width: 100% !important;
+    }
+}
+
+/* media query schermi medi */
+@media (max-width: 991.98px) {
+    .card-prodotto {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .card-prodotto>.col-5 {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .card-prodotto img.img-prodotto {
+        border-radius: 15px 15px 0 0 !important;
+        width: 100%;
+        height: auto;
+        max-height: 360px;
+        /* aumentato per evitare tagli verticali */
+        object-fit: cover;
+        /* mantieni il riempimento visivo */
+    }
+
+    .card-prodotto .card-title {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .card-prodotto ul {
+        text-align: left;
+        padding-left: 1.5rem;
+    }
+
+    .btn-scheda {
+        width: 70%;
+        /* ridotto */
+        max-width: 250px;
+        /* limite visivo */
+        margin: 2rem auto 1.5rem;
+        white-space: nowrap;
+    }
+
+    /* carosello rivestimenti */
+    .swiper-slide .img-rivestimento {
+        width: 60px !important;
+        height: 60px !important;
+        object-fit: cover;
+    }
+
+    .swiper {
+        padding: 10px 0 !important;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+        transform: translateY(-50%);
+        top: 50%;
+    }
+
+    .swiper-button-prev {
+        left: -15px;
+        transform: translateX(-100%);
+    }
+
+    .swiper-button-next {
+        right: -15px;
+        transform: translateX(100%);
+    }
+
+    .carosello-rivestimenti-wrapper .card {
+        padding: 1rem 1.2rem;
+    }
+
+    .col-carosello {
+        width: 100% !important;
     }
 }
