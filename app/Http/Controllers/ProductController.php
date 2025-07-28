@@ -2,27 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Support\Facades\View;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        return view('prodotti.index');
+        $categorie = Category::orderBy('name')->get();
+
+        return view('prodotti.index', compact('categorie'));
     }
 
     public function showCategoria($categoria)
     {
-        // Controllo se esiste la index della categoria
+        // Cerco la categoria dal DB (404 se non trovata)
+        $categoriaModel = Category::where('slug', $categoria)->firstOrFail();
+
+        // Costruisco il path della vista statica
         $view = "prodotti.static.{$categoria}.index";
 
         if (View::exists($view)) {
-            return view($view, ['categoria' => ucfirst($categoria)]);
+            // Carico le sottocategorie e metto 'PVC' in cima se presente
+            $sottocategorie = $categoriaModel->subcategories()
+                ->get()
+                ->sortBy(function ($sub) {
+                    return strtolower($sub->name) === 'pvc' ? 0 : 1;
+                });
+
+            return view($view, [
+                'categoria' => $categoriaModel,
+                'sottocategorie' => $sottocategorie,
+            ]);
         }
 
-        // Fallback generico se vuoi
+        // Fallback generico se la categoria non ha una view personalizzata
         if (View::exists("prodotti.static.categoria")) {
-            return view("prodotti.static.categoria", ['categoria' => ucfirst($categoria)]);
+            return view("prodotti.static.categoria", [
+                'categoria' => $categoriaModel,
+                'sottocategorie' => $categoriaModel->subcategories,
+            ]);
         }
 
         abort(404);

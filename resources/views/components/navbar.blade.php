@@ -15,7 +15,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contatti</a></li>
             </ul>
             @auth
-                <ul class="navbar-nav">
+                <ul class="navbar-nav pe-3">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">

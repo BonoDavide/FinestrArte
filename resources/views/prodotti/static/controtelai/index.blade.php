@@ -4,10 +4,10 @@
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
         <img src="https://picsum.photos/seed/controtelai-monoblocco-termici-header/1920/600"
             class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
-            alt="Controtelai Monoblocco Termici">
+            alt="Controtelai">
 
         <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-            <h1 class="display-3 fw-bold font-titolo">Controtelai Monoblocco Termici</h1>
+            <h1 class="display-3 fw-bold font-titolo">Controtelai</h1>
             <h2 class="h4">Scegli la tipologia che fa per te</h2>
         </div>
     </div>
@@ -18,26 +18,20 @@
 
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
 
-            @php
-                $sottocategorie = [
-                    ['slug' => 'cassonetto-ispezione-inferiore', 'name' => 'Cassonetto Ispezione Inferiore'],
-                    ['slug' => 'cassonetto-ispezione-frontale', 'name' => 'Cassonetto Ispezione Frontale'],
-                    ['slug' => 'controtelaio-classico', 'name' => 'Controtelaio Classico'],
-                ];
-            @endphp
-
             @foreach ($sottocategorie as $sottocategoria)
                 <div class="col-6">
                     <div class="card h-100 text-white border-0 position-relative overflow-hidden">
-                        <img src="https://picsum.photos/seed/controtelai-{{ $sottocategoria['slug'] }}/400/180"
-                            class="w-100" style="height: 180px; object-fit: cover;"
-                            alt="{{ $sottocategoria['name'] }}">
+                        <img src="{{ $sottocategoria->image ? asset('storage/' . $sottocategoria->image) : 'https://picsum.photos/seed/' . $categoria->slug . '-' . $sottocategoria->slug . '/400/180' }}"
+                            class="w-100" style="height: 180px; object-fit: cover;" alt="{{ $sottocategoria->name }}">
 
                         <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50 text-center py-2">
-                            <h5 class="mb-0">{{ $sottocategoria['name'] }}</h5>
+                            <h5 class="mb-0">{{ $sottocategoria->name }}</h5>
                         </div>
 
-                        <a href="{{ route('prodotti.sottocategoria', ['categoria' => 'controtelai-monoblocco-termici', 'sottocategoria' => $sottocategoria['slug']]) }}"
+                        <a href="{{ route('prodotti.sottocategoria', [
+                            'categoria' => $categoria->slug,
+                            'sottocategoria' => $sottocategoria->slug,
+                        ]) }}"
                             class="stretched-link"></a>
                     </div>
                 </div>

@@ -17,27 +17,20 @@
 
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
 
-            @php
-                $sottocategorie = [
-                    ['slug' => 'pvc', 'name' => 'PVC'],
-                    ['slug' => 'alluminio', 'name' => 'Alluminio'],
-                    ['slug' => 'legno-e-alluminio', 'name' => 'Legno e alluminio'],
-                    ['slug' => 'legno', 'name' => 'Legno'],
-                ];
-            @endphp
-
             @foreach ($sottocategorie as $sottocategoria)
                 <div class="col-6">
                     <div class="card h-100 text-white border-0 position-relative overflow-hidden">
-                        <img src="https://picsum.photos/seed/finestre-{{ $sottocategoria['slug'] }}/400/180"
-                            class="w-100" style="height: 180px; object-fit: cover;"
-                            alt="{{ $sottocategoria['name'] }}">
+                        <img src="{{ $sottocategoria->image ? asset('storage/' . $sottocategoria->image) : 'https://picsum.photos/seed/' . $categoria->slug . '-' . $sottocategoria->slug . '/400/180' }}"
+                            class="w-100" style="height: 180px; object-fit: cover;" alt="{{ $sottocategoria->name }}">
 
                         <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50 text-center py-2">
-                            <h5 class="mb-0">{{ $sottocategoria['name'] }}</h5>
+                            <h5 class="mb-0">{{ $sottocategoria->name }}</h5>
                         </div>
 
-                        <a href="{{ route('prodotti.sottocategoria', ['categoria' => 'finestre', 'sottocategoria' => $sottocategoria['slug']]) }}"
+                        <a href="{{ route('prodotti.sottocategoria', [
+                            'categoria' => $categoria->slug,
+                            'sottocategoria' => $sottocategoria->slug,
+                        ]) }}"
                             class="stretched-link"></a>
                     </div>
                 </div>

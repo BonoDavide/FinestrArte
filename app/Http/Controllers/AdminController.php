@@ -10,4 +10,14 @@ class AdminController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function categories()
+    {
+        return view('admin.categories');
+    }
+
+    public function subcategories()
+    {
+        return view('admin.subcategories');
+    }
 }

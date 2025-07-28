@@ -1,5 +1,5 @@
 import './bootstrap';
-import 'bootstrap/dist/js/bootstrap.min.js';
+import 'bootstrap';
 
 // Import Swiper (necessario se non già fatto in main.js)
 import 'swiper/css';
