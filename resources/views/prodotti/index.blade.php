@@ -1,9 +1,10 @@
 <x-layout>
-    <div class="position-relative text-white mb-5 mx-0 prodotti-hero" style="height: 60vh; min-height: 250px;">
-        <img src="https://picsum.photos/seed/prodotti/1920/600" alt="Prodotti"
-            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;">
-        <div class="position-absolute top-50 start-50 translate-middle text-center p-3 rounded" style="width: 90%;">
-            <h1 class="display-5 font-titolo mb-2">Scopri i nostri prodotti</h1>
+    <div class="position-relative overflow-hidden" style="height: 70vh; min-height: 250px;">
+        <img src="{{ asset('img/prodotti/prodotti.png') }}"
+            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
+        <div class="overlay-dark"></div>
+        <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
+            <h1 class="display-3 fw-bold font-titolo">Scopri i nostri prodotti</h1>
             <p class="fs-5 m-0">Soluzioni su misura per casa, sicurezza e design</p>
         </div>
     </div>

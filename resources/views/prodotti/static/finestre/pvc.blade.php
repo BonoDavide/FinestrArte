@@ -9,7 +9,7 @@
             <h1 class="display-2 fw-bold font-titolo">PVC</h1>
         </div>
     </div>
-
+    
     {{-- Paragrafo descrittivo --}}
     <div class="container py-5">
         <div class="row text-center justify-content-center mb-5 py-5">
