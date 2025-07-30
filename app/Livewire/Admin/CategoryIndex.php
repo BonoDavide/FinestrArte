@@ -17,10 +17,12 @@ class CategoryIndex extends Component
     public $image;
     public $categoryId;
     public $isEditing = false;
+    public $is_active = true;
 
     protected $rules = [
         'name' => 'required|string|max:255',
-        'image' => 'nullable|image|max:2048', // max 2MB
+        'image' => 'nullable|image|max:2048',
+        'is_active' => 'boolean',
     ];
 
     public function updatedName()
@@ -42,7 +44,6 @@ class CategoryIndex extends Component
         if ($this->isEditing && $this->categoryId) {
             $category = Category::findOrFail($this->categoryId);
 
-            // elimina immagine precedente se viene caricata una nuova
             if ($this->image && $category->image) {
                 Storage::disk('public')->delete($category->image);
             }
@@ -51,12 +52,14 @@ class CategoryIndex extends Component
                 'name' => $this->name,
                 'slug' => $this->slug,
                 'image' => $imagePath ?? $category->image,
+                'is_active' => $this->is_active,
             ]);
         } else {
             Category::create([
                 'name' => $this->name,
                 'slug' => $this->slug,
                 'image' => $imagePath,
+                'is_active' => $this->is_active,
             ]);
         }
 
@@ -69,6 +72,7 @@ class CategoryIndex extends Component
         $this->name = $category->name;
         $this->slug = $category->slug;
         $this->categoryId = $id;
+        $this->is_active = $category->is_active;
         $this->image = null;
         $this->isEditing = true;
     }
@@ -87,7 +91,7 @@ class CategoryIndex extends Component
 
     public function resetForm()
     {
-        $this->reset(['name', 'slug', 'image', 'categoryId', 'isEditing']);
+        $this->reset(['name', 'slug', 'image', 'categoryId', 'isEditing', 'is_active']);
     }
 
     public function render()

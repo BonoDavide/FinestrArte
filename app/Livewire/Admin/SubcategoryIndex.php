@@ -17,6 +17,7 @@ class SubcategoryIndex extends Component
     public $slug;
     public $category_id;
     public $image;
+    public $is_active = true;
     public $subcategoryId;
     public $isEditing = false;
 
@@ -24,6 +25,7 @@ class SubcategoryIndex extends Component
         'name' => 'required|string|max:255',
         'category_id' => 'required|exists:categories,id',
         'image' => 'nullable|image|max:2048',
+        'is_active' => 'boolean',
     ];
 
     public function updatedName()
@@ -45,7 +47,6 @@ class SubcategoryIndex extends Component
         if ($this->isEditing && $this->subcategoryId) {
             $subcategory = Subcategory::findOrFail($this->subcategoryId);
 
-            // elimina immagine precedente se sostituita
             if ($this->image && $subcategory->image) {
                 Storage::disk('public')->delete($subcategory->image);
             }
@@ -55,6 +56,7 @@ class SubcategoryIndex extends Component
                 'slug' => $this->slug,
                 'category_id' => $this->category_id,
                 'image' => $imagePath ?? $subcategory->image,
+                'is_active' => $this->is_active,
             ]);
         } else {
             Subcategory::create([
@@ -62,6 +64,7 @@ class SubcategoryIndex extends Component
                 'slug' => $this->slug,
                 'category_id' => $this->category_id,
                 'image' => $imagePath,
+                'is_active' => $this->is_active,
             ]);
         }
 
@@ -76,6 +79,7 @@ class SubcategoryIndex extends Component
         $this->category_id = $subcategory->category_id;
         $this->subcategoryId = $id;
         $this->image = null;
+        $this->is_active = $subcategory->is_active;
         $this->isEditing = true;
     }
 
@@ -93,7 +97,7 @@ class SubcategoryIndex extends Component
 
     public function resetForm()
     {
-        $this->reset(['name', 'slug', 'category_id', 'subcategoryId', 'isEditing', 'image']);
+        $this->reset(['name', 'slug', 'category_id', 'subcategoryId', 'isEditing', 'image', 'is_active']);
     }
 
     public function render()

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Subcategory extends Model
 {
-    protected $fillable = ['category_id', 'name', 'slug', 'image'];
+    protected $fillable = ['category_id', 'name', 'slug', 'image', 'is_active'];
 
     public function category()
     {

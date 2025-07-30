@@ -9,22 +9,27 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $categorie = Category::orderBy('name')->get();
+        // Mostra solo le categorie attive
+        $categorie = Category::where('is_active', true)
+            ->orderBy('name')
+            ->get();
 
         return view('prodotti.index', compact('categorie'));
     }
 
     public function showCategoria($categoria)
     {
-        // Cerco la categoria dal DB (404 se non trovata)
-        $categoriaModel = Category::where('slug', $categoria)->firstOrFail();
+        // Carica solo la categoria attiva
+        $categoriaModel = Category::where('slug', $categoria)
+            ->where('is_active', true)
+            ->firstOrFail();
 
-        // Costruisco il path della vista statica
         $view = "prodotti.static.{$categoria}.index";
 
         if (View::exists($view)) {
-            // Carico le sottocategorie e metto 'PVC' in cima se presente
+            // Carica solo sottocategorie attive
             $sottocategorie = $categoriaModel->subcategories()
+                ->where('is_active', true)
                 ->get()
                 ->sortBy(function ($sub) {
                     return strtolower($sub->name) === 'pvc' ? 0 : 1;
@@ -36,11 +41,10 @@ class ProductController extends Controller
             ]);
         }
 
-        // Fallback generico se la categoria non ha una view personalizzata
         if (View::exists("prodotti.static.categoria")) {
             return view("prodotti.static.categoria", [
                 'categoria' => $categoriaModel,
-                'sottocategorie' => $categoriaModel->subcategories,
+                'sottocategorie' => $categoriaModel->subcategories()->where('is_active', true)->get(),
             ]);
         }
 

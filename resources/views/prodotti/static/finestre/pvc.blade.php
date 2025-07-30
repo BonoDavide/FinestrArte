@@ -6,12 +6,19 @@
             class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-            <h1 class="display-2 fw-bold font-titolo">PVC</h1>
+            <h1 class="display-2 fw-bold font-titolo underline-thin">PVC</h1>
         </div>
+    </div>
+
+    {{-- bottone indietro --}}
+    <div class="container pt-5">
+        <a href="{{ url('/prodotti/' . $categoria) }}" class="btn btn-pag-prod px-4">
+            <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ ucfirst($categoria) }}
+        </a>
     </div>
     
     {{-- Paragrafo descrittivo --}}
-    <div class="container py-5">
+    <div class="container pb-5">
         <div class="row text-center justify-content-center mb-5 py-5">
             <div class="col-12">
                 <div class="border"></div>
@@ -35,7 +42,7 @@
                     </div>
 
                     <div class="col-5 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
-                        <h5 class="mb-3 card-title">Schüco CT 70 Classic</h5>
+                        <h5 class="mb-3 card-title underline-thin">Schüco CT 70 Classic</h5>
 
                         <ul class="list-unstyled mb-4">
                             <li><strong>Prestazione energetica:</strong> Uw = 0,83 W/(m²K)</li>
@@ -67,7 +74,7 @@
                     </div>
 
                     <div class="col-5 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
-                        <h5 class="mb-3 card-title">Schüco LivIng 82</h5>
+                        <h5 class="mb-3 card-title underline-thin">Schüco LivIng 82</h5>
 
                         <ul class="list-unstyled mb-4">
                             <li><strong>Profondità telaio:</strong> 82 mm</li>

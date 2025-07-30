@@ -29,6 +29,11 @@
             @endif
         </div>
 
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" wire:model="is_active" role="switch" id="visibleSwitch">
+            <label class="form-check-label" for="visibleSwitch">Visibile sul sito</label>
+        </div>
+
         <button type="submit" class="btn btn-primary">
             {{ $isEditing ? 'Aggiorna' : 'Aggiungi' }}
         </button>
@@ -44,6 +49,7 @@
                 <th>Nome</th>
                 <th>Slug</th>
                 <th>Immagine</th>
+                <th>Visibile</th>
                 <th>Azioni</th>
             </tr>
         </thead>
@@ -57,6 +63,13 @@
                             <img src="{{ asset('storage/' . $category->image) }}" width="80" class="img-thumbnail">
                         @else
                             <span class="text-muted">—</span>
+                        @endif
+                    </td>
+                    <td>
+                        @if ($category->is_active)
+                            <span class="badge bg-success">Sì</span>
+                        @else
+                            <span class="badge bg-secondary">No</span>
                         @endif
                     </td>
                     <td>

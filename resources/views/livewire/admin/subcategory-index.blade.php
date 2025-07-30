@@ -42,6 +42,17 @@
             @endif
         </div>
 
+        <div class="mb-3">
+            <label class="form-label">Visibile</label>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" wire:model.defer="is_active" role="switch"
+                    id="is_active">
+                <label class="form-check-label" for="is_active">
+                    {{ $is_active ? 'Sì' : 'No' }}
+                </label>
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-primary">
             {{ $isEditing ? 'Aggiorna' : 'Aggiungi' }}
         </button>
@@ -58,6 +69,7 @@
                 <th>Slug</th>
                 <th>Categoria</th>
                 <th>Immagine</th>
+                <th>Visibile</th>
                 <th>Azioni</th>
             </tr>
         </thead>
@@ -72,6 +84,13 @@
                             <img src="{{ asset('storage/' . $sub->image) }}" width="80" class="img-thumbnail">
                         @else
                             <span class="text-muted">—</span>
+                        @endif
+                    </td>
+                    <td>
+                        @if ($sub->is_active)
+                            <span class="badge bg-success">Sì</span>
+                        @else
+                            <span class="badge bg-secondary">No</span>
                         @endif
                     </td>
                     <td>

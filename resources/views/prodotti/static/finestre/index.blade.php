@@ -6,7 +6,7 @@
             style="object-fit: cover;" alt="Finestre">
 
         <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-            <h1 class="display-3 fw-bold font-titolo">Finestre</h1>
+            <h1 class="display-3 fw-bold font-titolo underline-thin">Finestre</h1>
             <h2 class="h4">Scegli la tipologia che fa per te</h2>
         </div>
     </div>
