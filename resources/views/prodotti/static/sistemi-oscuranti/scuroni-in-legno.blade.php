@@ -6,14 +6,14 @@
             class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-            <h1 class="display-2 fw-bold font-titolo underline-thin">Sportelloni in Legno</h1>
+            <h1 class="display-2 fw-bold font-titolo underline-thin">Scuroni in Legno</h1>
         </div>
     </div>
 
     {{-- bottone indietro --}}
     <div class="container pt-5">
-        <a href="{{ url('/prodotti/' . $categoria) }}" class="btn btn-pag-prod px-4">
-            <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ ucfirst($categoria) }}
+        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4">
+            <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ $categoria->name }}
         </a>
     </div>
 
@@ -23,7 +23,7 @@
             <div class="col-12">
                 <div class="border"></div>
                 <p class="lead text-center py-5 paragrafo">
-                    Gli sportelli in legno rappresentano una scelta tradizionale ma sempre attuale, in grado di valorizzare l’estetica dell’edificio con calore, solidità e carattere. Disponibili in diverse configurazioni e lavorazioni, offrono soluzioni funzionali e versatili, adatte sia a contesti rustici che moderni.
+                    Gli Scuroni in legno rappresentano una scelta tradizionale ma sempre attuale, in grado di valorizzare l’estetica dell’edificio con calore, solidità e carattere. Disponibili in diverse configurazioni e lavorazioni, offrono soluzioni funzionali e versatili, adatte sia a contesti rustici che moderni.
                 </p>
                 <div class="border"></div>
             </div>
@@ -36,7 +36,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO PRINCIPALE --}}
-                    <h4 class="mb-5 font-titolo underline-thin">Sportelli Classici</h4>
+                    <h4 class="mb-5 font-titolo underline-thin">Scuroni Classici</h4>
                     {{-- IMMAGINE PRINCIPALE CENTRALE --}}
                     <div class="row justify-content-between text-center px-5 mx-5 pb-3">
                         <div class="col-12 col-md-5 mb-4">
@@ -83,7 +83,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 3 --}}
-                    <h4 class="mb-5 pt-3 font-titolo underline-thin">Sportelli Pocket</h4>
+                    <h4 class="mb-5 pt-3 font-titolo underline-thin">Scuroni Pocket</h4>
 
                     {{-- IMMAGINI --}}
                     <div class="row justify-content-between text-center px-5 mx-5 pb-3">
@@ -107,7 +107,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 4 --}}
-                    <h4 class="mb-5 pt-3 font-titolo underline-thin">Sportelli alla Veneta</h4>
+                    <h4 class="mb-5 pt-3 font-titolo underline-thin">Scuroni alla Veneta</h4>
 
                     {{-- IMMAGINI --}}
                     <div class="row justify-content-between text-center px-5 mx-5 pb-3">

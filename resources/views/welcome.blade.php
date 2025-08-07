@@ -20,7 +20,7 @@
                         class="img-fluid rounded shadow border">
                 </div>
             </div>
-
+            
             {{-- Secondo blocco --}}
             <div class="row align-items-center mb-5 pt-5 g-4 flex-md-row-reverse">
                 <div class="col-12 col-md-6 text-center text-md-start" data-aos="fade-left" data-aos-offset="400">

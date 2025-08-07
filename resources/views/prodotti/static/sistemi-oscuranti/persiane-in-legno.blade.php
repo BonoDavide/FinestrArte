@@ -12,8 +12,8 @@
 
     {{-- bottone indietro --}}
     <div class="container pt-5">
-        <a href="{{ url('/prodotti/' . $categoria) }}" class="btn btn-pag-prod px-4">
-            <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ ucfirst($categoria) }}
+        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4">
+            <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ $categoria->name }}
         </a>
     </div>
 
@@ -23,7 +23,10 @@
             <div class="col-12">
                 <div class="border"></div>
                 <p class="lead text-center py-5 paragrafo">
-                    Le persiane in legno uniscono eleganza senza tempo e funzionalità, valorizzando l'estetica di ogni abitazione con calore e naturalezza. Realizzate con essenze pregiate e trattamenti protettivi all’avanguardia, offrono un'eccellente resistenza agli agenti atmosferici e un ottimo isolamento termico e acustico.
+                    Le persiane in legno uniscono eleganza senza tempo e funzionalità, valorizzando l'estetica di ogni
+                    abitazione con calore e naturalezza. Realizzate con essenze pregiate e trattamenti protettivi
+                    all’avanguardia, offrono un'eccellente resistenza agli agenti atmosferici e un ottimo isolamento
+                    termico e acustico.
                 </p>
                 <div class="border"></div>
             </div>

@@ -1,0 +1,292 @@
+/* ========================
+    MEDIA QUERIES RESPONSIVE
+   ======================== */
+
+/* === SCHERMI PICCOLI: max 767.98px === */
+@media (max-width: 767.98px) {
+
+    /* HOMEPAGE */
+    .row.align-items-center {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .row.align-items-center>.col-md-6:first-child {
+        order: 2;
+    }
+
+    .row.align-items-center>.col-md-6:last-child {
+        order: 1;
+    }
+
+    .row.flex-md-row-reverse {
+        flex-direction: column !important;
+    }
+
+    .row.flex-md-row-reverse>.col-md-6:first-child {
+        order: 2;
+    }
+
+    .row.flex-md-row-reverse>.col-md-6:last-child {
+        order: 1;
+    }
+
+    /* Titoli e testi */
+    .title-hero {
+        font-size: 3rem;
+        max-width: 90%;
+        word-break: break-word;
+    }
+
+    .subtitle-hero {
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+
+    .btn-scheda-home {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        width: 60%;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-scheda-3 {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        width: 70%;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .row .col.text-center i {
+        font-size: 2rem !important;
+    }
+
+    .row .col.text-center h5 {
+        font-size: 1.1rem;
+    }
+
+    .row .col.text-center p {
+        padding: 0 1rem;
+    }
+
+    /* Navbar sticky e senza animazioni */
+    .navbar {
+        position: sticky !important;
+        top: 0;
+        z-index: 999;
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .navbar *,
+    .navbar-collapse,
+    .navbar-toggler {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .navbar-toggler {
+        background-color: transparent !important;
+        border: none;
+        box-shadow: none !important;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:active {
+        background-color: transparent !important;
+        outline: none;
+        box-shadow: none !important;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 999;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-left: 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    /* Disattiva AOS */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* contatti */
+    .btn-scheda-4 {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 20%;
+    }
+
+    /* bottone per tornare a pagina generica prodotti */
+    .btn-pag-prod {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 80%;
+    }
+}
+
+/* === SCHERMI MEDI: da 576px a 1199.98px === */
+@media (min-width: 576px) and (max-width: 1199.98px) {
+
+    /* HOMEPAGE */
+    .hero-content {
+        padding: 1rem 1.5rem;
+    }
+
+    .title-hero {
+        font-size: 6rem;
+        line-height: 1.2;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .subtitle-hero {
+        font-size: 2rem;
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .btn-scheda-home {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        width: 70%;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-scheda-3 {
+        font-size: 1.3rem;
+        padding: 0.5rem 1.2rem;
+        width: auto;
+        min-width: 220px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* NAVBAR sticky */
+    .navbar {
+        position: sticky !important;
+        top: 0;
+        z-index: 999;
+        background-color: white !important;
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .navbar *,
+    .navbar-collapse,
+    .navbar-toggler {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 999;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-left: 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    .navbar-toggler {
+        background-color: transparent !important;
+        border: none;
+        box-shadow: none !important;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:active {
+        outline: none;
+        box-shadow: none !important;
+    }
+
+    .collapsing {
+        height: auto !important;
+        transition: none !important;
+        display: block !important;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-collapse.collapse.show {
+        display: block !important;
+    }
+
+    /* Disattiva AOS */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* contatti */
+    .btn-scheda-4 {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 20%;
+    }
+
+    /* bottone per tornare a pagina generica prodotti */
+    .btn-pag-prod {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 40%;
+    }
+}

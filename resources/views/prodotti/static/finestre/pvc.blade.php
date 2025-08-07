@@ -12,8 +12,8 @@
 
     {{-- bottone indietro --}}
     <div class="container pt-5">
-        <a href="{{ url('/prodotti/' . $categoria) }}" class="btn btn-pag-prod px-4">
-            <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ ucfirst($categoria) }}
+        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4">
+            <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ $categoria->name }}
         </a>
     </div>
     
@@ -57,7 +57,7 @@
 
                         <a href="{{ asset('pdf/schuco-ct-70-classic.pdf') }}" target="_blank" rel="noopener noreferrer"
                             class="btn btn-scheda">
-                            Scheda tecnica
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
                         </a>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
 
                         <a href="{{ asset('pdf/schuco-living-82.pdf') }}" target="_blank" rel="noopener noreferrer"
                             class="btn btn-scheda">
-                            Scheda tecnica
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
                         </a>
                     </div>
                 </div>

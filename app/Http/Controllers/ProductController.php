@@ -53,6 +53,11 @@ class ProductController extends Controller
 
     public function showSottocategoria($categoria, $sottocategoria)
     {
+        // Recupera il modello della categoria attiva
+        $categoriaModel = Category::where('slug', $categoria)
+            ->where('is_active', true)
+            ->firstOrFail();
+
         $view = "prodotti.static.{$categoria}.{$sottocategoria}";
 
         if (!View::exists($view)) {
@@ -60,7 +65,7 @@ class ProductController extends Controller
         }
 
         return view($view, [
-            'categoria' => ucfirst($categoria),
+            'categoria' => $categoriaModel,
             'sottocategoria' => ucfirst($sottocategoria),
         ]);
     }

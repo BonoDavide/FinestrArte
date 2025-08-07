@@ -7,7 +7,7 @@ import * as bootstrap from 'bootstrap';
 const navbar = document.querySelector(".navCustom");
 
 function handleNavbarScroll() {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1200) {
         if (window.scrollY > 50) {
             navbar.classList.add("nav-scrolled");
         } else {

@@ -6,9 +6,16 @@
             style="object-fit: cover;" alt="Finestre">
 
         <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-            <h1 class="display-3 fw-bold font-titolo underline-thin">Oscuranti</h1>
+            <h1 class="display-3 fw-bold font-titolo underline-thin">Sistemi Oscuranti</h1>
             <h2 class="h4">Scegli la tipologia che fa per te</h2>
         </div>
+    </div>
+
+    {{-- bottone indietro --}}
+    <div class="container pt-5">
+        <a href="{{ route('prodotti.index') }}" class="btn btn-pag-prod px-4">
+            <i class="bi bi-arrow-return-left me-2"></i> Torna a Prodotti
+        </a>
     </div>
 
     {{-- Sottocategorie --}}

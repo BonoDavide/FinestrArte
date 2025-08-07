@@ -11,6 +11,13 @@
         </div>
     </div>
 
+    {{-- bottone indietro --}}
+    <div class="container pt-5">
+        <a href="{{ route('prodotti.index') }}" class="btn btn-pag-prod px-4">
+            <i class="bi bi-arrow-return-left me-2"></i> Torna a Prodotti
+        </a>
+    </div>
+
     {{-- Sottocategorie --}}
     <div class="container py-5">
         <h3 class="text-center pb-3 font-titolo pt-5 pb-5 underline-thin">Seleziona il materiale</h3>
