@@ -46,20 +46,28 @@
                     <img src="{{ asset('img/prodotti/persiane/legno/persiane/a-murare-chiusa.jpg') }}"
                         alt="Persiana in Legno" class="img-fluid mx-auto mb-4"
                         style="max-height: 400px; object-fit: contain;">
+                </div>
+            </div>
+        </div>
 
-                    {{-- PRIMO BORDER --}}
-                    <hr class="my-4">
-
+        {{-- card 2 --}}
+        <div class="row g-4 justify-content-center pb-5 mb-5">
+            <div class="col-8">
+                <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 2 --}}
                     <h4 class="mb-5 pt-3 font-titolo underline-thin">Versione con Telaio</h4>
 
                     {{-- IMMAGINE SEZIONE 2 --}}
                     <img src="{{ asset('img/prodotti/persiane/legno/persiane/con-telaio2.png') }}" alt="con-telaio"
                         class="img-fluid mx-auto mb-4" style="max-height: 500px; object-fit: contain;">
+                </div>
+            </div>
+        </div>
 
-                    {{-- SECONDO BORDER --}}
-                    <hr class="my-4">
-
+        {{-- card 3 --}}
+        <div class="row g-4 justify-content-center pb-5 mb-5">
+            <div class="col-8">
+                <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 3 --}}
                     <h4 class="mb-5 pt-3 font-titolo underline-thin">CORNICI</h4>
 

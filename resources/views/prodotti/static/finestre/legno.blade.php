@@ -6,7 +6,7 @@
             class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-            <h1 class="display-2 fw-bold font-titolo underline-thin">Legno</h1>
+            <h1 class="display-2 fw-bold font-titolo underline-thin">Finestre in Legno</h1>
         </div>
     </div>
 
