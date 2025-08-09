@@ -14,7 +14,7 @@
                 <div class="col-12 col-md-6 pt-5">
                     <h2 class="pb-3 font-titolo underline-thin">Contatti</h2>
                     <p><strong>Indirizzo:</strong> Piazza dei Gerani, 26 – 00172 Roma (RM)</p>
-                    <p><strong>Email:</strong> <a href="mailto:info@finestrarte.it">info@finestrarte.it</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:finestrarte3.0@gmail.com">finestrarte3.0@gmail.com</a></p>
                     <p><strong>Telefono:</strong> <a href="tel:+3900000000">+39 000 0000000</a></p>
                     <p><strong>Orari:</strong> Lun–Ven 9:00–18:00</p>
                 </div>

@@ -28,7 +28,7 @@
                 <h6 class="text-uppercase">Contatti</h6>
                 <ul class="list-unstyled small">
                     <li><i class="bi bi-telephone"></i> +39 0123 456 789</li>
-                    <li><i class="bi bi-envelope"></i> info@infissisrl.it</li>
+                    <li><i class="bi bi-envelope"></i> finestrarte3.0@gmail.com</li>
                     <li><i class="bi bi-clock"></i> Lun–Ven: 9:00–18:00</li>
                 </ul>
             </div>
