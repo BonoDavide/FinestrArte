@@ -3,8 +3,7 @@
     {{-- Hero --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
         <img src="https://picsum.photos/seed/controtelai-monoblocco-termici-header/1920/600"
-            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
-            alt="Controtelai">
+            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="Controtelai">
 
         <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
             <h1 class="display-3 fw-bold font-titolo">Controtelai</h1>
@@ -21,7 +20,7 @@
             @foreach ($sottocategorie as $sottocategoria)
                 <div class="col-6">
                     <div class="card h-100 text-white border-0 position-relative overflow-hidden">
-                        <img src="{{ $sottocategoria->image ? asset('storage/' . $sottocategoria->image) : 'https://picsum.photos/seed/' . $categoria->slug . '-' . $sottocategoria->slug . '/400/180' }}"
+                        <img src="{{ $sottocategoria->image ? asset('img/' . $sottocategoria->image) : 'https://picsum.photos/seed/' . $categoria->slug . '-' . $sottocategoria->slug . '/400/180' }}"
                             class="w-100" style="height: 180px; object-fit: cover;" alt="{{ $sottocategoria->name }}">
 
                         <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50 text-center py-2">

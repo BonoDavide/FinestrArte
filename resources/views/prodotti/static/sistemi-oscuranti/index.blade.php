@@ -27,7 +27,7 @@
             @foreach ($sottocategorie as $sottocategoria)
                 <div class="col-6">
                     <div class="card h-100 text-white border-0 position-relative overflow-hidden">
-                        <img src="{{ $sottocategoria->image ? asset('storage/' . $sottocategoria->image) : 'https://picsum.photos/seed/' . $categoria->slug . '-' . $sottocategoria->slug . '/400/180' }}"
+                        <img src="{{ $sottocategoria->image ? asset('img/' . $sottocategoria->image) : 'https://picsum.photos/seed/' . $categoria->slug . '-' . $sottocategoria->slug . '/400/180' }}"
                             class="w-100" style="height: 180px; object-fit: cover;" alt="{{ $sottocategoria->name }}">
 
                         <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50 text-center py-2">
