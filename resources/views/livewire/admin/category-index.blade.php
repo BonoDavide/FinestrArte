@@ -22,10 +22,28 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
 
+            {{-- anteprima upload corrente --}}
             @if ($image)
                 <div class="mt-2">
                     <img src="{{ $image->temporaryUrl() }}" class="img-thumbnail" width="120">
                 </div>
+            @endif
+
+            {{-- immagine già salvata quando sto modificando e NON ho scelto un nuovo file --}}
+            @if ($isEditing && $categoryId && !$image)
+                @php
+                    $current = $categories->firstWhere('id', $categoryId);
+                @endphp
+                @if ($current && $current->image)
+                    <div class="mt-2 d-flex align-items-start gap-2">
+                        <img src="{{ asset('storage/' . $current->image) }}" class="img-thumbnail" width="120">
+                        <button type="button" class="btn btn-outline-danger btn-sm"
+                            wire:click="removeImage({{ $categoryId }})"
+                            onclick="confirm('Rimuovere l\'immagine attuale?') || event.stopImmediatePropagation()">
+                            Rimuovi immagine
+                        </button>
+                    </div>
+                @endif
             @endif
         </div>
 
@@ -60,7 +78,15 @@
                     <td>{{ $category->slug }}</td>
                     <td>
                         @if ($category->image)
-                            <img src="{{ asset('storage/' . $category->image) }}" width="80" class="img-thumbnail">
+                            <div class="d-flex flex-column align-items-start gap-2">
+                                <img src="{{ asset('storage/' . $category->image) }}" width="80"
+                                    class="img-thumbnail">
+                                <button class="btn btn-outline-danger btn-sm"
+                                    wire:click="removeImage({{ $category->id }})"
+                                    onclick="confirm('Eliminare solo l\'immagine?') || event.stopImmediatePropagation()">
+                                    Rimuovi immagine
+                                </button>
+                            </div>
                         @else
                             <span class="text-muted">—</span>
                         @endif

@@ -95,6 +95,20 @@ class SubcategoryIndex extends Component
         $this->resetForm();
     }
 
+    public function removeImage($id)
+    {
+        $subcategory = Subcategory::findOrFail($id);
+
+        if ($subcategory->image) {
+            Storage::disk('public')->delete($subcategory->image);
+            $subcategory->update(['image' => null]);
+        }
+
+        if ($this->isEditing && $this->subcategoryId === $id) {
+            $this->image = null;
+        }
+    }
+
     public function resetForm()
     {
         $this->reset(['name', 'slug', 'category_id', 'subcategoryId', 'isEditing', 'image', 'is_active']);

@@ -89,6 +89,21 @@ class CategoryIndex extends Component
         $this->resetForm();
     }
 
+    public function removeImage($id)
+    {
+        $category = Category::findOrFail($id);
+
+        if ($category->image) {
+            Storage::disk('public')->delete($category->image);
+            $category->update(['image' => null]);
+        }
+
+        // opzionale: resetto l’anteprima nel form se sto modificando proprio questa categoria
+        if ($this->isEditing && $this->categoryId === $id) {
+            $this->image = null;
+        }
+    }
+
     public function resetForm()
     {
         $this->reset(['name', 'slug', 'image', 'categoryId', 'isEditing', 'is_active']);
