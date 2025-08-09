@@ -49,7 +49,7 @@
                 @endphp
                 @if ($current && $current->image)
                     <div class="mt-2 d-flex align-items-start gap-2">
-                        <img src="{{ asset('storage/' . $current->image) }}" class="img-thumbnail" width="120">
+                        <img src="{{ asset('img/' . $current->image) }}" class="img-thumbnail" width="120">
                         <button type="button" class="btn btn-outline-danger btn-sm"
                             wire:click="removeImage({{ $subcategoryId }})"
                             onclick="confirm('Rimuovere l\'immagine attuale?') || event.stopImmediatePropagation()">
@@ -100,7 +100,7 @@
                     <td>
                         @if ($sub->image)
                             <div class="d-flex flex-column align-items-start gap-2">
-                                <img src="{{ asset('storage/' . $sub->image) }}" width="80" class="img-thumbnail">
+                                <img src="{{ asset('img/' . $sub->image) }}" width="80" class="img-thumbnail">
                                 <button class="btn btn-outline-danger btn-sm"
                                     wire:click="removeImage({{ $sub->id }})"
                                     onclick="confirm('Eliminare solo l\'immagine?') || event.stopImmediatePropagation()">

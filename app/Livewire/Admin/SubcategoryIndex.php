@@ -41,14 +41,14 @@ class SubcategoryIndex extends Component
 
         if ($this->image) {
             $filename = $this->slug . '.' . $this->image->getClientOriginalExtension();
-            $imagePath = $this->image->storeAs('img/sottocategorie', $filename, 'public');
+            $imagePath = $this->image->storeAs('sottocategorie', $filename, 'public_img');
         }
 
         if ($this->isEditing && $this->subcategoryId) {
             $subcategory = Subcategory::findOrFail($this->subcategoryId);
 
             if ($this->image && $subcategory->image) {
-                Storage::disk('public')->delete($subcategory->image);
+                Storage::disk('public_img')->delete($subcategory->image);
             }
 
             $subcategory->update([
@@ -88,7 +88,7 @@ class SubcategoryIndex extends Component
         $subcategory = Subcategory::findOrFail($id);
 
         if ($subcategory->image) {
-            Storage::disk('public')->delete($subcategory->image);
+            Storage::disk('public_img')->delete($subcategory->image);
         }
 
         $subcategory->delete();
@@ -100,7 +100,7 @@ class SubcategoryIndex extends Component
         $subcategory = Subcategory::findOrFail($id);
 
         if ($subcategory->image) {
-            Storage::disk('public')->delete($subcategory->image);
+            Storage::disk('public_img')->delete($subcategory->image);
             $subcategory->update(['image' => null]);
         }
 

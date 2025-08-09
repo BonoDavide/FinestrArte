@@ -41,7 +41,16 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'public_img' => [
+            'driver' => 'local',
+            'root' => public_path('img'), // cartella pubblica
+            'url' => env('APP_URL') . '/img', // URL base
             'visibility' => 'public',
             'throw' => false,
             'report' => false,

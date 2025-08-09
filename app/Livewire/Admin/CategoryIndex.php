@@ -38,14 +38,15 @@ class CategoryIndex extends Component
 
         if ($this->image) {
             $filename = $this->slug . '.' . $this->image->getClientOriginalExtension();
-            $imagePath = $this->image->storeAs('img/categorie', $filename, 'public');
+            $imagePath = $this->image->storeAs('categorie', $filename, 'public_img');
         }
 
         if ($this->isEditing && $this->categoryId) {
             $category = Category::findOrFail($this->categoryId);
 
             if ($this->image && $category->image) {
-                Storage::disk('public')->delete($category->image);
+                // elimina dal disco public_img
+                Storage::disk('public_img')->delete($category->image);
             }
 
             $category->update([
@@ -82,7 +83,7 @@ class CategoryIndex extends Component
         $category = Category::findOrFail($id);
 
         if ($category->image) {
-            Storage::disk('public')->delete($category->image);
+            Storage::disk('public_img')->delete($category->image);
         }
 
         $category->delete();
@@ -94,11 +95,11 @@ class CategoryIndex extends Component
         $category = Category::findOrFail($id);
 
         if ($category->image) {
-            Storage::disk('public')->delete($category->image);
+            Storage::disk('public_img')->delete($category->image);
             $category->update(['image' => null]);
         }
 
-        // opzionale: resetto l’anteprima nel form se sto modificando proprio questa categoria
+        // opzionale: reset anteprima se sto modificando proprio questa categoria
         if ($this->isEditing && $this->categoryId === $id) {
             $this->image = null;
         }
