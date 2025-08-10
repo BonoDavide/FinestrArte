@@ -153,6 +153,120 @@
         font-weight: 500;
         transition: all 0.3s ease;
         width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* CARD PRODOTTO - layout verticale su mobile */
+    .card-prodotto {
+        flex-direction: column !important;
+        text-align: center;
+        /* per centrare testo e bottoni */
+    }
+
+    .card-prodotto>.col-5 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .card-prodotto img.img-prodotto {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 0.5rem;
+        /* stesso valore della card */
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0;
+        /* angoli bassi dritti */
+        border-bottom-right-radius: 0;
+    }
+
+    .card-prodotto>.col-5:last-child {
+        padding: 1.5rem !important;
+    }
+
+    .card-prodotto .btn-scheda {
+        display: block;
+        margin: 1rem auto 0 auto;
+        /* top, auto centrato, bottom */
+        width: 80%;
+        /* o 100% se vuoi a tutta larghezza */
+        text-align: center;
+    }
+
+    /* Carosello rivestimenti - Mobile */
+    .carosello-rivestimenti-wrapper .card-prodotto {
+        padding: 0.75rem !important;
+        /* un po' più spazio interno */
+    }
+
+    .carosello-rivestimenti-wrapper .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem;
+        /* meno spazio per farne entrare di più */
+    }
+
+    .carosello-rivestimenti-wrapper .img-rivestimento {
+        width: 50px !important;
+        /* più piccole per fare spazio */
+        height: 50px !important;
+    }
+
+    /* Pulsanti di navigazione proporzionati */
+    .carosello-rivestimenti-wrapper .swiper-button-prev,
+    .carosello-rivestimenti-wrapper .swiper-button-next {
+        display: none !important;
+    }
+
+    .card-prodotto .col-12 {
+        display: flex;
+        flex-direction: column-reverse;
+        /* testo sopra, immagine sotto */
+        align-items: center;
+        text-align: center;
+    }
+
+    .card-prodotto .col-12 img.img-fluid {
+        max-width: 150px;
+        max-height: 150px;
+        transform: none;
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .card-prodotto h6 {
+        padding-bottom: 1rem;
+        font-size: 0.8rem;
+        white-space: normal;
+        /* evita testo verticale */
+    }
+
+    .cornici-wrapper .col-12 {
+        display: flex;
+        flex-direction: column;
+        /* immagine sopra, testo sotto */
+        align-items: center;
+        text-align: center;
+    }
+
+    .cornici-wrapper img.img-fluid {
+        max-width: 150px;
+        max-height: 150px;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .cornici-wrapper p {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .cornici-wrapper small {
+        font-size: 0.85rem;
     }
 }
 
@@ -287,6 +401,127 @@
         padding: 0.5rem 1.2rem;
         font-weight: 500;
         transition: all 0.3s ease;
-        width: 40%;
+        width: 60%;
+        margin: 0 auto;
+        display: block;
     }
+
+    /* CARD PRODOTTO - layout verticale su tablet */
+    .card-prodotto {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .card-prodotto .btn-scheda {
+        display: block;
+        margin: 1rem auto 0 auto;
+        /* top, auto centrato, bottom */
+        width: 50%;
+        /* o 100% se vuoi a tutta larghezza */
+        text-align: center;
+    }
+
+    .card-prodotto>.col-5 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .card-prodotto img.img-prodotto {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .card-prodotto>.col-5:last-child {
+        padding: 2rem 1.5rem !important;
+    }
+
+    /* Carosello rivestimenti */
+    .carosello-rivestimenti-wrapper .swiper-slide {
+        padding: 0.5rem;
+    }
+
+    .carosello-rivestimenti-wrapper .img-rivestimento {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    /* Nasconde frecce anche su tablet */
+    .carosello-rivestimenti-wrapper .swiper-button-prev,
+    .carosello-rivestimenti-wrapper .swiper-button-next {
+        display: none !important;
+    }
+
+    /* Ripristina il contenitore card normale (niente column-reverse) */
+    .cornici-wrapper .card-prodotto {
+        display: block !important;
+    }
+
+    /* Ogni elemento (col-md-3) occupa tutta la riga */
+    .cornici-wrapper .col-md-3 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        /* impila contenuti */
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Ordine: immagine -> titolo -> descrizione */
+    .cornici-wrapper .col-md-3 img {
+        order: 3;
+        max-width: 180px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .cornici-wrapper .col-md-3 p {
+        order: 2;
+        font-weight: 700;
+    }
+
+    .cornici-wrapper .col-md-3 small {
+        order: 1;
+        line-height: 1;
+    }
+
+    /* Forza le colonne a una per riga dentro le card con due immagini */
+    .card-prodotto .row.justify-content-between>.col-md-5,
+    .card-prodotto .row.justify-content-between>.col-md-6,
+    .card-prodotto .row.justify-content-between>.col-md-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Allinea al centro e spazia */
+    .card-prodotto .row.justify-content-between {
+        justify-content: center !important;
+        row-gap: 1.5rem;
+    }
+
+    /* Inversione ordine: testo sopra, immagine sotto */
+    .card-prodotto .mb-4 {
+        display: flex;
+        flex-direction: column-reverse;
+        /* il contenuto viene invertito */
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Immagini */
+    .card-prodotto .mb-4 img.img-fluid {
+        max-width: 220px;
+        height: auto;
+        object-fit: contain;
+        margin-top: 1rem;
+    }
+
+
 }

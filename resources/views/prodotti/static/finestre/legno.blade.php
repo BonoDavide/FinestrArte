@@ -32,45 +32,6 @@
         </div>
 
         {{-- Griglia prodotti --}}
-        {{-- card finestra dynamic --}}
-        <div class="row g-4 justify-content-center pb-5 mb-5">
-            <div class="col-10">
-                <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
-                    <div class="col-5 p-0 me-4">
-                        <img src="{{ asset('img/prodotti/finestre/legno/dynamic.png') }}" class="img-prodotto"
-                            alt="Finestra Dynamic">
-                    </div>
-
-                    {{-- border --}}
-                    <div class="border"></div>
-
-                    <div class="col-5 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
-                        <h5 class="mb-3 card-title underline-thin">Finestra Dynamic</h5>
-
-                        <ul class="list-unstyled mb-4">
-                            <li><strong>Trasmittanza termica:</strong> Uw fino a 1,3 W/m²K</li>
-                            <li><strong>Abbattimento acustico:</strong> fino a 44 dB</li>
-                            <li><strong>Spessore vetro:</strong> fino a 29 mm</li>
-                            <li><strong>Montante centrale:</strong> simmetria ante e maggiore stabilità</li>
-                            <li><strong>Ferramenta:</strong> cerniere trend a regolazione tridimensionale</li>
-                            <li><strong>Siliconatura vetro:</strong> doppia, automatica, con rasatura robot</li>
-                            <li><strong>Doppia guarnizione:</strong> in TPE espanso, a scomparsa</li>
-                            <li><strong>Verniciatura:</strong> a 4 mani, interamente all’acqua</li>
-                            <li><strong>Vetro standard:</strong> basso emissivo, doppia sigillatura robotizzata</li>
-                            <li><strong>High Fix System®:</strong> perni in legno ad espansione</li>
-                            <li><strong>Asta monocomando:</strong> chiusura superiore e inferiore con leva</li>
-                            <li><strong>Gocciolatoio:</strong> in legno, integrato con clip a scomparsa</li>
-                            {{-- <li><strong>Versioni disponibili:</strong> tonda, quadra, barocco</li> --}}
-                        </ul>
-
-                        {{-- <a href="{{ asset('pdf/finestra-dynamic.pdf') }}" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-scheda">
-                            Scheda tecnica
-                        </a> --}}
-                    </div>
-                </div>
-            </div>
-        </div>
 
         {{-- card finestra dynamic diamante --}}
         <div class="row g-4 justify-content-center pb-5 mb-5">
@@ -159,7 +120,7 @@
         <div class="container container-car carosello-rivestimenti-wrapper pt-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 col-carosello">
-                    <h3 class="text-center mb-4 font-titolo underline-thin">Rivestimenti disponibili</h3>
+                    <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
                     <div class="card card-prodotto px-5 py-3">
                         <div class="position-relative">
                             <div class="swiper px-3">

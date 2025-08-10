@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-
+        
         {{-- card 2 --}}
         <div class="row g-4 justify-content-center pb-5 pt-5">
             <div class="col-10">
@@ -104,7 +104,7 @@
         <div class="container container-car carosello-rivestimenti-wrapper mb-5 pt-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 col-carosello">
-                    <h3 class="text-center mb-4 font-titolo underline-thin">Rivestimenti disponibili</h3>
+                    <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
                     <div class="card card-prodotto px-5 py-3">
                         <div class="position-relative">
                             <div class="swiper px-3">

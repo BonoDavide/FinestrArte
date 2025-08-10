@@ -40,7 +40,7 @@
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
 
                     {{-- TITOLO PRINCIPALE --}}
-                    <h4 class=" font-titolo underline-thin">Versione a Murare</h4>
+                    <h4 class=" underline-thin">Versione a Murare</h4>
 
                     {{-- IMMAGINE PRINCIPALE CENTRALE --}}
                     <img src="{{ asset('img/prodotti/persiane/legno/persiane/a-murare-chiusa.jpg') }}"
@@ -55,7 +55,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 2 --}}
-                    <h4 class="mb-5 pt-3 font-titolo underline-thin">Versione con Telaio</h4>
+                    <h4 class="mb-5 pt-3 underline-thin">Versione con Telaio</h4>
 
                     {{-- IMMAGINE SEZIONE 2 --}}
                     <img src="{{ asset('img/prodotti/persiane/legno/persiane/con-telaio2.png') }}" alt="con-telaio"
@@ -65,11 +65,11 @@
         </div>
 
         {{-- card 3 --}}
-        <div class="row g-4 justify-content-center pb-5 mb-5">
+        <div class="row g-4 justify-content-center pb-5 mb-5 cornici-wrapper">
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 3 --}}
-                    <h4 class="mb-5 pt-3 font-titolo underline-thin">CORNICI</h4>
+                    <h4 class="mb-5 pt-3 underline-thin">Cornici</h4>
 
                     {{-- 3 IMMAGINI IN LINEA CON DESCRIZIONI --}}
                     <div class="row justify-content-between text-center px-5 mx-3 pb-3">
@@ -104,7 +104,7 @@
         <div class="container container-car carosello-rivestimenti-wrapper pt-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 col-carosello">
-                    <h3 class="text-center mb-4 font-titolo underline-thin">Rivestimenti disponibili</h3>
+                    <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
                     <div class="card card-prodotto px-5 py-3">
                         <div class="position-relative">
                             <div class="swiper px-3">

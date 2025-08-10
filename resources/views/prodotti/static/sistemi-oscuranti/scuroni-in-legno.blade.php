@@ -36,7 +36,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO PRINCIPALE --}}
-                    <h4 class="mb-5 font-titolo underline-thin">Scuroni Classici</h4>
+                    <h4 class="mb-5 underline-thin">Scuroni Classici</h4>
                     {{-- IMMAGINE PRINCIPALE CENTRALE --}}
                     <div class="row justify-content-between text-center px-5 mx-5 pb-3">
                         <div class="col-12 col-md-5 mb-4">
@@ -61,7 +61,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 2 --}}
-                    <h4 class="mb-5 pt-3 font-titolo underline-thin">Sportali alla Romanina</h4>
+                    <h4 class="mb-5 pt-3 underline-thin">Sportali alla Romanina</h4>
 
                     {{-- IMMAGINE SEZIONE 2 --}}
                     <div class="row justify-content-between text-center px-5 mx-5 pb-3">
@@ -83,7 +83,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 3 --}}
-                    <h4 class="mb-5 pt-3 font-titolo underline-thin">Scuroni Pocket</h4>
+                    <h4 class="mb-5 pt-3 underline-thin">Scuroni Pocket</h4>
 
                     {{-- IMMAGINI --}}
                     <div class="row justify-content-between text-center px-5 mx-5 pb-3">
@@ -107,7 +107,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 4 --}}
-                    <h4 class="mb-5 pt-3 font-titolo underline-thin">Scuroni alla Veneta</h4>
+                    <h4 class="mb-5 pt-3 underline-thin">Scuroni alla Veneta</h4>
 
                     {{-- IMMAGINI --}}
                     <div class="row justify-content-between text-center px-5 mx-5 pb-3">
@@ -134,7 +134,7 @@
         <div class="container container-car carosello-rivestimenti-wrapper pt-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 col-carosello">
-                    <h3 class="text-center mb-4 font-titolo underline-thin">Rivestimenti disponibili</h3>
+                    <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
                     <div class="card card-prodotto px-5 py-3">
                         <div class="position-relative">
                             <div class="swiper px-3">
