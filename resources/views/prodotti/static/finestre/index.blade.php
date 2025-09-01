@@ -11,6 +11,8 @@
         </div>
     </div>
 
+    <x-banner/>
+
     {{-- bottone indietro --}}
     <div class="container pt-5">
         <a href="{{ route('prodotti.index') }}" class="btn btn-pag-prod px-4">

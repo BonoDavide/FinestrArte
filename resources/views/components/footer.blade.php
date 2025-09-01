@@ -1,6 +1,6 @@
 <footer class="bg-light text-muted border-top pt-5 pb-4 mt-5">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-between">
 
             {{-- Descrizione azienda --}}
             <div class="col-md-3 mb-4 text-center">
@@ -27,21 +27,22 @@
             <div class="col-md-3 mb-4 text-center">
                 <h6 class="text-uppercase">Contatti</h6>
                 <ul class="list-unstyled small">
-                    <li><i class="bi bi-telephone"></i> +39 0123 456 789</li>
-                    <li><i class="bi bi-envelope"></i> finestrarte3.0@gmail.com</li>
-                    <li><i class="bi bi-clock"></i> Lun–Ven: 9:00–18:00</li>
+                    <li><i class="bi bi-telephone"></i> Commerciale: +39 350 536 2216</li>
+                    <li><i class="bi bi-telephone"></i> Amministrazione: +39 350 536 2207</li>
+                    <li><i class="bi bi-envelope"></i> finestrartesrls@gmail.com</li>
+                    <li><i class="bi bi-clock"></i> Mar-Sab: 9:00–13:00/14.30–18.30</li>
                 </ul>
             </div>
 
             {{-- Social icons --}}
-            <div class="col-md-3 mb-4 text-center">
+            {{-- <div class="col-md-3 mb-4 text-center">
                 <h6 class="text-uppercase">Seguici sui Social</h6>
                 <div class="mt-4">
                     <a href="#" class="text-reset me-3"><i class="bi bi-facebook fs-5"></i></a>
                     <a href="#" class="text-reset me-3"><i class="bi bi-instagram fs-5"></i></a>
                     <a href="#" class="text-reset"><i class="bi bi-linkedin fs-5"></i></a>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         {{-- Area riservata + copyright --}}

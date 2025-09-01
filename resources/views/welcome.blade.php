@@ -2,6 +2,8 @@
 
     <x-header />
 
+    <x-banner/>
+
     {{-- main --}}
     <section class="py-5">
         <div class="container pt-5">

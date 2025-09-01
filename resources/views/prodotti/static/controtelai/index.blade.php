@@ -10,6 +10,8 @@
             <h2 class="h4">Scegli la tipologia che fa per te</h2>
         </div>
     </div>
+    
+    <x-banner/>
 
     {{-- Sottocategorie --}}
     <div class="container py-5">

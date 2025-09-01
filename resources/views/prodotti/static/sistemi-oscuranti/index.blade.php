@@ -10,6 +10,8 @@
             <h2 class="h4">Scegli la tipologia che fa per te</h2>
         </div>
     </div>
+    
+    <x-banner/>
 
     {{-- bottone indietro --}}
     <div class="container pt-5">
@@ -17,6 +19,7 @@
             <i class="bi bi-arrow-return-left me-2"></i> Torna a Prodotti
         </a>
     </div>
+
 
     {{-- Sottocategorie --}}
     <div class="container py-5">
