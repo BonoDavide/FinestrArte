@@ -8,11 +8,15 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Symfony\Component\Mime\Address;
 
-class NewContactMessage extends Mailable
+class NewContactMessage extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
+
+    public $tries = 3;
+    public $timeout = 90;
 
     public ContactMessage $contact;
 
@@ -30,6 +34,11 @@ class NewContactMessage extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
+            // ✅ Reply-To: rispondi direttamente al mittente del form
+            replyTo: [
+                new Address($this->contact->email, $this->contact->name),
+            ],
+            
             subject: 'Nuovo messaggio dal sito FinestrArte',
         );
     }

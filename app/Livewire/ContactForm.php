@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\ContactMessage;
 use App\Mail\NewContactMessage;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactForm extends Component
@@ -41,11 +42,21 @@ class ContactForm extends Component
                 'message' => $this->message,
             ]);
 
-            Mail::to(config('mail.contact_address'))->send(new NewContactMessage($contact));
+            // Destinatario configurabile da config/env, fallback al from
+            $to = config('mail.contact_address', config('mail.from.address'));
+
+            try {
+                // ✅ Invia in coda e SOLO dopo il commit del DB
+                Mail::to($to)->queue(
+                    (new NewContactMessage($contact))->afterCommit()
+                );
+            } catch (\Throwable $e) {
+                // Non blocchiamo l’utente: logghiamo e andiamo avanti
+                Log::error('Queue email failed: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
+            }
         });
 
         $this->reset(['name', 'email', 'message']);
-
         session()->flash('success', 'Messaggio inviato con successo!');
     }
 

@@ -114,7 +114,7 @@ return [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
-
-    'contact_address' => env('CONTACT_MAIL', 'info@finestrarte.it'),
+    
+    'contact_address' => env('MAIL_CONTACT_ADDRESS', env('MAIL_FROM_ADDRESS')),
 
 ];
