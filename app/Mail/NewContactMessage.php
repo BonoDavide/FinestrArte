@@ -2,14 +2,14 @@
 
 namespace App\Mail;
 
-use App\Models\ContactMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
-use Illuminate\Queue\SerializesModels;
+use App\Models\ContactMessage;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
+use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Symfony\Component\Mime\Address;
 
 class NewContactMessage extends Mailable implements ShouldQueue
 {
