@@ -14,7 +14,6 @@
                 <div class="col-12 col-md-6 pt-5">
                     <h2 class="pb-3 underline-thin">Contatti</h2>
                     <p><strong>Indirizzo:</strong> Piazza dei Gerani, 26 – 00172 Roma (RM)</p>
-                    <p><strong>Email:</strong> finestrartesrls@gmail.com</p>
                     <p><strong>Telefono Commerciale:</strong> +39 350 536 2216</p>
                     <p><strong>Telefono Amministrazione:</strong> +39 350 536 2207</p>
                     <p><strong>Orari:</strong> Mar-Sab: 9:00–13:00/14.30–18.30</p>
