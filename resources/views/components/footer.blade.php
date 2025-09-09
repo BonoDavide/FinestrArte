@@ -27,8 +27,8 @@
             <div class="col-md-3 mb-4 text-center">
                 <h6 class="text-uppercase">Contatti</h6>
                 <ul class="list-unstyled small">
-                    <li><i class="bi bi-geo-alt"></i> Piazza dei Gerani, 26 – 00172 Roma (RM)</li>
                     <li><i class="bi bi-clock"></i> Mar-Sab: 9:00–13:00/14.30–18.30</li>
+                    <li><i class="bi bi-geo-alt"></i> Piazza dei Gerani, 26 – 00172 Roma (RM)</li>
                     <li><i class="bi bi-telephone"></i> Commerciale: +39 350 536 2216</li>
                     <li><i class="bi bi-telephone"></i> Amministrazione: +39 350 536 2207</li>
                 </ul>

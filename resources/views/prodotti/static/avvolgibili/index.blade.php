@@ -15,7 +15,7 @@
 
     {{-- Sottocategorie --}}
     <div class="container py-5">
-        <h3 class="text-center pb-3 font-titolo pt-5 pb-5 underline-thin">Seleziona il materiale</h3>
+        <h3 class="text-center pb-3 pt-5 pb-5 underline-thin">Seleziona il materiale</h3>
 
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
 
