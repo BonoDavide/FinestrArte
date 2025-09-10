@@ -61,7 +61,7 @@
             <div class="col-8">
                 <div class="card overflow-hidden card-prodotto card-hover-scale pt-5 text-center">
                     {{-- TITOLO SEZIONE 2 --}}
-                    <h4 class="mb-5 pt-3 underline-thin">Sportali alla Romanina</h4>
+                    <h4 class="mb-5 pt-3 underline-thin">Scuroni alla Romanina</h4>
 
                     {{-- IMMAGINE SEZIONE 2 --}}
                     <div class="row justify-content-between text-center px-5 mx-5 pb-3">
