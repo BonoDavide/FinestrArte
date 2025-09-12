@@ -131,7 +131,7 @@
 
         <section class="container container-car carosello-rivestimenti-wrapper pt-5">
             <div class="row justify-content-center">
-                <div class="col-8 col-md-8 col-lg-8 col-carosello">
+                <div class="col-12 col-md-10 col-lg-8 col-carosello">
                     <h3 class="text-center mb-4 underline-thin">Colori di serie</h3>
 
                     <div class="card card-prodotto px-5 py-3">
