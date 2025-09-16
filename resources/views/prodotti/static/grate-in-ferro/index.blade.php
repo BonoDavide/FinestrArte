@@ -2,11 +2,11 @@
 
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
-        <img src="{{ asset('img/prodotti/finestre/pvc/finestre-pvc.png') }}"
+        <img src="{{ asset('img/prodotti/grate/header-grate.png') }}"
             class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-            <h1 class="display-2 fw-bold font-titolo underline-thin">Grare in Ferro</h1>
+            <h1 class="display-2 fw-bold font-titolo underline-thin">Grate in Ferro</h1>
         </div>
     </div>
 
@@ -37,8 +37,8 @@
         <div class="container text-center">
             <img src="{{ asset('img/prodotti/grate/cropped-logo-rinascita.png') }}" alt="Logo Rinascita"
                 class="img-fluid mb-4" style="max-height: 80px;">
-            <img src="{{ asset('img/prodotti/grate/KRETA-BLACK.png') }}" alt="Logo prodotto Kreta" class="img-fluid"
-                style="max-height: 100px;">
+            <img src="{{ asset('img/prodotti/grate/KRETA-BLACK.png') }}" alt="Logo prodotto Kreta" class="img-fluid pb-3"
+                style="max-height: 150px;">
         </div>
     </section>
 
