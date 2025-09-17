@@ -268,6 +268,17 @@
     .cornici-wrapper small {
         font-size: 0.85rem;
     }
+
+    .col-scheda-toska {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .btn-caratteristiche {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        text-align: center;
+    }
 }
 
 /* === SCHERMI MEDI: da 576px a 1199.98px === */
@@ -523,5 +534,20 @@
         margin-top: 1rem;
     }
 
+    .col-scheda-toska {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
 
+    .caratteristiche-lista li {
+        margin-bottom: 0.35rem;
+        /* meno spazio sotto ogni voce */
+        line-height: 1.25;
+        /* compatta un po’ l’interlinea */
+    }
+
+    .caratteristiche-lista {
+        --bs-gutter-x: 3rem;
+        /* default 1.5rem → ridotto */
+    }
 }

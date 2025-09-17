@@ -1,9 +1,82 @@
 <x-layout>
 
+    {{-- SEO --}}
+    @section('title', 'Finestre in Legno — FinestrArte 3.0')
+    @section('meta_description', 'Finestre in legno: calore estetico e prestazioni moderne. Scopri i modelli Dynamic
+        Diamante e Dynamic 80: isolamento termico/acustico, vernici all’acqua e dettagli costruttivi.')
+    @section('og_title', 'Finestre in Legno — FinestrArte 3.0')
+    @section('og_description', 'Modelli Dynamic Diamante e Dynamic 80: legno selezionato, verniciatura all’acqua,
+        isolamento e durata nel tempo.')
+    @section('og_image', asset('img/og-finestre-legno.jpg'))
+
+    @push('structured-data')
+        @php
+            // Breadcrumbs: Home > Prodotti > Finestre > Legno
+            $breadcrumbs = [
+                '@context' => 'https://schema.org',
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Prodotti', 'item' => route('prodotti.index')],
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 3,
+                        'name' => $categoria->name ?? 'Finestre',
+                        'item' => url('/prodotti/' . ($categoria->slug ?? 'finestre')),
+                    ],
+                    ['@type' => 'ListItem', 'position' => 4, 'name' => 'Finestre in Legno', 'item' => url()->current()],
+                ],
+            ];
+
+            // Elenco modelli presenti nella pagina (per ItemList)
+            $models = [
+                [
+                    'name' => 'Finestra Dynamic Diamante',
+                    'image' => asset('img/prodotti/finestre/legno/dynamic2.png'),
+                    'url' => url()->current() . '#dynamic-diamante',
+                    'brand' => '—',
+                ],
+                [
+                    'name' => 'Finestra Dynamic 80',
+                    'image' => asset('img/prodotti/finestre/legno/dynamic3.png'),
+                    'url' => url()->current() . '#dynamic-80',
+                    'brand' => '—',
+                ],
+            ];
+
+            $itemList = [];
+            foreach ($models as $i => $m) {
+                $itemList[] = [
+                    '@type' => 'ListItem',
+                    'position' => $i + 1,
+                    'url' => $m['url'],
+                    'name' => $m['name'],
+                    'image' => $m['image'],
+                ];
+            }
+
+            // CollectionPage con la lista dei modelli (pagina elenco, non scheda singola)
+            $collection = [
+                '@context' => 'https://schema.org',
+                '@type' => 'CollectionPage',
+                'name' => 'Finestre in Legno',
+                'url' => url()->current(),
+                'about' => 'Finestre in legno — modelli Dynamic',
+                'mainEntity' => [
+                    '@type' => 'ItemList',
+                    'itemListElement' => $itemList,
+                ],
+            ];
+        @endphp
+        <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+        <script type="application/ld+json">{!! json_encode($collection,  JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+    @endpush
+
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
         <img src="{{ asset('img/prodotti/finestre/pvc/finestre-pvc.png') }}"
-            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
+            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
+            alt="Finestre in legno — anteprima">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
             <h1 class="display-2 fw-bold font-titolo underline-thin">Finestre in Legno</h1>
@@ -12,7 +85,8 @@
 
     {{-- bottone indietro --}}
     <div class="container pt-5">
-        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4">
+        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4"
+            aria-label="Torna alla categoria {{ $categoria->name }}">
             <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ $categoria->name }}
         </a>
     </div>
@@ -34,12 +108,12 @@
         {{-- Griglia prodotti --}}
 
         {{-- card finestra dynamic diamante --}}
-        <div class="row g-4 justify-content-center pb-5 mb-5">
+        <div class="row g-4 justify-content-center pb-5 mb-5" id="dynamic-diamante">
             <div class="col-10">
                 <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
                     <div class="col-5 p-0 me-4">
                         <img src="{{ asset('img/prodotti/finestre/legno/dynamic2.png') }}" class="img-prodotto"
-                            alt="Finestra Dynamic Diamante">
+                            alt="Finestra Dynamic Diamante — legno">
                     </div>
 
                     {{-- border --}}
@@ -73,12 +147,12 @@
         </div>
 
         {{-- card finestra dynamic 80 --}}
-        <div class="row g-4 justify-content-center pb-5">
+        <div class="row g-4 justify-content-center pb-5" id="dynamic-80">
             <div class="col-10">
                 <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
                     <div class="col-5 p-0 me-4">
                         <img src="{{ asset('img/prodotti/finestre/legno/dynamic3.png') }}" class="img-prodotto"
-                            alt="Finestra Dynamic 80">
+                            alt="Finestra Dynamic 80 — legno">
                     </div>
 
                     {{-- border --}}
@@ -123,7 +197,7 @@
                     <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
                     <div class="card card-prodotto px-5 py-3">
                         <div class="position-relative">
-                            <div class="swiper px-3">
+                            <div class="swiper px-3" aria-label="Carosello rivestimenti legno">
                                 <div class="swiper-wrapper align-items-center">
                                     @php
                                         $rivestimenti = [
@@ -156,19 +230,24 @@
                                     @endphp
 
                                     @foreach ($rivestimenti as $img)
+                                        @php
+                                            $label = Str::of($img)
+                                                ->replace(['-', '_'], ' ')
+                                                ->title();
+                                        @endphp
                                         <div class="swiper-slide text-center">
                                             <img src="{{ asset('img/prodotti/finestre/legno/rivestimenti/' . $img . '.jpg') }}"
-                                                alt="{{ $img }}"
+                                                alt="Rivestimento legno: {{ $label }}"
                                                 class="img-fluid rounded-circle img-rivestimento"
                                                 style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;"
-                                                data-nome="{{ Str::of($img)->replace(['-', '_'], ' ')->title() }}">
+                                                data-nome="{{ $label }}">
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
                             <!-- Bottoni swiper -->
-                            <div class="swiper-button-prev text-dark"></div>
-                            <div class="swiper-button-next text-dark"></div>
+                            <div class="swiper-button-prev text-dark" aria-label="Precedente"></div>
+                            <div class="swiper-button-next text-dark" aria-label="Successivo"></div>
                         </div>
                     </div>
                 </div>
@@ -176,7 +255,8 @@
         </div>
 
         {{-- modale carosello --}}
-        <div class="modal fade" id="modalRivestimento" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="modalRivestimento" tabindex="-1" aria-hidden="true"
+            aria-labelledby="rivestimentoNome">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-dark text-white border-0 rounded-4 shadow-lg overflow-hidden p-4"
                     style="width: 350px; height: 350px; margin: auto;">
@@ -186,7 +266,7 @@
                         <img id="rivestimentoImg" src="#" alt="Rivestimento" class="img-fluid rounded-3 shadow"
                             style="width: 170px; height: 170px; object-fit: cover; object-position: center;">
                         <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                            data-bs-dismiss="modal"></button>
+                            data-bs-dismiss="modal" aria-label="Chiudi"></button>
                     </div>
                 </div>
             </div>

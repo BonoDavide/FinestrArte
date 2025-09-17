@@ -1,5 +1,8 @@
 /* HEADER */
 
+/* controllo spaziatura */
+/* * { outline: 1px solid red; } */
+
 .hero-header {
     position: relative;
     height: 100vh;

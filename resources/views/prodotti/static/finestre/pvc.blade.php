@@ -1,9 +1,83 @@
 <x-layout>
 
+    {{-- SEO --}}
+    @section('title', 'Finestre in PVC — FinestrArte 3.0')
+    @section('meta_description', 'Finestre in PVC Schüco: isolamento termico e acustico, design e durata. Scopri i
+        modelli CT 70 Classic e LivIng 82, schede tecniche PDF e rivestimenti disponibili.')
+    @section('og_title', 'Finestre in PVC — FinestrArte 3.0')
+    @section('og_description', 'Prestazioni elevate e comfort: modelli Schüco CT 70 Classic e LivIng 82. Schede tecniche
+        e rivestimenti disponibili.')
+    @section('og_image', asset('img/og-finestre-pvc.jpg'))
+
+    @push('structured-data')
+        @php
+            // Breadcrumbs: Home > Prodotti > Finestre > PVC
+            $breadcrumbs = [
+                '@context' => 'https://schema.org',
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Prodotti', 'item' => route('prodotti.index')],
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 3,
+                        'name' => $categoria->name ?? 'Finestre',
+                        'item' => url('/prodotti/' . ($categoria->slug ?? 'finestre')),
+                    ],
+                    ['@type' => 'ListItem', 'position' => 4, 'name' => 'Finestre in PVC', 'item' => url()->current()],
+                ],
+            ];
+
+            // Elenco modelli presenti nella pagina (per ItemList)
+            $models = [
+                [
+                    'name' => 'Schüco CT 70 Classic',
+                    'image' => asset('img/prodotti/finestre/pvc/schuco-ct-70-classic.png'),
+                    'url' => url()->current() . '#ct70-classic',
+                    'brand' => 'Schüco',
+                ],
+                [
+                    'name' => 'Schüco LivIng 82',
+                    'image' => asset('img/prodotti/finestre/pvc/schuco-living-82.png'),
+                    'url' => url()->current() . '#living-82',
+                    'brand' => 'Schüco',
+                ],
+            ];
+
+            $itemList = [];
+            foreach ($models as $i => $m) {
+                $itemList[] = [
+                    '@type' => 'ListItem',
+                    'position' => $i + 1,
+                    'url' => $m['url'],
+                    'name' => $m['name'],
+                    'image' => $m['image'],
+                ];
+            }
+
+            // CollectionPage con la lista dei modelli (non è la pagina prodotto singolo)
+            $collection = [
+                '@context' => 'https://schema.org',
+                '@type' => 'CollectionPage',
+                'name' => 'Finestre in PVC',
+                'url' => url()->current(),
+                'about' => 'Finestre in PVC Schüco',
+                'mainEntity' => [
+                    '@type' => 'ItemList',
+                    'itemListElement' => $itemList,
+                ],
+            ];
+        @endphp
+        <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+        <script type="application/ld+json">{!! json_encode($collection,  JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+    @endpush
+
+
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
         <img src="{{ asset('img/prodotti/finestre/pvc/finestre-pvc.png') }}"
-            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
+            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
+            alt="Finestre in PVC — anteprima">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
             <h1 class="display-2 fw-bold font-titolo underline-thin">Finestre in PVC</h1>
@@ -12,11 +86,12 @@
 
     {{-- bottone indietro --}}
     <div class="container pt-5">
-        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4">
+        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4"
+            aria-label="Torna alla categoria {{ $categoria->name }}">
             <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ $categoria->name }}
         </a>
     </div>
-    
+
     {{-- Paragrafo descrittivo --}}
     <div class="container pb-5">
         <div class="row text-center justify-content-center mb-5 py-5">
@@ -33,12 +108,12 @@
         {{-- Griglia prodotti --}}
 
         {{-- card 1 --}}
-        <div class="row g-4 justify-content-center pb-5">
+        <div class="row g-4 justify-content-center pb-5" id="ct70-classic">
             <div class="col-10">
                 <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
                     <div class="col-5 p-0 me-4">
                         <img src="{{ asset('img/prodotti/finestre/pvc/schuco-ct-70-classic.png') }}"
-                            class="img-prodotto" alt="Schüco CT 70 Classic">
+                            class="img-prodotto" alt="Schüco CT 70 Classic — finestra in PVC">
                     </div>
 
                     <div class="col-5 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
@@ -56,21 +131,21 @@
                         </ul>
 
                         <a href="{{ asset('pdf/schuco-ct-70-classic.pdf') }}" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-scheda">
+                            class="btn btn-scheda" aria-label="Apri scheda tecnica Schüco CT 70 Classic (PDF)">
                             <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         {{-- card 2 --}}
-        <div class="row g-4 justify-content-center pb-5 pt-5">
+        <div class="row g-4 justify-content-center pb-5 pt-5" id="living-82">
             <div class="col-10">
                 <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
                     <div class="col-5 p-0 me-4">
                         <img src="{{ asset('img/prodotti/finestre/pvc/schuco-living-82.png') }}" class="img-prodotto"
-                            alt="Schüco LivIng 82">
+                            alt="Schüco LivIng 82 — finestra in PVC">
                     </div>
 
                     <div class="col-5 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
@@ -87,7 +162,7 @@
                         </ul>
 
                         <a href="{{ asset('pdf/schuco-living-82.pdf') }}" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-scheda">
+                            class="btn btn-scheda" aria-label="Apri scheda tecnica Schüco LivIng 82 (PDF)">
                             <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
                         </a>
                     </div>
@@ -107,7 +182,7 @@
                     <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
                     <div class="card card-prodotto px-5 py-3">
                         <div class="position-relative">
-                            <div class="swiper px-3">
+                            <div class="swiper px-3" aria-label="Carosello rivestimenti PVC">
                                 <div class="swiper-wrapper align-items-center">
                                     @php
                                         $rivestimenti = [
@@ -136,29 +211,31 @@
                                     @endphp
 
                                     @foreach ($rivestimenti as $img)
+                                        @php
+                                            $label = Str::of($img)->replace('-', ' ')->title();
+                                        @endphp
                                         <div class="swiper-slide text-center">
                                             <img src="{{ asset('img/prodotti/finestre/pvc/rivestimenti/' . $img . '.webp') }}"
-                                                alt="{{ $img }}"
+                                                alt="Rivestimento PVC: {{ $label }}"
                                                 class="img-fluid rounded-circle img-rivestimento"
                                                 style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;"
-                                                data-nome="{{ Str::of($img)->replace('-', ' ')->title() }}">
-                                            {{-- <div class="mt-2 small text-muted">
-                                            {{ Str::of($img)->replace('-', ' ')->title() }}
-                                        </div> --}}
+                                                data-nome="{{ $label }}">
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
                             <!-- Bottoni fuori visivamente -->
-                            <div class="swiper-button-prev text-dark"></div>
-                            <div class="swiper-button-next text-dark"></div>
+                            <div class="swiper-button-prev text-dark" aria-label="Precedente"></div>
+                            <div class="swiper-button-next text-dark" aria-label="Successivo"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         {{-- modale carosello --}}
-        <div class="modal fade" id="modalRivestimento" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="modalRivestimento" tabindex="-1" aria-hidden="true"
+            aria-labelledby="rivestimentoNome">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-dark text-white border-0 rounded-4 shadow-lg overflow-hidden p-4"
                     style="width: 350px; height: 350px; margin: auto;">
@@ -168,7 +245,7 @@
                         <img id="rivestimentoImg" src="#" alt="Rivestimento" class="img-fluid rounded-3 shadow"
                             style="width: 170px; height: 170px; object-fit: contain;">
                         <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                            data-bs-dismiss="modal"></button>
+                            data-bs-dismiss="modal" aria-label="Chiudi"></button>
                     </div>
                 </div>
             </div>

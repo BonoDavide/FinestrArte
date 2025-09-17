@@ -1,9 +1,81 @@
 <x-layout>
 
+    {{-- SEO --}}
+    @section('title', 'Finestre in PVC e Alluminio — FinestrArte 3.0')
+    @section('meta_description', 'Finestre in PVC e alluminio: alte prestazioni termiche e acustiche, manutenzione
+        ridotta e personalizzazione bicolore. Scopri Korus FiberK Slim con PDF tecnico e finiture disponibili.')
+    @section('og_title', 'Finestre in PVC e Alluminio — FinestrArte 3.0')
+    @section('og_description', 'Profilo ibrido con anima in fibra, doppio/triplo vetro, classi di tenuta elevate.
+        Rivestimenti e colori per ogni contesto.')
+    @section('og_image', asset('img/og-finestre-pvc-alluminio.jpg'))
+
+    @push('structured-data')
+        @php
+            // Breadcrumbs: Home > Prodotti > Finestre > PVC e Alluminio
+            $breadcrumbs = [
+                '@context' => 'https://schema.org',
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Prodotti', 'item' => route('prodotti.index')],
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 3,
+                        'name' => $categoria->name ?? 'Finestre',
+                        'item' => url('/prodotti/' . ($categoria->slug ?? 'finestre')),
+                    ],
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 4,
+                        'name' => 'Finestre in PVC e Alluminio',
+                        'item' => url()->current(),
+                    ],
+                ],
+            ];
+
+            // Elenco modelli presenti nella pagina (scalabile: ora 1)
+            $models = [
+                [
+                    'name' => 'Korus FiberK Slim',
+                    'image' => asset('img/prodotti/finestre/pvc_e_alluminio/korus-fiberk-slim-2.png'),
+                    'url' => url()->current() . '#fiberk-slim',
+                    'brand' => 'Korus',
+                ],
+            ];
+
+            $itemList = [];
+            foreach ($models as $i => $m) {
+                $itemList[] = [
+                    '@type' => 'ListItem',
+                    'position' => $i + 1,
+                    'name' => $m['name'],
+                    'url' => $m['url'],
+                    'image' => $m['image'],
+                ];
+            }
+
+            // CollectionPage con ItemList (pagina elenco, non scheda singola)
+            $collection = [
+                '@context' => 'https://schema.org',
+                '@type' => 'CollectionPage',
+                'name' => 'Finestre in PVC e Alluminio',
+                'url' => url()->current(),
+                'about' => 'Finestre ibride PVC/Alluminio',
+                'mainEntity' => [
+                    '@type' => 'ItemList',
+                    'itemListElement' => $itemList,
+                ],
+            ];
+        @endphp
+        <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+        <script type="application/ld+json">{!! json_encode($collection,  JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+    @endpush>
+
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
         <img src="{{ asset('img/prodotti/finestre/pvc/finestre-pvc.png') }}"
-            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
+            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
+            alt="Finestre in PVC e Alluminio — anteprima">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
             <h1 class="display-2 fw-bold font-titolo underline-thin">Finestre in PVC e Alluminio</h1>
@@ -12,7 +84,8 @@
 
     {{-- bottone indietro --}}
     <div class="container pt-5">
-        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4">
+        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4"
+            aria-label="Torna alla categoria {{ $categoria->name }}">
             <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ $categoria->name }}
         </a>
     </div>
@@ -23,21 +96,22 @@
             <div class="col-12">
                 <div class="border"></div>
                 <p class="lead text-center py-5 paragrafo">
-                    Le finestre in PVC e Alluminio offrono elevate prestazioni energetiche e acustiche, richiedono poca manutenzione e permettono una vasta possibilità di personalizzazione, anche con finiture bicolore. Ideali per chi cerca comfort abitativo e resistenza nel tempo.
+                    Le finestre in PVC e Alluminio offrono elevate prestazioni energetiche e acustiche, richiedono poca
+                    manutenzione e permettono una vasta possibilità di personalizzazione, anche con finiture bicolore.
+                    Ideali per chi cerca comfort abitativo e resistenza nel tempo.
                 </p>
                 <div class="border"></div>
             </div>
         </div>
 
         {{-- Griglia prodotti --}}
-
-        {{-- card FiberK Slim --}}
-        <div class="row g-4 justify-content-center pb-5 pt-5">
+        {{-- card: FiberK Slim --}}
+        <div class="row g-4 justify-content-center pb-5 pt-5" id="fiberk-slim">
             <div class="col-10">
                 <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
                     <div class="col-5 p-0 me-4">
                         <img src="{{ asset('img/prodotti/finestre/pvc_e_alluminio/korus-fiberk-slim-2.png') }}"
-                            class="img-prodotto" alt="Korus FiberK Slim">
+                            class="img-prodotto" alt="Korus FiberK Slim — finestra in PVC e alluminio">
                     </div>
 
                     {{-- border --}}
@@ -58,7 +132,7 @@
                         </ul>
 
                         <a href="{{ asset('pdf/korus-fiberk-slim.pdf') }}" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-scheda">
+                            class="btn btn-scheda" aria-label="Apri scheda tecnica Korus FiberK Slim (PDF)">
                             Scheda tecnica
                         </a>
                     </div>
@@ -66,7 +140,6 @@
             </div>
         </div>
         {{-- fine card FiberK Slim --}}
-        {{-- fine grliglia prodotti --}}
 
         <div class="pt-5 pb-3">
             <div class="border"></div>
@@ -79,7 +152,7 @@
                     <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
                     <div class="card card-prodotto px-5 py-3">
                         <div class="position-relative">
-                            <div class="swiper px-3">
+                            <div class="swiper px-3" aria-label="Carosello rivestimenti PVC e alluminio">
                                 <div class="swiper-wrapper align-items-center">
                                     @php
                                         $rivestimenti = [
@@ -116,26 +189,34 @@
                                     @endphp
 
                                     @foreach ($rivestimenti as $img)
+                                        @php
+                                            $label = Str::of($img)
+                                                ->beforeLast('.')
+                                                ->replace(['_', '-'], ' ')
+                                                ->title();
+                                        @endphp
                                         <div class="swiper-slide text-center">
                                             <img src="{{ asset('img/prodotti/finestre/pvc_e_alluminio/rivestimenti/' . $img) }}"
-                                                alt="{{ $img }}"
+                                                alt="Rivestimento PVC/Alluminio: {{ $label }}"
                                                 class="img-fluid rounded-circle img-rivestimento"
                                                 style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;"
-                                                data-nome="{{ Str::of($img)->beforeLast('.')->replace(['_', '-'], ' ')->title() }}">
+                                                data-nome="{{ $label }}">
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
-                            <div class="swiper-button-prev text-dark"></div>
-                            <div class="swiper-button-next text-dark"></div>
+                            <div class="swiper-button-prev text-dark" aria-label="Precedente"></div>
+                            <div class="swiper-button-next text-dark" aria-label="Successivo"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         {{-- fine carosello --}}
+
         {{-- modale carosello --}}
-        <div class="modal fade" id="modalRivestimento" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="modalRivestimento" tabindex="-1" aria-hidden="true"
+            aria-labelledby="rivestimentoNome">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-dark text-white border-0 rounded-4 shadow-lg overflow-hidden p-4"
                     style="width: 350px; height: 350px; margin: auto;">
@@ -145,7 +226,7 @@
                         <img id="rivestimentoImg" src="#" alt="Rivestimento" class="img-fluid rounded-3 shadow"
                             style="width: 170px; height: 170px; object-fit: contain;">
                         <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                            data-bs-dismiss="modal"></button>
+                            data-bs-dismiss="modal" aria-label="Chiudi"></button>
                     </div>
                 </div>
             </div>

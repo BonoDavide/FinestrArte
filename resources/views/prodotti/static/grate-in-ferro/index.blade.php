@@ -1,9 +1,84 @@
 <x-layout>
 
+    {{-- SEO --}}
+    @section('title', 'Grata in Ferro KRETA — FinestrArte 3.0')
+    @section('meta_description', 'Grata di sicurezza in ferro zincato KRETA con profili 15/10, cerniere antistrappo e
+        chiusure multipunto. Disegni personalizzabili e finiture RAL.')
+    @section('og_title', 'Grata in Ferro KRETA — FinestrArte 3.0')
+    @section('og_description', 'KRETA: grata di sicurezza in ferro zincato con profili rinforzati, chiusure multipunto e
+        ampia scelta di finiture RAL.')
+    @section('og_image', asset('img/prodotti/grate/header-grate.png'))
+
+    @push('structured-data')
+        @php
+            // Breadcrumbs: Home > Prodotti > Grate in Ferro (KRETA)
+            $breadcrumbs = [
+                '@context' => 'https://schema.org',
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Prodotti', 'item' => route('prodotti.index')],
+                    [
+                        '@type' => 'ListItem',
+                        'position' => 3,
+                        'name' => 'Grate in Ferro — KRETA',
+                        'item' => url()->current(),
+                    ],
+                ],
+            ];
+
+            // Immagini principali del prodotto
+            $productImages = [
+                asset('img/prodotti/grate/header-grate.png'),
+                asset('img/prodotti/grate/KRETA-BLACK.png'),
+            ];
+
+            // Caratteristiche tecniche -> PropertyValue
+            $features = [
+                ['name' => 'Materiale', 'value' => 'Ferro zincato con tubolari tondi o squadrati (spessore 15/10)'],
+                ['name' => 'Personalizzazione', 'value' => 'Disegni e lavorazioni su misura'],
+                ['name' => 'Telaio', 'value' => 'PSH scatolato a Z con falda in battuta 50 mm'],
+                ['name' => 'Traversa inferiore', 'value' => 'Profilo U 25/10 con scarico acqua'],
+                ['name' => 'Sicurezza', 'value' => 'Cerniere/rostri antistrappo e asta basculante multipunto'],
+                ['name' => 'Profilo anta', 'value' => 'PA60 in tubolare 60×40×1,5 mm'],
+                ['name' => 'Comfort', 'value' => 'Antirumore in gomma sui puntali di chiusura'],
+                ['name' => 'Finiture', 'value' => 'Ampia gamma colori RAL'],
+            ];
+
+            $additionalProps = array_map(
+                fn($f) => [
+                    '@type' => 'PropertyValue',
+                    'name' => $f['name'],
+                    'value' => $f['value'],
+                ],
+                $features,
+            );
+
+            // Product schema (singolo prodotto KRETA)
+            $product = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Product',
+                'name' => 'KRETA',
+                'category' => 'Grata di sicurezza in ferro',
+                'brand' => ['@type' => 'Brand', 'name' => 'Rinascita'],
+                'image' => $productImages,
+                'description' =>
+                    'Grata di sicurezza KRETA in ferro zincato con profili rinforzati, chiusure multipunto e finiture personalizzabili.',
+                'url' => url()->current(),
+                'additionalProperty' => $additionalProps,
+                'isRelatedTo' => [
+                    ['@type' => 'CreativeWork', 'name' => 'Scheda tecnica KRETA', 'url' => asset('pdf/KRETA.pdf')],
+                ],
+            ];
+        @endphp
+        <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+        <script type="application/ld+json">{!! json_encode($product, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+    @endpush
+
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
-        <img src="{{ asset('img/prodotti/grate/header-grate.png') }}"
-            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="PVC">
+        <img src="{{ asset('img/prodotti/grate/header-grate.png') }}" class="position-absolute top-0 start-0 w-100 h-100"
+            style="object-fit: cover;" alt="Grate in ferro KRETA — immagine di copertina">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
             <h1 class="display-2 fw-bold font-titolo underline-thin">Grate in Ferro</h1>
@@ -12,7 +87,7 @@
 
     {{-- bottone indietro --}}
     <div class="container pt-5">
-        <a href="{{ route('prodotti.index') }}" class="btn btn-pag-prod px-4">
+        <a href="{{ route('prodotti.index') }}" class="btn btn-pag-prod px-4" aria-label="Torna alla pagina Prodotti">
             <i class="bi bi-arrow-return-left me-2"></i> Torna a Prodotti
         </a>
     </div>
@@ -37,19 +112,19 @@
         <div class="container text-center">
             <img src="{{ asset('img/prodotti/grate/cropped-logo-rinascita.png') }}" alt="Logo Rinascita"
                 class="img-fluid mb-4" style="max-height: 80px;">
-            <img src="{{ asset('img/prodotti/grate/KRETA-BLACK.png') }}" alt="Logo prodotto Kreta" class="img-fluid pb-3"
-                style="max-height: 150px;">
+            <img src="{{ asset('img/prodotti/grate/KRETA-BLACK.png') }}" alt="Logo prodotto KRETA"
+                class="img-fluid pb-3" style="max-height: 150px;">
         </div>
     </section>
 
     {{-- CARATTERISTICHE (2 colonne) --}}
     <section class="py-5">
         <div class="container">
-            <div class="card bg-dark text-white border-0 rounded-4 px-4 py-4">
+            <div class="card bg-dark text-white border-0 rounded-4 px-4 py-4 col-scheda-toska">
                 <h3 class="mb-4 underline-thin text-center">Caratteristiche</h3>
                 <div class="row justify-content-between">
                     <div class="col-md-6">
-                        <ul class="fs-5 ms-5 fw-semibold mb-0">
+                        <ul class="fs-5 ms-5 fw-semibold mb-0 caratteristiche-lista">
                             <li>Ferro zincato con tubolari tondi o squadrati</li>
                             <li>Disegni e lavorazioni personalizzabili</li>
                             <li>Telaio PSH scatolato a Z, falda in battuta 50&nbsp;mm</li>
@@ -66,9 +141,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 ps-5 ms-5 pt-4">
+                    <div class="col-12 col-md-6 col-lg-4 ps-5 ms-5 pt-4 btn-caratteristiche">
                         <a href="{{ asset('pdf/KRETA.pdf') }}" target="_blank" rel="noopener noreferrer"
-                            class="btn btn-scheda d-inline-flex align-items-center gap-2 px-4 py-2 text-nowrap" style="min-width: 180px;">
+                            class="btn btn-scheda d-inline-flex align-items-center gap-2 px-4 py-2 text-nowrap"
+                            style="min-width: 180px;" aria-label="Apri la scheda tecnica KRETA in PDF">
                             <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
                         </a>
                     </div>
@@ -82,46 +158,14 @@
         <div class="container">
             <h3 class="mb-4 underline-thin text-center">Tubolari tondi</h3>
             <div class="row g-4">
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t1.png') }}" alt="T1" class="img-fluid mb-2">
-                    <div class="fw-semibold">T1</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t2.jpg') }}" alt="T2" class="img-fluid mb-2">
-                    <div class="fw-semibold">T2</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t3.jpg') }}" alt="T3" class="img-fluid mb-2">
-                    <div class="fw-semibold">T3</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t4.jpg') }}" alt="T4" class="img-fluid mb-2">
-                    <div class="fw-semibold">T4</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t5.jpg') }}" alt="T5" class="img-fluid mb-2">
-                    <div class="fw-semibold">T5</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t6.jpg') }}" alt="T6" class="img-fluid mb-2">
-                    <div class="fw-semibold">T6</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t7.jpg') }}" alt="T7" class="img-fluid mb-2">
-                    <div class="fw-semibold">T7</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t8.jpg') }}" alt="T8" class="img-fluid mb-2">
-                    <div class="fw-semibold">T8</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t9.jpg') }}" alt="T9" class="img-fluid mb-2">
-                    <div class="fw-semibold">T9</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="{{ asset('img/prodotti/grate/tondi/t10.jpg') }}" alt="T10" class="img-fluid mb-2">
-                    <div class="fw-semibold">T10</div>
-                </div>
+                @foreach (range(1, 10) as $i)
+                    @php $fname = $i === 1 ? "t{$i}.png" : "t{$i}.jpg"; @endphp
+                    <div class="col-6 col-md-4 col-lg-2 text-center">
+                        <img src="{{ asset('img/prodotti/grate/tondi/' . $fname) }}"
+                            alt="Grata KRETA tubolare tondo modello T{{ $i }}" class="img-fluid mb-2">
+                        <div class="fw-semibold">T{{ $i }}</div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -131,30 +175,16 @@
         <div class="container">
             <h3 class="mb-4 underline-thin text-center">Tubolari squadrati</h3>
             <div class="row g-4">
-                <div class="col-6 col-md-3 text-center">
-                    <img src="{{ asset('img/prodotti/grate/squadrati/s1.jpg') }}" alt="S1"
-                        class="img-fluid mb-2">
-                    <div class="fw-semibold">S1</div>
-                </div>
-                <div class="col-6 col-md-3 text-center">
-                    <img src="{{ asset('img/prodotti/grate/squadrati/s2.jpg') }}" alt="S2"
-                        class="img-fluid mb-2">
-                    <div class="fw-semibold">S2</div>
-                </div>
-                <div class="col-6 col-md-3 text-center">
-                    <img src="{{ asset('img/prodotti/grate/squadrati/s3.jpg') }}" alt="S3"
-                        class="img-fluid mb-2">
-                    <div class="fw-semibold">S3</div>
-                </div>
-                <div class="col-6 col-md-3 text-center">
-                    <img src="{{ asset('img/prodotti/grate/squadrati/s4.jpg') }}" alt="S4"
-                        class="img-fluid mb-2">
-                    <div class="fw-semibold">S4</div>
-                </div>
+                @foreach (range(1, 4) as $i)
+                    <div class="col-6 col-md-3 text-center">
+                        <img src="{{ asset('img/prodotti/grate/squadrati/s' . $i . '.jpg') }}"
+                            alt="Grata KRETA tubolare squadrato modello S{{ $i }}" class="img-fluid mb-2">
+                        <div class="fw-semibold">S{{ $i }}</div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
-
 
     {{-- CAROSELLO RIVESTIMENTI – GRATE (RAL) --}}
     <div class="container container-car carosello-rivestimenti-wrapper mb-5 pt-5">
@@ -164,7 +194,7 @@
 
                 <div class="card card-prodotto px-5 py-3">
                     <div class="position-relative">
-                        <div class="swiper px-3">
+                        <div class="swiper px-3" aria-label="Carosello colori RAL per grata KRETA">
                             <div class="swiper-wrapper align-items-center">
                                 @php
                                     $ral = [
@@ -182,14 +212,11 @@
                                         'RAL-9010',
                                     ];
                                 @endphp
-
                                 @foreach ($ral as $code)
-                                    @php
-                                        $label = str_replace('-', ' ', $code); // es. "RAL 1013"
-                                    @endphp
+                                    @php $label = str_replace('-', ' ', $code); @endphp
                                     <div class="swiper-slide text-center">
                                         <img src="{{ asset('img/prodotti/grate/rivestimenti/' . $code . '.jpg') }}"
-                                            alt="{{ $label }}"
+                                            alt="Colore {{ $label }}"
                                             class="img-fluid rounded-circle img-rivestimento"
                                             style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;"
                                             data-nome="{{ $label }}">
@@ -197,18 +224,17 @@
                                 @endforeach
                             </div>
                         </div>
-
                         <!-- Bottoni swiper -->
-                        <div class="swiper-button-prev text-dark"></div>
-                        <div class="swiper-button-next text-dark"></div>
+                        <div class="swiper-button-prev text-dark" aria-label="Precedente"></div>
+                        <div class="swiper-button-next text-dark" aria-label="Successivo"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    {{-- Modale (riuso quella già presente nel progetto) --}}
-    <div class="modal fade" id="modalRivestimento" tabindex="-1" aria-hidden="true">
+    {{-- Modale (riuso) --}}
+    <div class="modal fade" id="modalRivestimento" tabindex="-1" aria-hidden="true" aria-labelledby="rivestimentoNome">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content bg-dark text-white border-0 rounded-4 shadow-lg overflow-hidden p-4"
                 style="width: 350px; height: 350px; margin: auto;">
@@ -217,7 +243,7 @@
                     <img id="rivestimentoImg" src="#" alt="Rivestimento" class="img-fluid rounded-3 shadow"
                         style="width: 170px; height: 170px; object-fit: cover; object-position: center;">
                     <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                        data-bs-dismiss="modal"></button>
+                        data-bs-dismiss="modal" aria-label="Chiudi"></button>
                 </div>
             </div>
         </div>
