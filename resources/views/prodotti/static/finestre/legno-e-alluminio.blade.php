@@ -83,7 +83,7 @@
 
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
-        <img src="{{ asset('img/prodotti/finestre/pvc/finestre-pvc.png') }}"
+        <img src="{{ asset('img/prodotti/finestre/legno_e_alluminio/header-f-le-all.jpg') }}"
             class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
             alt="Finestre in legno e alluminio — anteprima">
         <div class="overlay-dark"></div>
