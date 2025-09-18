@@ -64,7 +64,7 @@
 
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
-        <img src="{{ asset('img/prodotti/persiane/legno/sportelloni/header-scuroni-legno.jpg') }}"
+        <img src="{{ asset('img/prodotti/persiane/legno/sportelloni/header-scuroni.png') }}"
             class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
             alt="Scuroni in legno — panoramica">
         <div class="overlay-dark"></div>

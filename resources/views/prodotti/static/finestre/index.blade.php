@@ -66,11 +66,13 @@
 
     {{-- Hero --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
-        <img src="https://picsum.photos/seed/finestre-header/1920/600" class="position-absolute top-0 start-0 w-100 h-100"
-            style="object-fit: cover;" alt="{{ $catName }} — panoramica categorie">
-        <div class="position-absolute top-50 start-50 translate-middle text-center text-white px-3">
-            <h1 class="display-3 fw-bold font-titolo underline-thin">{{ $catName }}</h1>
-            <h2 class="h4">Scegli la tipologia che fa per te</h2>
+        <img src="{{ asset('img/prodotti/finestre/pvc/finestre-pvc.png') }}"
+            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
+            alt="{{ $catName }} — panoramica categorie">
+            <div class="overlay-dark"></div>
+        <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
+                <h1 class="display-2 fw-bold font-titolo underline-thin">{{ $catName }}</h1>
+                <h2 class="h4">Scegli la tipologia che fa per te</h2>
         </div>
     </div>
 

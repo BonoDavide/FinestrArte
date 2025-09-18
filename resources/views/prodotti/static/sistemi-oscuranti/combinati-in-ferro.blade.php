@@ -2,10 +2,12 @@
 
     {{-- SEO --}}
     @section('title', 'Combinati in Ferro UNIKA — FinestrArte 3.0')
-    @section('meta_description', 'UNIKA: combinato in ferro con grata + persiana integrate. Struttura zincata, chiusure
+    @section('meta_description',
+        'UNIKA: combinato in ferro con grata + persiana integrate. Struttura zincata, chiusure
         multipunto, lamelle fisse o orientabili e finiture RAL.')
     @section('og_title', 'Combinati in Ferro UNIKA — FinestrArte 3.0')
-    @section('og_description', 'Sicurezza e protezione dalle intemperie in un’unica soluzione: combinato UNIKA con grata
+    @section('og_description',
+        'Sicurezza e protezione dalle intemperie in un’unica soluzione: combinato UNIKA con grata
         e persiana integrate, personalizzabile nei dettagli.')
     @section('og_image', asset('img/prodotti/persiane/ferro_combinato/header-combinati.png'))
 
@@ -86,10 +88,11 @@
         </div>
     </div>
 
-    {{-- Back --}}
+    {{-- bottone indietro --}}
     <div class="container pt-5">
-        <a href="{{ route('prodotti.index') }}" class="btn btn-pag-prod px-4" aria-label="Torna alla pagina Prodotti">
-            <i class="bi bi-arrow-return-left me-2"></i> Torna a Prodotti
+        <a href="{{ url('/prodotti/' . $categoria->slug) }}" class="btn btn-pag-prod px-4"
+            aria-label="Torna alla categoria {{ $categoria->name }}">
+            <i class="bi bi-arrow-return-left me-2"></i> Torna a {{ $categoria->name }}
         </a>
     </div>
 
@@ -151,7 +154,8 @@
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6">
                     <img src="{{ asset('img/prodotti/persiane/ferro_combinato/unika-foto.jpg') }}"
-                        class="img-fluid rounded-4 shadow-sm" alt="Combinato UNIKA — vista prodotto" style="max-height: 620px">
+                        class="img-fluid rounded-4 shadow-sm" alt="Combinato UNIKA — vista prodotto"
+                        style="max-height: 620px">
                 </div>
                 <div class="col-lg-6">
                     <img src="{{ asset('img/prodotti/persiane/ferro_combinato/unika-profili.png') }}"
