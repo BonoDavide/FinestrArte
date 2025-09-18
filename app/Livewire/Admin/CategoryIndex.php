@@ -34,32 +34,35 @@ class CategoryIndex extends Component
     {
         $this->validate();
 
-        $imagePath = null;
+        $category = ($this->isEditing && $this->categoryId)
+            ? Category::findOrFail($this->categoryId)
+            : null;
+
+        $imagePath = $category?->image;
 
         if ($this->image) {
+            // elimina sempre l’immagine precedente se esiste
+            if ($category && $category->image) {
+                Storage::disk('public_img')->delete($category->image);
+            }
+
+            // usa lo stesso nome (slug.estensione)
             $filename = $this->slug . '.' . $this->image->getClientOriginalExtension();
             $imagePath = $this->image->storeAs('categorie', $filename, 'public_img');
         }
 
-        if ($this->isEditing && $this->categoryId) {
-            $category = Category::findOrFail($this->categoryId);
-
-            if ($this->image && $category->image) {
-                // elimina dal disco public_img
-                Storage::disk('public_img')->delete($category->image);
-            }
-
+        if ($category) {
             $category->update([
-                'name' => $this->name,
-                'slug' => $this->slug,
-                'image' => $imagePath ?? $category->image,
+                'name'      => $this->name,
+                'slug'      => $this->slug,
+                'image'     => $imagePath,
                 'is_active' => $this->is_active,
             ]);
         } else {
             Category::create([
-                'name' => $this->name,
-                'slug' => $this->slug,
-                'image' => $imagePath,
+                'name'      => $this->name,
+                'slug'      => $this->slug,
+                'image'     => $imagePath,
                 'is_active' => $this->is_active,
             ]);
         }

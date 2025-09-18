@@ -37,34 +37,43 @@ class SubcategoryIndex extends Component
     {
         $this->validate();
 
-        $imagePath = null;
+        // se sto modificando, recupero la sottocategoria corrente
+        $subcategory = ($this->isEditing && $this->subcategoryId)
+            ? Subcategory::findOrFail($this->subcategoryId)
+            : null;
+
+        // di default mantieni il path esistente (se c'è)
+        $imagePath = $subcategory?->image;
 
         if ($this->image) {
-            $filename = $this->slug . '.' . $this->image->getClientOriginalExtension();
-            $imagePath = $this->image->storeAs('sottocategorie', $filename, 'public_img');
-        }
-
-        if ($this->isEditing && $this->subcategoryId) {
-            $subcategory = Subcategory::findOrFail($this->subcategoryId);
-
-            if ($this->image && $subcategory->image) {
+            // 1) elimina sempre il vecchio file se esiste
+            if ($subcategory && $subcategory->image) {
                 Storage::disk('public_img')->delete($subcategory->image);
             }
 
+            // 2) usa lo stesso nome (slug.estensione)
+            $ext = $this->image->getClientOriginalExtension();
+            $filename = $this->slug . '.' . $ext;
+
+            // 3) salva su disco 'public_img' nella cartella 'sottocategorie'
+            $imagePath = $this->image->storeAs('sottocategorie', $filename, 'public_img');
+        }
+
+        if ($subcategory) {
             $subcategory->update([
-                'name' => $this->name,
-                'slug' => $this->slug,
+                'name'        => $this->name,
+                'slug'        => $this->slug,
                 'category_id' => $this->category_id,
-                'image' => $imagePath ?? $subcategory->image,
-                'is_active' => $this->is_active,
+                'image'       => $imagePath,
+                'is_active'   => $this->is_active,
             ]);
         } else {
             Subcategory::create([
-                'name' => $this->name,
-                'slug' => $this->slug,
+                'name'        => $this->name,
+                'slug'        => $this->slug,
                 'category_id' => $this->category_id,
-                'image' => $imagePath,
-                'is_active' => $this->is_active,
+                'image'       => $imagePath, // può restare null
+                'is_active'   => $this->is_active,
             ]);
         }
 
