@@ -1,10 +1,12 @@
 <x-layout>
     {{-- SEO --}}
     @section('title', 'Prodotti — Categorie | FinestrArte 3.0')
-    @section('meta_description', 'Scopri tutte le categorie di prodotti FinestrArte: finestre, persiane, grate e
+    @section('meta_description',
+        'Scopri tutte le categorie di prodotti FinestrArte: finestre, persiane, grate e
         soluzioni su misura per casa, sicurezza e design a Roma.')
     @section('og_title', 'Prodotti — Categorie | FinestrArte 3.0')
-    @section('og_description', 'Seleziona la categoria che ti interessa: soluzioni su misura per la tua casa, con
+    @section('og_description',
+        'Seleziona la categoria che ti interessa: soluzioni su misura per la tua casa, con
         installazione professionale.')
     @section('og_image', asset('img/og-prodotti.jpg'))
 
@@ -69,8 +71,11 @@
                 @forelse ($categorie as $categoria)
                     <div class="col-6 col-md-4 col-lg-3">
                         <div class="card h-100 text-white border-0 position-relative overflow-hidden">
-                            <img src="{{ $categoria->image ? asset('img/' . $categoria->image) : 'https://picsum.photos/seed/' . $categoria->slug . '/400/180' }}"
-                                class="w-100" style="height: 180px; object-fit: cover;" alt="{{ $categoria->name }}">
+                            <img src="{{ $categoria->image
+                                ? asset('img/' . $categoria->image) . '?v=' . $categoria->updated_at->timestamp
+                                : 'https://picsum.photos/seed/' . $categoria->slug . '/400/180' }}"
+                                class="w-100" style="height: 180px; object-fit: cover;" alt="{{ $categoria->name }}"
+                                loading="lazy">
                             <div
                                 class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50 text-center py-2">
                                 <h5 class="mb-0">{{ $categoria->name }}</h5>
