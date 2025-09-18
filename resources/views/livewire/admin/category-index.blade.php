@@ -36,7 +36,8 @@
                 @endphp
                 @if ($current && $current->image)
                     <div class="mt-2 d-flex align-items-start gap-2">
-                        <img src="{{ asset('img/' . $current->image) }}" class="img-thumbnail" width="120">
+                        <img src="{{ asset('img/' . $current->image) }}?v={{ $current->updated_at->timestamp }}"
+                            class="img-thumbnail" width="120">
                         <button type="button" class="btn btn-outline-danger btn-sm"
                             wire:click="removeImage({{ $categoryId }})"
                             onclick="confirm('Rimuovere l\'immagine attuale?') || event.stopImmediatePropagation()">
@@ -79,7 +80,8 @@
                     <td>
                         @if ($category->image)
                             <div class="d-flex flex-column align-items-start gap-2">
-                                <img src="{{ asset('img/' . $category->image) }}" width="80" class="img-thumbnail">
+                                <img src="{{ asset('img/' . $category->image) }}?v={{ $category->updated_at->timestamp }}"
+                                    width="80" class="img-thumbnail">
                                 <button class="btn btn-outline-danger btn-sm"
                                     wire:click="removeImage({{ $category->id }})"
                                     onclick="confirm('Eliminare solo l\'immagine?') || event.stopImmediatePropagation()">
