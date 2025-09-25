@@ -2,11 +2,13 @@
 
     {{-- SEO --}}
     @section('title', 'Finestre in PVC — FinestrArte 3.0')
-    @section('meta_description', 'Finestre in PVC Schüco: isolamento termico e acustico, design e durata. Scopri i
-        modelli CT 70 Classic e LivIng 82, schede tecniche PDF e rivestimenti disponibili.')
+    @section('meta_description',
+        'Finestre in PVC Schüco: prestazioni termiche e acustiche, design e durata. Scopri i
+        modelli CT 70 Classic, LivIng 82 e FocusIng, schede tecniche PDF e rivestimenti.')
     @section('og_title', 'Finestre in PVC — FinestrArte 3.0')
-    @section('og_description', 'Prestazioni elevate e comfort: modelli Schüco CT 70 Classic e LivIng 82. Schede tecniche
-        e rivestimenti disponibili.')
+    @section('og_description',
+        'Gamma PVC Schüco: CT 70 Classic, LivIng 82 e FocusIng. Alte prestazioni, schede tecniche
+        in PDF e rivestimenti disponibili.')
     @section('og_image', asset('img/og-finestre-pvc.jpg'))
 
     @push('structured-data')
@@ -42,6 +44,12 @@
                     'url' => url()->current() . '#living-82',
                     'brand' => 'Schüco',
                 ],
+                [
+                    'name' => 'Schüco FocusIng',
+                    'image' => asset('img/prodotti/finestre/pvc/schuco-focusing.png'),
+                    'url' => url()->current() . '#schuco-focusing',
+                    'brand' => 'Schüco',
+                ],
             ];
 
             $itemList = [];
@@ -55,7 +63,7 @@
                 ];
             }
 
-            // CollectionPage con la lista dei modelli (non è la pagina prodotto singolo)
+            // CollectionPage con la lista dei modelli (pagina di raccolta, non singolo prodotto)
             $collection = [
                 '@context' => 'https://schema.org',
                 '@type' => 'CollectionPage',
@@ -69,9 +77,8 @@
             ];
         @endphp
         <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
-        <script type="application/ld+json">{!! json_encode($collection,  JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+        <script type="application/ld+json">{!! json_encode($collection, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
     @endpush
-
 
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
@@ -169,6 +176,39 @@
                 </div>
             </div>
         </div>
+
+        {{-- card Schüco FocusIng --}}
+        <div class="row g-4 justify-content-center pb-5 pt-5" id="schuco-focusing">
+            <div class="col-10">
+                <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                    <div class="col-5 p-0 me-4">
+                        <img src="{{ asset('img/prodotti/finestre/pvc/schuco-focusing.png') }}" class="img-prodotto"
+                            alt="Schüco FocusIng — finestra in PVC">
+                    </div>
+
+                    <div class="col-5 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                        <h5 class="mb-3 card-title underline-thin">Schüco FocusIng</h5>
+
+                        <ul class="list-unstyled mb-4">
+                            <li><strong>Isolamento termico (profilo):</strong> Uf = 1,1 W/(m²K)</li>
+                            <li><strong>Comfort acustico:</strong> Fino a Rw 48 dB</li>
+                            <li><strong>Protezione antieffrazione:</strong> Sicurezza RC2</li>
+                            <li><strong>Profondità di montaggio:</strong> Telaio 70 mm / Anta 76 mm</li>
+                            <li><strong>Vetro isolante:</strong> 16–52 mm (doppi o tripli)</li>
+                            <li><strong>Resistenza agenti atmosferici:</strong> Aria Classe 4 · Acqua 9A · Vento B5</li>
+                            <li><strong>Struttura camere:</strong> Tecnologia 5/6 camere</li>
+                            <li><strong>Peso anta massimo:</strong> 120 kg</li>
+                        </ul>
+
+                        <a href="{{ asset('pdf/Schuco-FocusIng.pdf') }}" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-scheda" aria-label="Apri scheda tecnica Schüco FocusIng (PDF)">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         {{-- fine container principale --}}
 
         <div class="pt-5 pb-3">
@@ -242,7 +282,8 @@
                     <div
                         class="modal-body d-flex flex-column justify-content-center align-items-center text-center h-100">
                         <h5 class="modal-title fw-bold mb-4" id="rivestimentoNome"></h5>
-                        <img id="rivestimentoImg" src="#" alt="Rivestimento" class="img-fluid rounded-3 shadow"
+                        <img id="rivestimentoImg" src="#" alt="Rivestimento"
+                            class="img-fluid rounded-3 shadow"
                             style="width: 170px; height: 170px; object-fit: contain;">
                         <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
                             data-bs-dismiss="modal" aria-label="Chiudi"></button>

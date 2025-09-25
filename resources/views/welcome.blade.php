@@ -2,10 +2,12 @@
 
     {{-- SEO: title + description + og --}}
     @section('title', 'FinestrArte 3.0 — Infissi su misura a Roma')
-    @section('meta_description', 'Finestre, persiane e pergole su misura a Roma. Sopralluogo, fornitura e posa: qualità
+    @section('meta_description',
+        'Finestre, persiane e pergole su misura a Roma. Sopralluogo, fornitura e posa: qualità
         e assistenza dedicata con FinestrArte 3.0.')
     @section('og_title', 'FinestrArte 3.0 — Infissi su misura a Roma')
-    @section('og_description', 'Finestre, persiane e pergole su misura a Roma. Qualità, isolamento e sicurezza con
+    @section('og_description',
+        'Finestre, persiane e pergole su misura a Roma. Qualità, isolamento e sicurezza con
         installazione professionale.')
     @section('og_image', asset('img/og-home.jpg'))
 
@@ -51,6 +53,29 @@
                 'name' => 'FinestrArte 3.0',
                 'url' => url('/'),
             ];
+
+            $offerHome = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Offer',
+                'name' => 'Promozione Korus: anticipi solo il 50%',
+                'description' =>
+                    'Infissi nuovi senza sconto in fattura: con Korus anticipi solo la metà. Offerta valida fino al 31/12.',
+                'url' => url('/prodotti/finestre/pvc-e-alluminio'),
+                'image' => asset('img/offerta_korus.jpg'),
+                'seller' => [
+                    '@type' => 'LocalBusiness',
+                    'name' => 'FinestrArte 3.0',
+                ],
+                'eligibleRegion' => 'IT',
+                'availabilityStarts' => now()->toDateString(),
+                'availabilityEnds' => now()->year . '-12-31',
+                'itemOffered' => [
+                    '@type' => 'Product',
+                    'name' => 'Finestre in PVC e Alluminio',
+                    'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                    'category' => 'Windows',
+                ],
+            ];
         @endphp
 
         <script type="application/ld+json">
@@ -59,12 +84,17 @@
         <script type="application/ld+json">
             {!! json_encode($website, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}
         </script>
+        <script type="application/ld+json">
+            {!! json_encode($offerHome, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}
+        </script>
     @endpush
 
 
     <x-header />
 
     <x-banner />
+
+    <x-korus-offer />
 
     {{-- main --}}
     <section class="py-5">
@@ -77,7 +107,8 @@
                     <p>Siamo una realtà specializzata nella fornitura e posa di infissi di alta qualità,
                         progettati per integrarsi perfettamente in ogni tipo di ambiente. Crediamo nella cura del
                         dettaglio, nella funzionalità e in un rapporto diretto e trasparente con il cliente.</p>
-                    <a href="{{ route('about') }}" class="btn btn-scheda-home border border-dark mb-3">Scopri il Team</a>
+                    <a href="{{ route('about') }}" class="btn btn-scheda-home border border-dark mb-3">Scopri il
+                        Team</a>
                 </div>
                 <div class="col-12 col-md-6 text-center" data-aos="fade-left" data-aos-offset="200">
                     <img src="{{ asset('img/benvenuti.png') }}" alt="FinestrArte — Fornitura e posa infissi a Roma"
