@@ -2,13 +2,11 @@
 
     {{-- SEO --}}
     @section('title', 'Finestre in PVC — FinestrArte 3.0')
-    @section('meta_description',
-        'Finestre in PVC Schüco: prestazioni termiche e acustiche, design e durata. Scopri i
-        modelli CT 70 Classic, LivIng 82 e FocusIng, schede tecniche PDF e rivestimenti.')
+    @section('meta_description', 'Finestre in PVC Schüco e Korus: prestazioni termiche e acustiche, design e durata.
+        Scopri CT 70 Classic, LivIng 82, FocusIng e Korus Fiber Slim con schede tecniche PDF e rivestimenti.')
     @section('og_title', 'Finestre in PVC — FinestrArte 3.0')
-    @section('og_description',
-        'Gamma PVC Schüco: CT 70 Classic, LivIng 82 e FocusIng. Alte prestazioni, schede tecniche
-        in PDF e rivestimenti disponibili.')
+    @section('og_description', 'Gamma PVC Schüco e Korus: CT 70 Classic, LivIng 82, FocusIng e Korus Fiber Slim. Alte
+        prestazioni, schede tecniche in PDF e rivestimenti disponibili.')
     @section('og_image', asset('img/og-finestre-pvc.jpg'))
 
     @push('structured-data')
@@ -50,6 +48,12 @@
                     'url' => url()->current() . '#schuco-focusing',
                     'brand' => 'Schüco',
                 ],
+                [
+                    'name' => 'Korus Fiber Slim',
+                    'image' => asset('img/prodotti/finestre/pvc/korus-fiber-slim.png'),
+                    'url' => url()->current() . '#fiber-slim',
+                    'brand' => 'Korus',
+                ],
             ];
 
             $itemList = [];
@@ -69,15 +73,16 @@
                 '@type' => 'CollectionPage',
                 'name' => 'Finestre in PVC',
                 'url' => url()->current(),
-                'about' => 'Finestre in PVC Schüco',
+                'about' => 'Finestre in PVC Schüco e Korus',
                 'mainEntity' => [
                     '@type' => 'ItemList',
                     'itemListElement' => $itemList,
                 ],
             ];
         @endphp
+
         <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
-        <script type="application/ld+json">{!! json_encode($collection, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+        <script type="application/ld+json">{!! json_encode($collection,  JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
     @endpush
 
     {{-- Hero sottocategoria --}}
@@ -104,7 +109,8 @@
         <div class="row text-center justify-content-center mb-5 py-5">
             <div class="col-12">
                 <div class="border"></div>
-                <p class="lead text-center py-5 paragrafo">
+                <h1 class="underline-thin pt-5">Schüco</h1>
+                <p class="lead text-center paragrafo pb-5">
                     I prodotti in PVC Schüco garantiscono un eccellente isolamento termico e acustico, mantenendo un
                     design minimal e prestazioni di lunga durata.
                 </p>
@@ -112,6 +118,7 @@
             </div>
         </div>
 
+        {{-- SCHUCO --}}
         {{-- Griglia prodotti --}}
 
         {{-- card 1 --}}
@@ -209,12 +216,6 @@
             </div>
         </div>
 
-        {{-- fine container principale --}}
-
-        <div class="pt-5 pb-3">
-            <div class="border"></div>
-        </div>
-
         {{-- carosello rivestimenti --}}
         <div class="container container-car carosello-rivestimenti-wrapper mb-5 pt-5">
             <div class="row justify-content-center">
@@ -291,5 +292,125 @@
                 </div>
             </div>
         </div>
+
+        {{-- KORUS --}}
+        {{-- Paragrafo descrittivo --}}
+        <div class="container pb-5 pt-5">
+            <div class="row text-center justify-content-center mb-5 py-5">
+                <div class="col-12">
+                    <div class="border"></div>
+                    <h1 class="underline-thin pt-5">Korus</h1>
+                    <p class="lead text-center paragrafo pb-5">
+                        I prodotti Korus Fiber Slim uniscono la leggerezza della fibra di vetro a un design essenziale e
+                        moderno, garantendo un’elevata luminosità e ottime prestazioni di isolamento termico e acustico.
+                    </p>
+                    <div class="border"></div>
+                </div>
+            </div>
+
+            {{-- Griglia prodotti --}}
+
+            {{-- card Korus Fiber Slim --}}
+            <div class="row g-4 justify-content-center pb-5" id="fiber-slim">
+                <div class="col-10">
+                    <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                        <div class="col-5 p-0 me-4">
+                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/korus-fiber-slim.jpg') }}"
+                                class="img-prodotto" alt="Korus Fiber Slim — finestra in PVC">
+                        </div>
+
+                        <div class="col-5 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                            <h5 class="mb-3 card-title underline-thin">Korus Fiber Slim</h5>
+
+                            <ul class="list-unstyled mb-4">
+                                <li><strong>+30% di luce:</strong> sezioni ridotte per maggiore superficie vetrata</li>
+                                <li><strong>Trasmittanza migliorata:</strong> assenza di rinforzo in ferro</li>
+                                <li><strong>Più leggerezza:</strong> anima in <em>fibra di vetro</em></li>
+                                <li><strong>Nodo centrale:</strong> versione <em>slim</em> simmetrica o asimmetrica</li>
+                                <li><strong>Comfort acustico:</strong> RW = 34–42 dB</li>
+                                <li><strong>Resistenza agenti:</strong> Aria Classe 4 · Acqua 9A · Vento C4</li>
+                                <li><strong>Maggiore tenuta:</strong> 3 guarnizioni · 6 camere nel telaio</li>
+                                <li><strong>Profondità telaio:</strong> 76 mm</li>
+                            </ul>
+                            <a href="{{ asset('pdf/korus-fiber-slim.pdf') }}" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-scheda"
+                                aria-label="Apri scheda tecnica Korus Fiber Slim (PDF)">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Carosello rivestimenti Korus --}}
+            <div class="container container-car carosello-rivestimenti-wrapper mb-5 pt-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-carosello">
+                        <h3 class="text-center mb-4 underline-thin">Rivestimenti Korus</h3>
+                        <div class="card card-prodotto px-5 py-3">
+                            <div class="position-relative">
+                                <div class="swiper px-3" aria-label="Carosello rivestimenti Korus">
+                                    <div class="swiper-wrapper align-items-center">
+                                        @php
+                                            // Elenco file così come presenti nella cartella /public/img/prodotti/finestre/pvc/korus/rivestimenti
+                                            $rivestimentiKorus = [
+                                                'M01.jpg',
+                                                'M02.jpg',
+                                                'P04.jpg',
+                                                'P05.jpg',
+                                                'P16.jpg',
+                                                'P41.jpg',
+                                                'P46.jpg',
+                                                'P50-Ginger-Oak-VLF.jpg',
+                                                'P51.jpg',
+                                                'P53.jpg',
+                                                'P54.jpg',
+                                                'V001_BiancoK.jpeg',
+                                                'V002_Bianco-Avorio-RAL.jpeg',
+                                                'V004_Grigio-Anracite-RAL.jpeg',
+                                                'V006_Grigio-Chiaro-RAL.jpeg',
+                                                'V008_Woodec-Rovere-Golden.jpeg',
+                                                'V009_Woodec-Noce.jpeg',
+                                                'V010_Woodec-Rovere-Naturale.jpeg',
+                                                'V012_Woodec-White.jpeg',
+                                            ];
+                                        @endphp
+
+                                        @foreach ($rivestimentiKorus as $file)
+                                            @php
+                                                // Etichetta pulita dal nome file (senza estensione, underscore e trattini)
+                                                $base = Str::of($file)
+                                                    ->beforeLast('.') // toglie estensione
+                                                    ->replace(['_', '-'], ' ') // spazi al posto di _ e -
+                                                    ->replace('VLF', '') // rimuove eventuale suffisso VLF
+                                                    ->trim()
+                                                    ->value();
+
+                                                // Manteniamo 'RAL' in maiuscolo
+                                                $label = preg_replace('/\bral\b/i', 'RAL', $base);
+                                            @endphp
+
+                                            <div class="swiper-slide text-center">
+                                                <img src="{{ asset('img/prodotti/finestre/pvc/korus/rivestimenti/' . $file) }}"
+                                                    alt="Rivestimento Korus: {{ $label }}"
+                                                    class="img-fluid rounded-circle img-rivestimento"
+                                                    style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;"
+                                                    data-nome="{{ $label }}">
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <!-- Bottoni fuori visivamente -->
+                                <div class="swiper-button-prev text-dark" aria-label="Precedente"></div>
+                                <div class="swiper-button-next text-dark" aria-label="Successivo"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        {{-- fine container principale --}}
 
 </x-layout>
