@@ -32,16 +32,5 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('two-factor', function ($request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
-
-        Blade::if('promo', function (string $key) {
-            $promo = config("site.promotions.$key");
-            if (!$promo || empty($promo['enabled'])) return false;
-            try {
-                $ends = Carbon::parse($promo['ends_at']);
-            } catch (\Throwable $e) {
-                return (bool) $promo['enabled'];
-            }
-            return now()->lte($ends);
-        });
     }
 }

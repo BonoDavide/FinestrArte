@@ -93,10 +93,8 @@
     <x-header />
 
     <x-banner />
-    
-    @promo('korus_50')
-        <x-korus-offer />
-    @endpromo
+
+    <x-korus-offer />
 
     {{-- main --}}
     <section class="py-5">
