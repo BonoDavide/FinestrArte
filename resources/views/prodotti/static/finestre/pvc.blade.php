@@ -2,10 +2,12 @@
 
     {{-- SEO --}}
     @section('title', 'Finestre in PVC — FinestrArte 3.0')
-    @section('meta_description', 'Finestre in PVC Schüco e Korus: prestazioni termiche e acustiche, design e durata.
+    @section('meta_description',
+        'Finestre in PVC Schüco e Korus: prestazioni termiche e acustiche, design e durata.
         Scopri CT 70 Classic, LivIng 82, FocusIng e Korus Fiber Slim con schede tecniche PDF e rivestimenti.')
     @section('og_title', 'Finestre in PVC — FinestrArte 3.0')
-    @section('og_description', 'Gamma PVC Schüco e Korus: CT 70 Classic, LivIng 82, FocusIng e Korus Fiber Slim. Alte
+    @section('og_description',
+        'Gamma PVC Schüco e Korus: CT 70 Classic, LivIng 82, FocusIng e Korus Fiber Slim. Alte
         prestazioni, schede tecniche in PDF e rivestimenti disponibili.')
     @section('og_image', asset('img/og-finestre-pvc.jpg'))
 
@@ -315,11 +317,14 @@
                 <div class="col-10">
                     <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
                         <div class="col-5 p-0 me-4">
-                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/korus-fiber-slim.jpg') }}"
+                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/korus-fiber-slim.PNG') }}"
                                 class="img-prodotto" alt="Korus Fiber Slim — finestra in PVC">
                         </div>
 
-                        <div class="col-5 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                        {{-- border --}}
+                        <div class="border"></div>
+
+                        <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
                             <h5 class="mb-3 card-title underline-thin">Korus Fiber Slim</h5>
 
                             <ul class="list-unstyled mb-4">
@@ -346,7 +351,7 @@
             <div class="container container-car carosello-rivestimenti-wrapper mb-5 pt-5">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8 col-carosello">
-                        <h3 class="text-center mb-4 underline-thin">Rivestimenti Korus</h3>
+                        <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
                         <div class="card card-prodotto px-5 py-3">
                             <div class="position-relative">
                                 <div class="swiper px-3" aria-label="Carosello rivestimenti Korus">
@@ -411,6 +416,6 @@
 
         </div>
 
-        {{-- fine container principale --}}
+    </div> {{-- fine container principale --}}
 
 </x-layout>

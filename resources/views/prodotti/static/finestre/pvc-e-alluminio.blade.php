@@ -2,12 +2,10 @@
 
     {{-- SEO --}}
     @section('title', 'Finestre in PVC e Alluminio — FinestrArte 3.0')
-    @section('meta_description',
-        'Finestre in PVC e alluminio: alte prestazioni termiche e acustiche, manutenzione
+    @section('meta_description', 'Finestre in PVC e alluminio: alte prestazioni termiche e acustiche, manutenzione
         ridotta e personalizzazione bicolore. Scopri Korus FiberK Slim con PDF tecnico e finiture disponibili.')
     @section('og_title', 'Finestre in PVC e Alluminio — FinestrArte 3.0')
-    @section('og_description',
-        'Profilo ibrido con anima in fibra, doppio/triplo vetro, classi di tenuta elevate.
+    @section('og_description', 'Profilo ibrido con anima in fibra, doppio/triplo vetro, classi di tenuta elevate.
         Rivestimenti e colori per ogni contesto.')
     @section('og_image', asset('img/og-finestre-pvc-alluminio.jpg'))
 
@@ -68,31 +66,10 @@
                     'itemListElement' => $itemList,
                 ],
             ];
-
-            $offerPvcAll = [
-                '@context' => 'https://schema.org',
-                '@type' => 'Offer',
-                'name' => 'Promozione Korus su Finestre PVC/Alluminio',
-                'description' => 'Anticipi solo il 50%. Offerta valida fino al 31/12.',
-                'url' => url()->current(),
-                'image' => asset('img/offerta_korus.jpg'),
-                'seller' => [
-                    '@type' => 'LocalBusiness',
-                    'name' => 'FinestrArte 3.0',
-                ],
-                'eligibleRegion' => 'IT',
-                'availabilityEnds' => now()->year . '-12-31',
-                'itemOffered' => [
-                    '@type' => 'Product',
-                    'name' => 'Finestre in PVC e Alluminio',
-                    'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
-                    'category' => 'Windows',
-                ],
-            ];
         @endphp
+
         <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
         <script type="application/ld+json">{!! json_encode($collection,  JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
-        <script type="application/ld+json">{!! json_encode($offerPvcAll, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
     @endpush
 
     {{-- Hero sottocategoria --}}
@@ -127,16 +104,6 @@
                 <div class="border"></div>
             </div>
         </div>
-
-        {{-- Sezione promozione Korus nella pagina PVC e Alluminio --}}
-        <section id="promo-korus" class="py-4">
-            <div class="container">
-                <div class="card border-0 shadow-sm mx-auto" style="max-width: 550px;">
-                    <img src="{{ asset('img/offerta_korus.jpg') }}" class="w-100"
-                        alt="Promozione Korus: anticipi solo il 50% — offerta valida fino al 31 dicembre">
-                </div>
-            </div>
-        </section>
 
         {{-- Griglia prodotti --}}
         {{-- card: FiberK Slim --}}

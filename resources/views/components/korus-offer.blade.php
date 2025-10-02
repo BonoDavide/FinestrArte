@@ -1,5 +1,5 @@
 {{-- Promozione Korus 50% - fascia rossa compatta --}}
-<section class="bg-danger text-white" role="region" aria-label="Promozione Korus">
+<section class="promo-hero text-white" role="region" aria-label="Promozione Korus">
     <div class="container">
         <div class="row align-items-center justify-content-between py-3 g-3">
             <div class="col-12 col-md-8">
@@ -13,11 +13,12 @@
             </div>
 
             <div class="col-12 col-md-auto text-md-end">
-                <a href="{{ url('/prodotti/finestre/pvc-e-alluminio') }}" class="btn btn-light px-4 fw-semibold"
-                    data-promo="korus-50" aria-label="Scopri finestre PVC e Alluminio in promozione">
+                <a href="{{ route('promo.korus50') }}" class="btn btn-light px-4 fw-semibold" data-promo="korus-50"
+                    aria-label="Scopri la promozione Korus">
                     Scopri l'offerta Korus
                 </a>
             </div>
+
         </div>
     </div>
 </section>

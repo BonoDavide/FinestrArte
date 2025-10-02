@@ -145,6 +145,15 @@
         width: 20%;
     }
 
+    .btn-scheda-5 {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+
     /* bottone per tornare a pagina generica prodotti */
     .btn-pag-prod {
         background: #ffc107;
@@ -171,6 +180,13 @@
         padding: 0 !important;
     }
 
+    .card-prodotto>.col-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     .card-prodotto img.img-prodotto {
         width: 100%;
         height: auto;
@@ -183,6 +199,10 @@
     }
 
     .card-prodotto>.col-5:last-child {
+        padding: 1.5rem !important;
+    }
+
+    .card-prodotto>.col-6:last-child {
         padding: 1.5rem !important;
     }
 
@@ -405,6 +425,15 @@
         width: 20%;
     }
 
+    .btn-scheda-5 {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 55%;
+    }
+
     /* bottone per tornare a pagina generica prodotti */
     .btn-pag-prod {
         background: #ffc107;
@@ -449,6 +478,10 @@
     }
 
     .card-prodotto>.col-5:last-child {
+        padding: 2rem 1.5rem !important;
+    }
+
+    .card-prodotto>.col-6:last-child {
         padding: 2rem 1.5rem !important;
     }
 
@@ -549,5 +582,15 @@
     .caratteristiche-lista {
         --bs-gutter-x: 3rem;
         /* default 1.5rem → ridotto */
+    }
+
+    /* Responsive: su mobile lasciamo libero (no altezza fissa) */
+    .promo-page .card-prodotto .media-col {
+        height: auto;
+    }
+
+    .promo-page .card-prodotto .media-col .img-prodotto {
+        width: 100%;
+        height: auto;
     }
 }

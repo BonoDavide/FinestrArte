@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PromoController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminContactController;
-use App\Http\Middleware\AdminMiddleware;
 
 // home
 Route::get('/', [PublicController::class, 'home'])->name('home');
@@ -31,3 +32,6 @@ Route::get('/prodotti/{categoria}/{sottocategoria}', [ProductController::class, 
 
 // visualizzazione pdf
 Route::get('/prodotti/{categoria}/{sottocategoria}/{prodotto}/scheda', [ProductController::class, 'showScheda'])->name('prodotti.scheda');
+
+// promozione korus
+Route::get('/promozioni/korus-50', [PromoController::class, 'korus50'])->name('promo.korus50');

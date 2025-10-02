@@ -212,6 +212,20 @@
     color: #fff;
 }
 
+.btn-scheda-5 {
+    background: #ffc107;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 55%;
+}
+
+.btn-scheda-5:hover {
+    background: #e0a800;
+    color: #fff;
+}
+
 .btn-pag-prod {
     background: #ffc107;
     border: none;
@@ -331,5 +345,31 @@
 }
 
 
+/* ====== STILI LANDING PROMO KORUS ====== */
 
+/* Hero rosso */
+.promo-hero {
+    background: #921921;
+    /* colore simile alla creatività */
+}
 
+.h-hero-promo {
+    height: 30rem;
+}
+
+/* Landing Korus – normalizza altezza immagine nelle card */
+.promo-page .card-prodotto .media-col {
+    height: 360px;
+    /* altezza uniforme (puoi 340–400) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.promo-page .card-prodotto .media-col .img-prodotto {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    /* nessun taglio, solo scaling */
+}
