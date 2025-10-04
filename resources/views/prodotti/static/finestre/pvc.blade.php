@@ -1,14 +1,13 @@
 <x-layout>
 
-    {{-- SEO --}}
-    @section('title', 'Finestre in PVC — FinestrArte 3.0')
-    @section('meta_description',
-        'Finestre in PVC Schüco e Korus: prestazioni termiche e acustiche, design e durata.
-        Scopri CT 70 Classic, LivIng 82, FocusIng e Korus Fiber Slim con schede tecniche PDF e rivestimenti.')
-    @section('og_title', 'Finestre in PVC — FinestrArte 3.0')
-    @section('og_description',
-        'Gamma PVC Schüco e Korus: CT 70 Classic, LivIng 82, FocusIng e Korus Fiber Slim. Alte
-        prestazioni, schede tecniche in PDF e rivestimenti disponibili.')
+    {{-- SEO — Finestre in PVC --}}
+    @section('title', 'Finestre in PVC (Schüco & Korus) — FinestrArte 3.0')
+    @section('meta_description', 'Finestre in PVC Schüco e Korus: alte prestazioni termiche e acustiche, design e
+        durata. Modelli: CT 70 Classic, LivIng 82, FocusIng, Fiber Slim, Win Box, Win Up, Lumen, Win Slide e Portoncino.
+        Schede tecniche PDF e rivestimenti.')
+    @section('og_title', 'Finestre in PVC — Schüco & Korus | FinestrArte 3.0')
+    @section('og_description', 'Scopri la gamma PVC Schüco (CT 70 Classic, LivIng 82, FocusIng) e Korus (Fiber Slim, Win
+        Box, Win Up, Lumen, Win Slide, Portoncino). Prestazioni elevate, PDF tecnici e finiture.')
     @section('og_image', asset('img/og-finestre-pvc.jpg'))
 
     @push('structured-data')
@@ -30,8 +29,9 @@
                 ],
             ];
 
-            // Elenco modelli presenti nella pagina (per ItemList)
+            // Elenco modelli presenti nella pagina (ancore = id delle card)
             $models = [
+                // Schüco
                 [
                     'name' => 'Schüco CT 70 Classic',
                     'image' => asset('img/prodotti/finestre/pvc/schuco-ct-70-classic.png'),
@@ -50,10 +50,42 @@
                     'url' => url()->current() . '#schuco-focusing',
                     'brand' => 'Schüco',
                 ],
+
+                // Korus (PVC)
                 [
                     'name' => 'Korus Fiber Slim',
-                    'image' => asset('img/prodotti/finestre/pvc/korus-fiber-slim.png'),
+                    'image' => asset('img/prodotti/finestre/pvc/korus/korus-fiber-slim.png'), // usa il tuo file oggetto/preview
                     'url' => url()->current() . '#fiber-slim',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus Win Box',
+                    'image' => asset('img/prodotti/finestre/pvc/korus/winbox/win-box.jpg'),
+                    'url' => url()->current() . '#win-box',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus Win Up',
+                    'image' => asset('img/prodotti/finestre/pvc/korus/wink-up/win-up.jpg'),
+                    'url' => url()->current() . '#win-up',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus Lumen',
+                    'image' => asset('img/prodotti/finestre/pvc/korus/lumen/lumen.jpg'),
+                    'url' => url()->current() . '#lumen',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus Win Slide',
+                    'image' => asset('img/prodotti/finestre/pvc/korus/winslide/win-slide.jpg'),
+                    'url' => url()->current() . '#win-slide',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus Win Up Portoncino',
+                    'image' => asset('img/prodotti/finestre/pvc/korus/win_up_portoncino.jpg'),
+                    'url' => url()->current() . '#win-up-portoncino',
                     'brand' => 'Korus',
                 ],
             ];
@@ -69,7 +101,7 @@
                 ];
             }
 
-            // CollectionPage con la lista dei modelli (pagina di raccolta, non singolo prodotto)
+            // CollectionPage con la lista dei modelli (pagina di raccolta)
             $collection = [
                 '@context' => 'https://schema.org',
                 '@type' => 'CollectionPage',
@@ -86,6 +118,7 @@
         <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
         <script type="application/ld+json">{!! json_encode($collection,  JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
     @endpush
+
 
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
@@ -317,7 +350,7 @@
                 <div class="col-10">
                     <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
                         <div class="col-5 p-0 me-4">
-                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/korus-fiber-slim.PNG') }}"
+                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/korus-fiber-slim2.png') }}"
                                 class="img-prodotto" alt="Korus Fiber Slim — finestra in PVC">
                         </div>
 

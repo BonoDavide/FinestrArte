@@ -1,14 +1,15 @@
 <x-layout>
 
-    {{-- SEO --}}
+    {{-- SEO — Finestre in PVC e Alluminio --}}
     @section('title', 'Finestre in PVC e Alluminio — FinestrArte 3.0')
     @section('meta_description',
-        'Finestre in PVC e alluminio: alte prestazioni termiche e acustiche, manutenzione
-        ridotta e personalizzazione bicolore. Scopri Korus FiberK Slim con PDF tecnico e finiture disponibili.')
+        'Finestre ibride PVC e alluminio Korus: prestazioni termiche e acustiche elevate,
+        manutenzione ridotta e personalizzazione bicolore. Modelli: WinK Up, LumenK, WinK Slide e WinK Up Portoncino. Schede
+        tecniche PDF e finiture.')
     @section('og_title', 'Finestre in PVC e Alluminio — FinestrArte 3.0')
     @section('og_description',
-        'Profilo ibrido con anima in fibra, doppio/triplo vetro, classi di tenuta elevate.
-        Rivestimenti e colori per ogni contesto.')
+        'Scopri i modelli Korus in PVC e alluminio: WinK Up, LumenK, WinK Slide e WinK Up
+        Portoncino. Alte classi di tenuta, doppio/triplo vetro e rivestimenti.')
     @section('og_image', asset('img/og-finestre-pvc-alluminio.jpg'))
 
     @push('structured-data')
@@ -35,12 +36,36 @@
                 ],
             ];
 
-            // Elenco modelli presenti nella pagina (scalabile: ora 1)
+            // Elenco modelli presenti nella pagina (ancore = id delle card)
             $models = [
                 [
                     'name' => 'Korus FiberK Slim',
                     'image' => asset('img/prodotti/finestre/pvc_e_alluminio/korus-fiberk-slim-2.png'),
                     'url' => url()->current() . '#fiberk-slim',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus WinK Up',
+                    'image' => asset('img/prodotti/finestre/pvc_e_alluminio/winK-up/wink-up.jpg'),
+                    'url' => url()->current() . '#wink-up',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus LumenK',
+                    'image' => asset('img/prodotti/finestre/pvc_e_alluminio/lumenK/lumenk.jpg'),
+                    'url' => url()->current() . '#lumenk',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus WinK Slide',
+                    'image' => asset('img/prodotti/finestre/pvc_e_alluminio/winK-slide/wink-slide.jpg'),
+                    'url' => url()->current() . '#wink-slide',
+                    'brand' => 'Korus',
+                ],
+                [
+                    'name' => 'Korus WinK Up Portoncino',
+                    'image' => asset('img/prodotti/finestre/pvc_e_alluminio/winK-up-portoncino/wink-up-portoncino.jpg'),
+                    'url' => url()->current() . '#wink-up-portoncino',
                     'brand' => 'Korus',
                 ],
             ];
@@ -56,13 +81,13 @@
                 ];
             }
 
-            // CollectionPage con ItemList (pagina elenco, non scheda singola)
+            // CollectionPage con ItemList (pagina elenco)
             $collection = [
                 '@context' => 'https://schema.org',
                 '@type' => 'CollectionPage',
                 'name' => 'Finestre in PVC e Alluminio',
                 'url' => url()->current(),
-                'about' => 'Finestre ibride PVC/Alluminio',
+                'about' => 'Finestre ibride PVC/Alluminio Korus',
                 'mainEntity' => [
                     '@type' => 'ItemList',
                     'itemListElement' => $itemList,
@@ -74,6 +99,7 @@
         <script type="application/ld+json">{!! json_encode($collection,  JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
     @endpush
 
+    
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
         <img src="{{ asset('img/prodotti/finestre/pvc_e_alluminio/header-f-pvc-all.jpg') }}"

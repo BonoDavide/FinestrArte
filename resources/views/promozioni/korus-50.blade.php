@@ -1,18 +1,17 @@
 <x-layout>
-    {{-- SEO base --}}
-    @section('title', 'Promozione Korus — anticipi solo il 50% | FinestrArte 3.0')
-    @section('meta_description',
-        'Promozione Korus: infissi senza sconto in fattura, anticipi solo la metà. Valida fino
-        al 31/12. Scopri i modelli Korus in PVC e PVC/Alluminio.')
-    @section('og_title', 'Promozione Korus — anticipi solo il 50%')
-    @section('og_description',
-        'Fino al 31/12: infissi Korus con anticipo del 50%. Modelli in PVC e PVC/Alluminio,
-        consulenza gratuita.')
-    @section('og_image', asset('img/offerta_korus.jpg'))
 
+    {{-- SEO — Offerta Korus --}}
+    @section('title', 'Promozione Korus — anticipi solo il 50% | FinestrArte 3.0')
+    @section('meta_description', 'Offerta Korus: ordina gli infissi anticipando solo il 50%. Modelli in PVC e
+        PVC/Alluminio, consulenza gratuita e schede tecniche PDF. Promo valida fino al 31/12.')
+    @section('og_title', 'Promozione Korus — anticipi solo il 50%')
+    @section('og_description', 'Fino al 31/12: infissi Korus con anticipo del 50%. Scopri Fiber Slim, Win Box, Win Up,
+        Lumen, Win Slide e le versioni in PVC/Alluminio (WinK Up, LumenK, WinK Slide, Portoncino).')
+    @section('og_image', asset('img/offerta_korus.jpg'))
 
     @push('structured-data')
         @php
+            // AggregateOffer con collegamenti ai modelli/ancore presenti nelle pagine prodotto
             $aggregate = [
                 '@context' => 'https://schema.org',
                 '@type' => 'AggregateOffer',
@@ -26,6 +25,7 @@
                 'eligibleRegion' => 'IT',
                 'image' => asset('img/offerta_korus.jpg'),
                 'offers' => [
+                    // PVC
                     [
                         '@type' => 'Offer',
                         'name' => 'Korus Fiber Slim (PVC)',
@@ -40,11 +40,109 @@
                     ],
                     [
                         '@type' => 'Offer',
-                        'name' => 'Finestre PVC e Alluminio (Korus)',
-                        'url' => url('/prodotti/finestre/pvc-e-alluminio'),
+                        'name' => 'Korus Win Box (PVC)',
+                        'url' => url('/prodotti/finestre/pvc#win-box'),
                         'itemOffered' => [
                             '@type' => 'Product',
-                            'name' => 'Finestre in PVC e Alluminio',
+                            'name' => 'Korus Win Box',
+                            'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                            'category' => 'Windows',
+                        ],
+                        'availabilityEnds' => now()->year . '-12-31',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Korus Win Up (PVC)',
+                        'url' => url('/prodotti/finestre/pvc#win-up'),
+                        'itemOffered' => [
+                            '@type' => 'Product',
+                            'name' => 'Korus Win Up',
+                            'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                            'category' => 'Windows',
+                        ],
+                        'availabilityEnds' => now()->year . '-12-31',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Korus Lumen (PVC)',
+                        'url' => url('/prodotti/finestre/pvc#lumen'),
+                        'itemOffered' => [
+                            '@type' => 'Product',
+                            'name' => 'Korus Lumen',
+                            'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                            'category' => 'Windows',
+                        ],
+                        'availabilityEnds' => now()->year . '-12-31',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Korus Win Slide (PVC)',
+                        'url' => url('/prodotti/finestre/pvc#win-slide'),
+                        'itemOffered' => [
+                            '@type' => 'Product',
+                            'name' => 'Korus Win Slide',
+                            'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                            'category' => 'Windows',
+                        ],
+                        'availabilityEnds' => now()->year . '-12-31',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Korus Win Up Portoncino (PVC)',
+                        'url' => url('/prodotti/finestre/pvc#win-up-portoncino'),
+                        'itemOffered' => [
+                            '@type' => 'Product',
+                            'name' => 'Korus Win Up Portoncino',
+                            'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                            'category' => 'Windows',
+                        ],
+                        'availabilityEnds' => now()->year . '-12-31',
+                    ],
+
+                    // PVC e Alluminio
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Korus WinK Up (PVC e Alluminio)',
+                        'url' => url('/prodotti/finestre/pvc-e-alluminio#wink-up'),
+                        'itemOffered' => [
+                            '@type' => 'Product',
+                            'name' => 'Korus WinK Up',
+                            'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                            'category' => 'Windows',
+                        ],
+                        'availabilityEnds' => now()->year . '-12-31',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Korus LumenK (PVC e Alluminio)',
+                        'url' => url('/prodotti/finestre/pvc-e-alluminio#lumenk'),
+                        'itemOffered' => [
+                            '@type' => 'Product',
+                            'name' => 'Korus LumenK',
+                            'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                            'category' => 'Windows',
+                        ],
+                        'availabilityEnds' => now()->year . '-12-31',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Korus WinK Slide (PVC e Alluminio)',
+                        'url' => url('/prodotti/finestre/pvc-e-alluminio#wink-slide'),
+                        'itemOffered' => [
+                            '@type' => 'Product',
+                            'name' => 'Korus WinK Slide',
+                            'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
+                            'category' => 'Windows',
+                        ],
+                        'availabilityEnds' => now()->year . '-12-31',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Korus WinK Up Portoncino (PVC e Alluminio)',
+                        'url' => url('/prodotti/finestre/pvc-e-alluminio#wink-up-portoncino'),
+                        'itemOffered' => [
+                            '@type' => 'Product',
+                            'name' => 'Korus WinK Up Portoncino',
                             'brand' => ['@type' => 'Brand', 'name' => 'Korus'],
                             'category' => 'Windows',
                         ],
@@ -53,6 +151,7 @@
                 ],
             ];
 
+            // FAQ structured data
             $faq = [
                 '@context' => 'https://schema.org',
                 '@type' => 'FAQPage',
@@ -62,7 +161,7 @@
                         'name' => 'Fino a quando è valida la promozione?',
                         'acceptedAnswer' => [
                             '@type' => 'Answer',
-                            'text' => 'La promo è valida fino al ' . now()->year . '-12-31' . ' salvo proroghe.',
+                            'text' => 'La promo è valida fino al ' . now()->year . '-12-31' . ', salvo proroghe.',
                         ],
                     ],
                     [
@@ -76,16 +175,26 @@
                     ],
                     [
                         '@type' => 'Question',
-                        'name' => 'Quali modelli includono la promozione?',
+                        'name' => 'Quali modelli rientrano nella promozione?',
                         'acceptedAnswer' => [
                             '@type' => 'Answer',
                             'text' =>
-                                'Korus Fiber Slim (PVC) e le finestre in PVC/Alluminio indicate in questa pagina.',
+                                'Tutti i principali modelli Korus in PVC (Fiber Slim, Win Box, Win Up, Lumen, Win Slide, Portoncino) e in PVC/Alluminio (WinK Up, LumenK, WinK Slide, WinK Up Portoncino).',
+                        ],
+                    ],
+                    [
+                        '@type' => 'Question',
+                        'name' => 'Come posso aderire all’offerta?',
+                        'acceptedAnswer' => [
+                            '@type' => 'Answer',
+                            'text' =>
+                                'Richiedi una consulenza gratuita: verificheremo dimensioni e configurazioni e ti invieremo un preventivo personalizzato.',
                         ],
                     ],
                 ],
             ];
         @endphp
+
         <script type="application/ld+json">{!! json_encode($aggregate, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
         <script type="application/ld+json">{!! json_encode($faq, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
     @endpush
