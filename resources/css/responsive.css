@@ -431,7 +431,7 @@
         padding: 0.5rem 1.2rem;
         font-weight: 500;
         transition: all 0.3s ease;
-        width: 55%;
+        width: 80%;
     }
 
     /* bottone per tornare a pagina generica prodotti */
@@ -461,7 +461,8 @@
         text-align: center;
     }
 
-    .card-prodotto>.col-5 {
+    .card-prodotto>.col-5,
+    .card-prodotto>.col-6 {
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
