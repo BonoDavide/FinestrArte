@@ -2,10 +2,12 @@
 
     {{-- SEO — Offerta Korus --}}
     @section('title', 'Promozione Korus — anticipi solo il 50% | FinestrArte 3.0')
-    @section('meta_description', 'Offerta Korus: ordina gli infissi anticipando solo il 50%. Modelli in PVC e
+    @section('meta_description',
+        'Offerta Korus: ordina gli infissi anticipando solo il 50%. Modelli in PVC e
         PVC/Alluminio, consulenza gratuita e schede tecniche PDF. Promo valida fino al 31/12.')
     @section('og_title', 'Promozione Korus — anticipi solo il 50%')
-    @section('og_description', 'Fino al 31/12: infissi Korus con anticipo del 50%. Scopri Fiber Slim, Win Box, Win Up,
+    @section('og_description',
+        'Fino al 31/12: infissi Korus con anticipo del 50%. Scopri Fiber Slim, Win Box, Win Up,
         Lumen, Win Slide e le versioni in PVC/Alluminio (WinK Up, LumenK, WinK Slide, Portoncino).')
     @section('og_image', asset('img/offerta_korus.jpg'))
 
@@ -209,14 +211,15 @@
                     <p class="lead mb-0">Offerta valida fino al 31/12 • Consulenza gratuita</p>
                 </div>
             </div>
+        </div>
     </section>
 
     {{-- Layout billboard: promo a sinistra (sticky), card prodotti a destra --}}
-    <section class="py-5 mt-5 mb-5">
+    <section class="py-5 mt-5 mb-5 promo-page">
         <div class="container-fluid">
-            <div class="row g-4">
+            <div class="row gx-0 gy-4 no-gx">
                 {{-- Colonna sinistra: immagine promo --}}
-                <aside class="col-12 col-lg-4 p-promo">
+                <aside class="col-12 col-lg-4 p-promo promo-col">
                     <div class="position-sticky" style="top: 150px;">
                         <div class="card border-0 shadow-sm">
                             <img src="{{ asset('img/offerta_korus.jpg') }}"
@@ -273,7 +276,7 @@
                                         <li><strong>Profondità telaio:</strong> 76 mm</li>
                                     </ul>
                                     <a href="{{ asset('pdf/korus-fiber-slim.pdf') }}" target="_blank"
-                                        rel="noopener noreferrer" class="btn btn-scheda-5"
+                                        rel="noopener noreferrer" class="btn btn-scheda"
                                         aria-label="Apri scheda tecnica Korus Fiber Slim (PDF)">
                                         <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
                                     </a>
@@ -712,6 +715,7 @@
 
                 </div>
             </div>
+        </div>
     </section>
     <hr class="my-5">
     <section>
@@ -779,7 +783,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 </x-layout>

@@ -585,13 +585,69 @@
         /* default 1.5rem → ridotto */
     }
 
-    /* Responsive: su mobile lasciamo libero (no altezza fissa) */
-    .promo-page .card-prodotto .media-col {
-        height: auto;
+    /* Sposta la promo sopra e a piena larghezza */
+    .promo-col {
+        order: -1;
+        /* la mette prima */
+        flex: 0 0 100% !important;
+        /* occupa tutta la riga */
+        max-width: 100% !important;
+        margin-bottom: 2rem;
     }
 
-    .promo-page .card-prodotto .media-col .img-prodotto {
-        width: 100%;
-        height: auto;
+    /* Rimuove lo sticky che la teneva “piccola” in alto */
+    .promo-col .position-sticky {
+        position: static !important;
+        top: auto !important;
+    }
+
+    /* Assicura che l’immagine si allarghi bene */
+    .promo-col img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+    }
+
+    .promo-page .container-fluid>.row {
+        --bs-gutter-x: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .promo-page .container-fluid>.row>[class^="col-"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .promo-page .col-lg-4,
+    .promo-page .col-lg-8 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .promo-page .col-lg-8>.row>.col-10 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .promo-page .card-prodotto .me-4,
+    .promo-page .card-prodotto .ms-5 {
+        margin: 0 !important;
+    }
+
+    .promo-page .card-prodotto .ps-5 {
+        padding-left: 0 !important;
+    }
+
+    /* restringe leggermente le card su tablet */
+    .promo-page .col-lg-8>.row>.col-10 {
+        max-width: 70% !important;
+        /* o 85% se le vuoi più strette */
+    }
+
+    /* per coerenza visiva, centra le card */
+    .promo-page .col-lg-8>.row {
+        justify-content: center !important;
     }
 }
