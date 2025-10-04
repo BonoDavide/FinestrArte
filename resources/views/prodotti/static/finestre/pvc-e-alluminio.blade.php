@@ -2,10 +2,12 @@
 
     {{-- SEO --}}
     @section('title', 'Finestre in PVC e Alluminio — FinestrArte 3.0')
-    @section('meta_description', 'Finestre in PVC e alluminio: alte prestazioni termiche e acustiche, manutenzione
+    @section('meta_description',
+        'Finestre in PVC e alluminio: alte prestazioni termiche e acustiche, manutenzione
         ridotta e personalizzazione bicolore. Scopri Korus FiberK Slim con PDF tecnico e finiture disponibili.')
     @section('og_title', 'Finestre in PVC e Alluminio — FinestrArte 3.0')
-    @section('og_description', 'Profilo ibrido con anima in fibra, doppio/triplo vetro, classi di tenuta elevate.
+    @section('og_description',
+        'Profilo ibrido con anima in fibra, doppio/triplo vetro, classi di tenuta elevate.
         Rivestimenti e colori per ogni contesto.')
     @section('og_image', asset('img/og-finestre-pvc-alluminio.jpg'))
 
@@ -99,7 +101,6 @@
                 <p class="lead text-center py-5 paragrafo">
                     Le finestre in PVC e Alluminio offrono elevate prestazioni energetiche e acustiche, richiedono poca
                     manutenzione e permettono una vasta possibilità di personalizzazione, anche con finiture bicolore.
-                    Ideali per chi cerca comfort abitativo e resistenza nel tempo.
                 </p>
                 <div class="border"></div>
             </div>
@@ -140,10 +141,151 @@
                 </div>
             </div>
         </div>
-        {{-- fine card FiberK Slim --}}
 
-        <div class="pt-5 pb-3">
-            <div class="border"></div>
+        {{-- card Korus WinK Up --}}
+        <div class="row g-4 justify-content-center pb-5 pt-5" id="wink-up">
+            <div class="col-10">
+                <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                    <div class="col-5 p-0 me-4">
+                        <img src="{{ asset('img/prodotti/finestre/pvc_e_alluminio/winK-up/wink-up.jpg') }}"
+                            class="img-prodotto" alt="Korus WinK Up — finestra in PVC e alluminio">
+                    </div>
+
+                    {{-- border --}}
+                    <div class="border"></div>
+
+                    <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                        <h5 class="mb-3 card-title underline-thin">Korus WinK Up</h5>
+
+                        <ul class="list-unstyled mb-4">
+                            <li><strong>Modulare e performante:</strong> combinazione ideale di eleganza e funzionalità
+                            </li>
+                            <li><strong>Profilo versatile:</strong> adatto ad ambienti di arredo sia classici che
+                                moderni</li>
+                            <li><strong>20 mm di personalizzazione:</strong> grazie alla lamina esterna in alluminio
+                            </li>
+                            <li><strong>Struttura rinforzata:</strong> per maggiore stabilità e durata nel tempo</li>
+                            <li><strong>Facilità d’uso:</strong> movimentazione fluida e manutenzione ridotta</li>
+                            <li><strong>Performance:</strong> Aria Classe 4 · Acqua 9A · Vento C4 · RW = 34–42 dB</li>
+                        </ul>
+
+                        <a href="{{ asset('pdf/KORUS-WIN-UP-WINK-UP.pdf') }}" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-scheda" aria-label="Apri scheda tecnica Korus WinK Up (PDF)">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- card Korus LumenK --}}
+        <div class="row g-4 justify-content-center pb-5 pt-5" id="lumenk">
+            <div class="col-10">
+                <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                    <div class="col-5 p-0 me-4">
+                        <img src="{{ asset('img/prodotti/finestre/pvc_e_alluminio/lumenK/lumenk.jpg') }}"
+                            class="img-prodotto" alt="Korus LumenK — finestra in PVC e alluminio">
+                    </div>
+
+                    {{-- border --}}
+                    <div class="border"></div>
+
+                    <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                        <h5 class="mb-3 card-title underline-thin">Korus LumenK</h5>
+
+                        <ul class="list-unstyled mb-4">
+                            <li><strong>Vivi la luce:</strong> anta ridotta con +20% di superficie vetrata</li>
+                            <li><strong>Profilo moderno:</strong> design minimale con lamina esterna in alluminio</li>
+                            <li><strong>Stabilità strutturale:</strong> sezione rinforzata per maggiore solidità</li>
+                            <li><strong>Nuova versione:</strong> <em>maniglia centrale</em> per estetica uniforme</li>
+                            <li><strong>Resistenza agli agenti:</strong> Aria Classe 4 · Acqua 9A · Vento C4</li>
+                            <li><strong>Comfort acustico:</strong> RW = 34–42 dB</li>
+                        </ul>
+
+                        <a href="{{ asset('pdf/KORUS-LUMEN-LUMENK.pdf') }}" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-scheda" aria-label="Apri scheda tecnica Korus LumenK (PDF)">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- card Korus WinK Slide --}}
+        <div class="row g-4 justify-content-center pb-5 pt-5" id="wink-slide">
+            <div class="col-10">
+                <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                    <div class="col-5 p-0 me-4">
+                        <img src="{{ asset('img/prodotti/finestre/pvc_e_alluminio/winK-slide/wink-slide.jpg') }}"
+                            class="img-prodotto" alt="Korus WinK Slide — scorrevole in PVC e alluminio">
+                    </div>
+
+                    {{-- border --}}
+                    <div class="border"></div>
+
+                    <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                        <h5 class="mb-3 card-title underline-thin">Korus WinK Slide</h5>
+
+                        <ul class="list-unstyled mb-4">
+                            <li><strong>Eleganza e luminosità:</strong> pensato per ampie superfici vetrate</li>
+                            <li><strong>Cover esterna in alluminio:</strong> maggiore durata e pregio estetico</li>
+                            <li><strong>Garanzia 20 anni</strong></li>
+                            <li><strong>Anta fissa Minimal:</strong> più luce naturale negli ambienti</li>
+                            <li><strong>Comfort termico:</strong> tre guarnizioni dell’anta per tenuta superiore</li>
+                            <li><strong>Versatilità progettuale:</strong> scorrimento fluido, uso semplice e manovra
+                                agevole</li>
+                            <li><strong>Performance:</strong> Aria Classe 4 · Acqua 8A/9A · Vento C2/C3 · RW = 32–43 dB
+                            </li>
+                        </ul>
+
+                        <a href="{{ asset('pdf/KORUS-WIN-SLIDE-SLIDEK.pdf') }}" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-scheda"
+                            aria-label="Apri scheda tecnica Korus WinK Slide (PDF)">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- card Korus WinK Up Portoncino --}}
+        <div class="row g-4 justify-content-center pb-5 pt-5" id="wink-up-portoncino">
+            <div class="col-10">
+                <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                    <div class="col-5 p-0 me-4">
+                        <img src="{{ asset('img/prodotti/finestre/pvc_e_alluminio/winK-up-portoncino/wink-up-portoncino.jpg') }}"
+                            class="img-prodotto" alt="Korus WinK Up Portoncino — portoncino in PVC e alluminio">
+                    </div>
+
+                    {{-- border --}}
+                    <div class="border"></div>
+
+                    <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                        <h5 class="mb-3 card-title underline-thin">Korus WinK Up Portoncino</h5>
+
+                        <ul class="list-unstyled mb-4">
+                            <li><strong>Solido e resistente:</strong> progettato per durare nel tempo con materiali di
+                                alta qualità</li>
+                            <li><strong>Ottimo isolamento termico:</strong> riduce la dispersione e i costi di
+                                riscaldamento</li>
+                            <li><strong>Protezione acustica:</strong> eccellenti proprietà fonoassorbenti contro i
+                                rumori esterni</li>
+                            <li><strong>Personalizzazione estetica:</strong> ampia scelta di pannelli e finiture in
+                                alluminio</li>
+                            <li><strong>Massima resistenza:</strong> ottime prestazioni anche in condizioni meteo
+                                avverse</li>
+                            <li><strong>Performance:</strong> Aria Classe 4 · Acqua 4B · Vento C2/B2 · RW = 34–42 dB
+                            </li>
+                        </ul>
+
+                        <a href="{{ asset('pdf/KORUS-WIN-UP-WINK-UP-PORTONCINO.pdf') }}" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-scheda"
+                            aria-label="Apri scheda tecnica Korus WinK Up Portoncino (PDF)">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         {{-- carosello rivestimenti --}}
@@ -224,7 +366,8 @@
                     <div
                         class="modal-body d-flex flex-column justify-content-center align-items-center text-center h-100">
                         <h5 class="modal-title fw-bold mb-4" id="rivestimentoNome"></h5>
-                        <img id="rivestimentoImg" src="#" alt="Rivestimento" class="img-fluid rounded-3 shadow"
+                        <img id="rivestimentoImg" src="#" alt="Rivestimento"
+                            class="img-fluid rounded-3 shadow"
                             style="width: 170px; height: 170px; object-fit: contain;">
                         <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
                             data-bs-dismiss="modal" aria-label="Chiudi"></button>

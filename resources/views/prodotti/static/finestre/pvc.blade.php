@@ -347,8 +347,193 @@
                 </div>
             </div>
 
+            {{-- card Korus Win Box --}}
+            <div class="row g-4 justify-content-center pb-5 pt-5" id="win-box">
+                <div class="col-10">
+                    <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                        <div class="col-5 p-0 me-4">
+                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/winbox/win-box.jpg') }}"
+                                class="img-prodotto" alt="Korus Win Box — finestra in PVC">
+                        </div>
+
+                        {{-- border --}}
+                        <div class="border"></div>
+
+                        <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                            <h5 class="mb-3 card-title underline-thin">Korus Win Box</h5>
+
+                            <ul class="list-unstyled mb-4">
+                                <li><strong>Semplicità lineare:</strong> profili essenziali per un design pulito e
+                                    moderno</li>
+                                <li><strong>Maggiore luminosità:</strong> sezioni ottimizzate per incrementare la
+                                    superficie vetrata</li>
+                                <li><strong>Versatile:</strong> disponibile con nodo centrale <em>simmetrico</em> o
+                                    nuova versione <em>asimmetrica</em></li>
+                                <li><strong>Isolamento ottimizzato:</strong> studiato per comfort termico e acustico
+                                    nell’uso quotidiano</li>
+                                <li><strong>Durabilità:</strong> materiali resistenti e facile manutenzione</li>
+                                <li><strong>Finiture:</strong> abbinabile a diverse colorazioni e texture</li>
+                            </ul>
+
+                            <a href="{{ asset('pdf/KORUS-WIN-BOX.pdf') }}" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-scheda" aria-label="Apri scheda tecnica Korus Win Box (PDF)">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- card Korus Win Up --}}
+            <div class="row g-4 justify-content-center pb-5 pt-5" id="win-up">
+                <div class="col-10">
+                    <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                        <div class="col-5 p-0 me-4">
+                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/winup/win-up.jpg') }}"
+                                class="img-prodotto" alt="Korus Win Up — finestra in PVC">
+                        </div>
+
+                        {{-- border --}}
+                        <div class="border"></div>
+
+                        <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                            <h5 class="mb-3 card-title underline-thin">Korus Win Up</h5>
+
+                            <ul class="list-unstyled mb-4">
+                                <li><strong>Modulare e performante:</strong> pensato per coniugare efficienza e
+                                    versatilità</li>
+                                <li><strong>Profilo adatto:</strong> ideale per ambienti d’arredo semplici e
+                                    tradizionali</li>
+                                <li><strong>Nodo centrale:</strong> struttura che conferisce maggiore stabilità
+                                    all’infisso</li>
+                                <li><strong>Facilità d’uso:</strong> manovre semplici e ridotta necessità di
+                                    manutenzione</li>
+                                <li><strong>Resistenza agli agenti:</strong> Aria Classe 4 · Acqua 9A · Vento C4</li>
+                                <li><strong>Comfort acustico:</strong> RW = 34–42 dB</li>
+                            </ul>
+
+                            <a href="{{ asset('pdf/KORUS-WIN-UP-WINK-UP.pdf') }}" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-scheda"
+                                aria-label="Apri scheda tecnica Korus Win Up (PDF)">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- card Korus Lumen --}}
+            <div class="row g-4 justify-content-center pb-5 pt-5" id="lumen">
+                <div class="col-10">
+                    <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                        <div class="col-5 p-0 me-4">
+                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/lumen/lumen.jpg') }}"
+                                class="img-prodotto" alt="Korus Lumen — finestra in PVC">
+                        </div>
+
+                        {{-- border --}}
+                        <div class="border"></div>
+
+                        <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                            <h5 class="mb-3 card-title underline-thin">Korus Lumen</h5>
+
+                            <ul class="list-unstyled mb-4">
+                                <li><strong>Vivi la luce:</strong> sezioni ottimizzate per massima luminosità</li>
+                                <li><strong>Design minimale:</strong> profilo adatto ad ambienti moderni e puliti</li>
+                                <li><strong>Stabilità:</strong> nodo centrale che conferisce solidità all’infisso</li>
+                                <li><strong>Nuova versione:</strong> <em>maniglia centrale</em> per estetica ancora più
+                                    uniforme</li>
+                                <li><strong>Resistenza agli agenti:</strong> Aria Classe 4 · Acqua 9A · Vento C4</li>
+                                <li><strong>Comfort acustico:</strong> RW = 34–42 dB</li>
+                            </ul>
+
+                            <a href="{{ asset('pdf/KORUS-LUMEN-LUMENK.pdf') }}" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-scheda"
+                                aria-label="Apri scheda tecnica Korus Lumen (PDF)">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- card Korus Win Slide --}}
+            <div class="row g-4 justify-content-center pb-5 pt-5" id="win-slide">
+                <div class="col-10">
+                    <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                        <div class="col-5 p-0 me-4">
+                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/winslide/win-slide.jpg') }}"
+                                class="img-prodotto" alt="Korus Win Slide — finestra scorrevole in PVC">
+                        </div>
+
+                        {{-- border --}}
+                        <div class="border"></div>
+
+                        <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                            <h5 class="mb-3 card-title underline-thin">Korus Win Slide</h5>
+
+                            <ul class="list-unstyled mb-4">
+                                <li><strong>Eleganza e luminosità:</strong> design pensato per ampie superfici vetrate
+                                </li>
+                                <li><strong>Versatilità di progettazione:</strong> ottimizza spazi e passaggi</li>
+                                <li><strong>Anta fissa Minimal:</strong> più luce naturale negli ambienti</li>
+                                <li><strong>Comfort termico:</strong> guarnizioni dell’anta per tenuta migliorata</li>
+                                <li><strong>Scorrimento facile:</strong> utilizzo semplice e manovra fluida</li>
+                                <li><strong>Performance:</strong> Aria Classe 4 · Acqua 8A/9A · Vento C2/C3 · RW = 32–43
+                                    dB</li>
+                            </ul>
+
+                            <a href="{{ asset('pdf/KORUS-WIN-SLIDE-SLIDEK.pdf') }}" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-scheda"
+                                aria-label="Apri scheda tecnica Korus Win Slide (PDF)">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- card Korus Win Up Portoncino --}}
+            <div class="row g-4 justify-content-center pb-5 pt-5" id="win-up-portoncino">
+                <div class="col-10">
+                    <div class="card flex-row overflow-hidden card-prodotto card-hover-scale">
+                        <div class="col-5 p-0 me-4">
+                            <img src="{{ asset('img/prodotti/finestre/pvc/korus/winup-portoncino/win_up_portoncino.jpg') }}"
+                                class="img-prodotto" alt="Korus Win Up Portoncino — portoncino in PVC">
+                        </div>
+
+                        {{-- border --}}
+                        <div class="border"></div>
+
+                        <div class="col-6 p-4 d-flex flex-column justify-content-center ms-5 ps-5">
+                            <h5 class="mb-3 card-title underline-thin">Korus Win Up Portoncino</h5>
+
+                            <ul class="list-unstyled mb-4">
+                                <li><strong>Solido e resistente:</strong> struttura pensata per affidabilità nel tempo
+                                </li>
+                                <li><strong>Ottimo isolamento termico:</strong> riduce la dispersione e i costi di
+                                    riscaldamento</li>
+                                <li><strong>Protezione acustica:</strong> proprietà fonoassorbenti contro l’inquinamento
+                                    sonoro</li>
+                                <li><strong>Personalizzazione estetica:</strong> disponibile con varie pannellature e
+                                    vetri</li>
+                                <li><strong>Resistenza agli agenti:</strong> Tenuta acqua Classe 4B · Aria Classe 4 ·
+                                    Vento Classe C2/B2</li>
+                                <li><strong>Comfort acustico:</strong> RW = 34–42 dB</li>
+                            </ul>
+
+                            <a href="{{ asset('pdf/KORUS-WIN-UP-WINK-UP-PORTONCINO.pdf') }}" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-scheda"
+                                aria-label="Apri scheda tecnica Korus Win Up Portoncino (PDF)">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Scheda tecnica
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {{-- Carosello rivestimenti Korus --}}
-            <div class="container container-car carosello-rivestimenti-wrapper mb-5 pt-5">
+            <div class="container container-car carosello-rivestimenti-wrapper pt-5">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8 col-carosello">
                         <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>

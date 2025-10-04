@@ -223,12 +223,8 @@
             </div>
         </div>
 
-        <div class="pt-5 pb-3">
-            <div class="border"></div>
-        </div>
-
         {{-- carosello rivestimenti legno e alluminio --}}
-        <div class="container container-car carosello-rivestimenti-wrapper pt-5">
+        <div class="container container-car carosello-rivestimenti-wrapper mb-5 pt-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8 col-carosello">
                     <h3 class="text-center mb-4 underline-thin">Rivestimenti disponibili</h3>
