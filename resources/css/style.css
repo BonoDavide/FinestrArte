@@ -373,3 +373,7 @@
     object-fit: contain;
     /* nessun taglio, solo scaling */
 }
+
+.img-border-right {
+  border-right: 2px solid #ddd; /* colore neutro */
+}

@@ -1,10 +1,51 @@
 <x-layout>
+    {{-- SEO --}}
+    {{-- SEO — Finestra Ibrida --}}
+    @section('title', 'Finestra Ibrida — alluminio-legno materica | La Rinascita Design')
+    @section('meta_description', 'Scopri Ibrida, la finestra in alluminio-legno di La Rinascita Design: profilo ibrido
+        dal design materico, alte prestazioni termiche e ampia scelta di rivestimenti effetto legno e RAL.')
+    @section('og_title', 'Finestra Ibrida — alluminio-legno materica')
+    @section('og_description', 'Finestra Ibrida di La Rinascita Design: equilibrio tra estetica e solidità. Profilo
+        ibrido in alluminio-legno, prestazioni elevate e ampia gamma di finiture.')
+    @section('og_image', asset('img/prodotti/finestre/ibrida/ibrida2.jpg'))
+
+    @push('structured-data')
+        @php
+            $productData = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Product',
+                'name' => 'Finestra Ibrida',
+                'brand' => [
+                    '@type' => 'Brand',
+                    'name' => 'La Rinascita Design',
+                ],
+                'image' => asset('img/prodotti/finestre/ibrida/ibrida2.jpg'),
+                'description' =>
+                    'Finestra in alluminio-legno dal profilo ibrido, progettata per coniugare design materico, isolamento termico e acustico, ampia personalizzazione delle finiture e durata nel tempo.',
+                'category' => 'Infissi in alluminio-legno',
+                'url' => url()->current(),
+                'offers' => [
+                    '@type' => 'Offer',
+                    'availability' => 'https://schema.org/InStock',
+                    'priceCurrency' => 'EUR',
+                    'price' => '0', // opzionale, se non si espone il prezzo lascia pure 0
+                    'seller' => [
+                        '@type' => 'Organization',
+                        'name' => 'FinestrArte 3.0',
+                    ],
+                ],
+            ];
+        @endphp
+        <script type="application/ld+json">
+        {!! json_encode($productData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+    </script>
+    @endpush
+
 
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
         <img src="{{ asset('img/prodotti/finestre/ibrida/header-ibrida-3.jpg') }}"
-            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;"
-            alt="Finestre in PVC — anteprima">
+            class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="Finestre Ibride">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
             <h1 class="display-2 fw-bold font-titolo underline-thin">Finestre Ibride</h1>

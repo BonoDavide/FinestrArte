@@ -299,6 +299,17 @@
         padding-left: 0 !important;
         text-align: center;
     }
+
+    .img-border-right {
+        border-right: none;
+        /* evita bordo su mobile */
+        border-bottom: 2px solid #ddd;
+    }
+
+    .card-prodotto .h4 {
+        text-align: center;
+        width: 100%;
+    }
 }
 
 /* === SCHERMI MEDI: da 576px a 1199.98px === */
@@ -649,5 +660,16 @@
     /* per coerenza visiva, centra le card */
     .promo-page .col-lg-8>.row {
         justify-content: center !important;
+    }
+
+    .img-border-right {
+        border-right: none;
+        /* evita bordo su mobile */
+        border-bottom: 2px solid #ddd;
+    }
+
+    .card-prodotto .h4 {
+        text-align: center;
+        width: 100%;
     }
 }
