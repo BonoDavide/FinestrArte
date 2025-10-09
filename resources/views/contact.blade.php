@@ -1,7 +1,8 @@
 <x-layout>
     {{-- SEO --}}
     @section('title', 'Contatti — FinestrArte 3.0')
-    @section('meta_description', 'Contatta FinestrArte 3.0 a Roma: indirizzo, telefoni, orari e modulo richieste per
+    @section('meta_description',
+        'Contatta FinestrArte 3.0 a Roma: indirizzo, telefoni, orari e modulo richieste per
         infissi su misura.')
     @section('og_title', 'Contatti — FinestrArte 3.0')
     @section('og_description', 'Telefono, indirizzo e orari. Scrivici per sopralluoghi e preventivi.')
@@ -75,10 +76,19 @@
 
     <section aria-labelledby="contatti-title">
 
-        {{-- Immagine decorativa in alto --}}
-        <div class="mb-4 text-center">
-            <img src="https://picsum.photos/1920/600?grayscale" alt="Contattaci — FinestrArte 3.0" class="img-fluid w-100"
-                style="object-fit: cover; height: 60vh;">
+        {{-- Immagine decorativa in alto con testo centrato --}}
+        <div class="position-relative" style="height: 60vh; min-height: 250px;">
+            <img src="{{ asset('img/negozio/header-contatti.jpg') }}" class="position-absolute top-0 start-0 w-100 h-100"
+                style="object-fit: cover;" alt="Il team FinestrArte al lavoro su serramenti su misura">
+
+            {{-- Overlay --}}
+            <div class="image-dark-overlay"></div>
+
+            {{-- Testo sopra --}}
+            <div class="position-absolute start-50 translate-middle-x text-center text-white"
+                style="top: 50%; z-index: 2;">
+                <h1 class="display-2 fw-bold text-shadow font-titolo">Contatti</h1>
+            </div>
         </div>
 
         {{-- Contenuto centrale --}}
@@ -86,7 +96,7 @@
             <div class="row g-4">
                 {{-- Colonna Contatti --}}
                 <div class="col-12 col-md-6 pt-5">
-                    <h2 id="contatti-title" class="pb-3 underline-thin">Contatti</h2>
+                    <h2 id="contatti-title" class="pb-3 underline-thin">Informazioni utili</h2>
                     <p><strong>Indirizzo:</strong>
                         <a href="https://maps.google.com/?q=Piazza%20dei%20Gerani%2026%2000172%20Roma"
                             class="text-reset text-decoration-underline" rel="noopener" target="_blank">

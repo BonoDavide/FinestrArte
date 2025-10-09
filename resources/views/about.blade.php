@@ -40,7 +40,7 @@
 
     {{-- Hero Image con scritta centrata --}}
     <div class="position-relative" style="height: 60vh; min-height: 250px;">
-        <img src="https://picsum.photos/1200/400?blur=1" class="position-absolute top-0 start-0 w-100 h-100"
+        <img src="{{asset('img/negozio/IMG_0272.jpg')}}" class="position-absolute top-0 start-0 w-100 h-100"
             style="object-fit: cover;" alt="Il team FinestrArte al lavoro su serramenti su misura">
 
         {{-- Overlay --}}

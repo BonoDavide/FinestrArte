@@ -88,7 +88,7 @@
 
     {{-- Hero sottocategoria --}}
     <div class="position-relative overflow-hidden" style="height: 60vh; min-height: 250px;">
-        <img src="{{ asset('img/prodotti/zanzariere/header-zanzariere.jpg') }}"
+        <img src="{{ asset('img/prodotti/controtelai_monoblocco/header-controtelai.jpg') }}"
             class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" alt="Zanzariere">
         <div class="overlay-dark"></div>
         <div class="overlay-text position-absolute top-50 start-50 translate-middle text-center text-white px-3">
