@@ -310,6 +310,26 @@
         text-align: center;
         width: 100%;
     }
+
+
+    /* CONTROTELAI */
+    .btn-scheda-6 {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 60%;
+    }
+
+    .btn-scheda-6:hover {
+        background: #e0a800;
+        color: #fff;
+    }
+
+    .prod-img {
+        min-height: 500px;
+    }
 }
 
 /* === SCHERMI MEDI: da 576px a 1199.98px === */
@@ -671,5 +691,19 @@
     .card-prodotto .h4 {
         text-align: center;
         width: 100%;
+    }
+
+    .btn-scheda-6 {
+        background: #ffc107;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 60%;
+    }
+
+    .btn-scheda-6:hover {
+        background: #e0a800;
+        color: #fff;
     }
 }
