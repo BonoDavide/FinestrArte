@@ -36,7 +36,7 @@
         @endphp
         <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
         <script type="application/ld+json">{!! json_encode($about, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
-    @endpush>
+    @endpush
 
     {{-- Hero Image con scritta centrata --}}
     <div class="position-relative" style="height: 60vh; min-height: 250px;">

@@ -72,7 +72,7 @@
         @endphp
         <script type="application/ld+json">{!! json_encode($breadcrumbs, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
         <script type="application/ld+json">{!! json_encode($contact, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
-    @endpush>
+    @endpush
 
     <section aria-labelledby="contatti-title">
 
