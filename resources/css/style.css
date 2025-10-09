@@ -398,3 +398,66 @@
     min-height: auto;
     object-fit: cover;
 }
+
+/* slide & immagini */
+.swiper-gallery-main .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-gallery-main img {
+    width: auto;
+    height: 520px;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+@media (max-width:992px) {
+    .swiper-gallery-main img {
+        height: 420px
+    }
+}
+
+@media (max-width:576px) {
+    .swiper-gallery-main img {
+        height: 320px
+    }
+}
+
+/* centra il blocco pagination */
+.swiper-gallery-main {
+    text-align: center;
+}
+
+/* override del default Swiper che mette width:100% */
+.swiper-gallery-main.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-gallery-main .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto !important;
+    left: auto !important;
+    right: auto !important;
+}
+
+/* wrapper arrotondato dietro i pallini */
+.swiper-gallery-main .swiper-pagination {
+    position: static;
+    margin-top: .75rem;
+    display: inline-block;
+    /* largo quanto i pallini */
+    background-color: rgb(23, 23, 23);
+    /* sfondo scuro trasparente */
+    padding: .3rem .5rem;
+    border-radius: 1.5rem;
+    /* box-shadow: 0 2px 6px rgb(0, 0, 0); */
+}
+
+/* pallini gialli */
+.swiper-gallery-main .swiper-pagination-bullet {
+    background-color: #ffbf00;
+    opacity: .5;
+    transition: opacity .2s ease;
+}
+
+.swiper-gallery-main .swiper-pagination-bullet-active {
+    opacity: 1;
+}

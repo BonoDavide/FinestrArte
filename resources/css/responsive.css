@@ -330,6 +330,22 @@
     .prod-img {
         min-height: 500px;
     }
+
+    /* portoni blindati */
+    .swiper-gallery-main img {
+        height: 320px;
+    }
+
+    .swiper-gallery-main .swiper-button-prev,
+    .swiper-gallery-main .swiper-button-next {
+        width: 28px;
+        height: 28px;
+    }
+
+    .swiper-gallery-main .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+    }
 }
 
 /* === SCHERMI MEDI: da 576px a 1199.98px === */
@@ -705,5 +721,9 @@
     .btn-scheda-6:hover {
         background: #e0a800;
         color: #fff;
+    }
+
+    .swiper-gallery-main img {
+        height: 420px;
     }
 }

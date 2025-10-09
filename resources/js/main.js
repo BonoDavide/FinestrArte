@@ -1,47 +1,50 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination'; // sicuro anche se già importato in app.js
 import * as bootstrap from 'bootstrap';
 
-// Navbar scroll effetto
-const navbar = document.querySelector(".navCustom");
+// --------------------------
+// Navbar scroll effect
+// --------------------------
+const navbar = document.querySelector('.navCustom');
 
 function handleNavbarScroll() {
+    if (!navbar) return;
     if (window.innerWidth >= 1200) {
-        if (window.scrollY > 50) {
-            navbar.classList.add("nav-scrolled");
-        } else {
-            navbar.classList.remove("nav-scrolled");
-        }
+        if (window.scrollY > 50) navbar.classList.add('nav-scrolled');
+        else navbar.classList.remove('nav-scrolled');
     } else {
-        navbar.classList.remove("nav-scrolled");
+        navbar.classList.remove('nav-scrolled');
     }
 }
 
-window.addEventListener("scroll", handleNavbarScroll);
-window.addEventListener("resize", handleNavbarScroll);
+window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+window.addEventListener('resize', handleNavbarScroll);
 handleNavbarScroll();
 
-// carosello Swiper
-// carosello Swiper
+// --------------------------
+// Swiper
+// --------------------------
 document.addEventListener('DOMContentLoaded', () => {
-    // Inizializza TUTTI gli swiper, con default
+    // Init GENERICO per caroselli "a griglia"
     document.querySelectorAll('.swiper').forEach((el) => {
-        // default (per tutti gli altri)
+        // salta i due slider dei portoni: li inizializziamo con settaggi dedicati
+        if (el.matches('#swiperAntaMain, #swiperDoppiaMain')) return;
+
         let opts = {
             slidesPerView: 6,
             spaceBetween: 20,
             centeredSlides: false,
             navigation: {
-                // prende i bottoni dentro lo stesso wrapper
-                nextEl: el.parentElement.querySelector('.swiper-button-next'),
-                prevEl: el.parentElement.querySelector('.swiper-button-prev'),
+                nextEl: el.parentElement?.querySelector('.swiper-button-next'),
+                prevEl: el.parentElement?.querySelector('.swiper-button-prev'),
             },
             breakpoints: {
                 0: { slidesPerView: 4, spaceBetween: 8 },
                 768: { slidesPerView: 4, spaceBetween: 15 },
                 1200: { slidesPerView: 6, spaceBetween: 20 },
-            }
+            },
         };
 
         // Override SOLO per il carosello rivestimenti delle pergole
@@ -49,53 +52,78 @@ document.addEventListener('DOMContentLoaded', () => {
             const slides = el.querySelectorAll('.swiper-slide').length;
             opts = {
                 ...opts,
-                // watchOverflow: false,              // mostra frecce anche se poche slide
-                centerInsufficientSlides: true,    // centra le slide se non c’è overflow
-                loop: slides > 6,                  // loop solo se ha senso
-                // navigation: {
-                //     nextEl: '#nextRivPergole',
-                //     prevEl: '#prevRivPergole',
-                // },
+                centerInsufficientSlides: true,
+                loop: slides > 6,
                 breakpoints: {
                     0: { slidesPerView: Math.min(3, slides), spaceBetween: 8 },
                     768: { slidesPerView: Math.min(4, slides), spaceBetween: 15 },
                     1200: { slidesPerView: Math.min(6, slides), spaceBetween: 20 },
-                }
+                },
             };
         }
 
         new Swiper(el, opts);
     });
 
-    // --- Modale rivestimenti (generica, se la usi ancora altrove) ---
-    const rivestimenti = document.querySelectorAll('.img-rivestimento:not(#swiperRivestimentiPergole .img-rivestimento)');
+    // --- Modale rivestimenti (generica) ---
+    const rivestimenti = document.querySelectorAll(
+        '.img-rivestimento:not(#swiperRivestimentiPergole .img-rivestimento)'
+    );
     const modalImg = document.getElementById('rivestimentoImg');
     const modalTitle = document.getElementById('rivestimentoNome');
     const modalEl = document.getElementById('modalRivestimento');
+
     if (rivestimenti.length && modalImg && modalTitle && modalEl) {
-        rivestimenti.forEach(img => {
+        rivestimenti.forEach((img) => {
             img.addEventListener('click', () => {
-                modalImg.src = img.getAttribute('src');
+                modalImg.src = img.getAttribute('src') || '';
                 modalTitle.textContent = img.getAttribute('data-nome') || '';
                 new bootstrap.Modal(modalEl).show();
             });
         });
     }
 
-    // --- Modale rivestimenti PERGOLE (id dedicati, non tocca gli altri) ---
-    const pergoleImgs = document.querySelectorAll('#swiperRivestimentiPergole .img-rivestimento');
+    // --- Modale rivestimenti PERGOLE ---
+    const pergoleImgs = document.querySelectorAll(
+        '#swiperRivestimentiPergole .img-rivestimento'
+    );
     const pergoleImg = document.getElementById('rivestimentoImgPergole');
     const pergoleTitle = document.getElementById('rivestimentoNomePergole');
     const pergoleModalEl = document.getElementById('modalRivestimentoPergole');
+
     if (pergoleImgs.length && pergoleImg && pergoleTitle && pergoleModalEl) {
-        pergoleImgs.forEach(img => {
+        pergoleImgs.forEach((img) => {
             img.addEventListener('click', () => {
-                pergoleImg.src = img.getAttribute('data-src') || img.getAttribute('src');
+                pergoleImg.src =
+                    img.getAttribute('data-src') || img.getAttribute('src') || '';
                 pergoleTitle.textContent = img.getAttribute('data-nome') || '';
                 new bootstrap.Modal(pergoleModalEl).show();
             });
         });
     }
+
+    // --- Inizializzazione DEDICATA slider portoni (SOLO MAIN) ---
+    function initMainSlider(containerSel) {
+        const el = document.querySelector(containerSel);
+        if (!el) return;
+
+        new Swiper(el, {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 16,
+            autoHeight: true,
+            pagination: {
+                el: el.querySelector('.swiper-pagination'),
+                clickable: true,
+            },
+            navigation: {
+                nextEl: el.querySelector('.swiper-button-next'),
+                prevEl: el.querySelector('.swiper-button-prev'),
+            },
+            keyboard: { enabled: true },
+        });
+    }
+
+    initMainSlider('#swiperAntaMain');
+    initMainSlider('#swiperDoppiaMain');
 });
-
-
