@@ -77,7 +77,7 @@
     <section aria-labelledby="contatti-title">
 
         {{-- Immagine decorativa in alto con testo centrato --}}
-        <div class="position-relative" style="height: 60vh; min-height: 250px;">
+        <div class="position-relative" style="height: 100vh; min-height: 250px;">
             <img src="{{ asset('img/negozio/header-contatti.jpg') }}" class="position-absolute top-0 start-0 w-100 h-100"
                 style="object-fit: cover;" alt="Il team FinestrArte al lavoro su serramenti su misura">
 

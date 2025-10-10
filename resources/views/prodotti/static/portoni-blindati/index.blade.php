@@ -144,11 +144,11 @@
                         aria-label="Galleria porta blindata 1 anta">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="{{ asset('img/prodotti/portoni_blindati/anta-singola/porta_blindata1.jpg') }}"
+                                <img src="{{ asset('img/prodotti/portoni_blindati/anta-singola/porta_blindata5.jpg') }}"
                                     alt="Porta 1 anta - nera" loading="lazy">
                             </div>
                             <div class="swiper-slide">
-                                <img src="{{ asset('img/prodotti/portoni_blindati/anta-singola/porta_blindata2.jpg') }}"
+                                <img src="{{ asset('img/prodotti/portoni_blindati/anta-singola/porta_blindata6.jpg') }}"
                                     alt="Porta 1 anta - marrone" loading="lazy">
                             </div>
                             <div class="swiper-slide">
@@ -204,10 +204,10 @@
                         aria-label="Galleria porta blindata doppia anta">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img
-                                    src="{{ asset('img/prodotti/portoni_blindati/doppia-anta/porta_blindata5.jpg') }}"
+                                    src="{{ asset('img/prodotti/portoni_blindati/doppia-anta/porta_blindata1.jpg') }}"
                                     alt="Porta doppia anta - legno" loading="lazy"></div>
                             <div class="swiper-slide"><img
-                                    src="{{ asset('img/prodotti/portoni_blindati/doppia-anta/porta_blindata6.jpg') }}"
+                                    src="{{ asset('img/prodotti/portoni_blindati/doppia-anta/porta_blindata2.jpg') }}"
                                     alt="Porta doppia anta - pannelli" loading="lazy"></div>
                         </div>
                         <div class="swiper-pagination"></div>
