@@ -1,10 +1,8 @@
-- Finestrarte 3.0 Website -
+FINESTRARTE 3.0 WEBSITE
 
 Descrizione:
 
 Questo progetto consiste nello sviluppo del sito web per Finestrarte, un’azienda di infissi con sede a Roma.
-
-L’obiettivo è creare una presenza online moderna e funzionale, che permetta agli utenti di conoscere l’azienda e consultare in modo semplice il catalogo prodotti.
 
 Obiettivo:
 
