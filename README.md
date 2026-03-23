@@ -8,8 +8,6 @@ L’obiettivo è creare una presenza online moderna e funzionale, che permetta a
 
 - Obiettivo:
 
-Il sito è stato realizzato per:
-
 * presentare l’azienda in modo chiaro e professionale
 * mostrare i prodotti disponibili
 * migliorare la visibilità online e facilitare il contatto con potenziali clienti
