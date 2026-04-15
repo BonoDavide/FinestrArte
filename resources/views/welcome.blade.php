@@ -94,7 +94,7 @@
 
     <x-banner />
 
-    <x-korus-offer />
+    {{-- <x-korus-offer /> --}}
 
     {{-- main --}}
     <section class="py-5">
