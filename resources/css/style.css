@@ -85,26 +85,27 @@
 
 /* NAVBAR */
 .navCustom {
-    /* Navbar con sfondo bianco di default */
     background-color: white !important;
     z-index: 1000;
 }
 
 .transition {
-    /* transizione di sfondo, filtro, margini e bordi */
-    transition: background-color .3s ease, backdrop-filter .3s ease,
-        margin .3s ease, border .3s ease, border-radius .3s ease;
+    transition:
+        background-color .3s ease,
+        backdrop-filter .3s ease,
+        margin .3s ease,
+        border .3s ease,
+        border-radius .3s ease,
+        top .3s ease;
 }
 
 .nav-scrolled {
+    top: 2vh;
     margin: 0 5vw;
     border: 2px solid rgb(36, 36, 36);
     border-radius: 10px;
     backdrop-filter: blur(7px);
     background-color: rgba(255, 255, 255, 0.649) !important;
-    position: sticky;
-    top: 2vh;
-    z-index: 1000;
 }
 
 /* bottoni */
