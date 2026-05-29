@@ -2,10 +2,12 @@
 
     {{-- SEO --}}
     @section('title', 'Chi siamo — FinestrArte 3.0')
-    @section('meta_description', 'Chi è FinestrArte 3.0: storia, valori e team che realizza serramenti su misura a Roma
+    @section('meta_description',
+        'Chi è FinestrArte 3.0: storia, valori e team che realizza serramenti su misura a Roma
         con posa professionale.')
     @section('og_title', 'Chi siamo — FinestrArte 3.0')
-    @section('og_description', 'La nostra storia e il team: affidabilità, precisione e materiali eccellenti per infissi
+    @section('og_description',
+        'La nostra storia e il team: affidabilità, precisione e materiali eccellenti per infissi
         su misura a Roma.')
     @section('og_image', asset('img/og-about.jpg'))
 
@@ -40,7 +42,7 @@
 
     {{-- Hero Image con scritta centrata --}}
     <div class="position-relative" style="height: 100vh; min-height: 250px;">
-        <img src="{{asset('img/negozio/IMG_0249B.JPG')}}" class="position-absolute top-0 start-0 w-100 h-100"
+        <img src="{{ asset('img/negozio/IMG_0249B.JPG') }}" class="position-absolute top-0 start-0 w-100 h-100"
             style="object-fit: cover;" alt="Il team FinestrArte al lavoro su serramenti su misura">
 
         {{-- Overlay --}}
@@ -75,52 +77,54 @@
     </div>
 
     {{-- Team aziendale --}}
-    <div class="container pb-5 pt-5">
-        <div class="row">
+    <div class="container py-5 mb-5">
+        <div class="row pb-5">
             <div class="col text-center" data-aos="fade-up">
                 <h2 class="fw-bold font-titolo underline-thin">Il nostro Team</h2>
+                <p class="text-muted mt-4">
+                    Competenze e attenzione al cliente in ogni fase del lavoro.
+                </p>
             </div>
         </div>
 
-        {{-- Persona 1 --}}
-        <div class="row align-items-center pb-5 pt-5 gy-4">
-            <div class="col-md-4 text-center" data-aos="fade-right" data-aos-offset="400">
-                <img src="https://picsum.photos/300/400?random=1" class="img-fluid rounded shadow-sm border"
-                    alt="Marica — Ufficio Commerciale">
-            </div>
-            <div class="col-md-4 text-center text-md-start" data-aos="fade-up" data-aos-offset="400">
-                <h4 class="mb-1 font-titolo">Marica</h4>
-                <p class="text-muted">Ufficio Commerciale</p>
-                <p>Segue il cliente nella scelta degli serramenti più adatti, proponendo soluzioni personalizzate e
-                    preventivi su misura.</p>
-            </div>
-        </div>
+        <div class="row justify-content-center g-4 pt-3">
 
-        {{-- Persona 2 --}}
-        <div class="row align-items-center pb-5 pt-5 gy-4">
-            <div class="col-md-4 text-center" data-aos="fade-right" data-aos-offset="500">
-                <img src="https://picsum.photos/300/400?random=2" class="img-fluid rounded shadow-sm border"
-                    alt="Marta — Ufficio Amministrativo">
+            {{-- Persona 1 --}}
+            <div class="col-md-4" data-aos="fade-up" data-aos-offset="100" data-aos-delay="200">
+                <div class="team-card h-100 text-center">
+                    <h4 class="mb-2 font-titolo">Marica</h4>
+                    <p class="team-role mb-3">Ufficio Commerciale</p>
+                    <p class="mb-0">
+                        Segue il cliente nella scelta dei serramenti più adatti, proponendo soluzioni personalizzate e
+                        preventivi su misura.
+                    </p>
+                </div>
             </div>
-            <div class="col-md-4 text-center text-md-start" data-aos="fade-up" data-aos-offset="500">
-                <h4 class="mb-1 font-titolo">Marta</h4>
-                <p class="text-muted">Ufficio Amministrativo</p>
-                <p>Gestisce pratiche, documenti e organizzazione interna con precisione e discrezione.</p>
-            </div>
-        </div>
 
-        {{-- Persona 3 --}}
-        <div class="row align-items-center pb-5 pt-5 gy-4">
-            <div class="col-md-4 text-center" data-aos="fade-right" data-aos-offset="700">
-                <img src="https://picsum.photos/300/400?random=3" class="img-fluid rounded shadow-sm border"
-                    alt="Giovanni — Tecnico Rilevatore e Installatore">
+            {{-- Persona 2 --}}
+            <div class="col-md-4" data-aos="fade-up" data-aos-offset="100" data-aos-delay="400">
+                <div class="team-card h-100 text-center">
+                    <h4 class="mb-2 font-titolo">Marta</h4>
+                    <p class="team-role mb-3">Ufficio Amministrativo</p>
+                    <p class="mb-0">
+                        Gestisce pratiche, documenti e organizzazione interna con precisione e discrezione.
+                    </p>
+                </div>
             </div>
-            <div class="col-md-4 text-center text-md-start" data-aos="fade-up" data-aos-offset="700">
-                <h4 class="mb-1 font-titolo">Giovanni</h4>
-                <p class="text-muted">Tecnico Rilevatore e Installatore</p>
-                <p>Effettua sopralluoghi, rilievi precisi e si occupa dell’installazione degli infissi con competenza
-                    tecnica e attenzione ai dettagli.</p>
+
+            {{-- Persona 3 --}}
+            <div class="col-md-4" data-aos="fade-up" data-aos-offset="100" data-aos-delay="600">
+                <div class="team-card h-100 text-center">
+                    <h4 class="mb-2 font-titolo">Giovanni</h4>
+                    <p class="team-role mb-3">Tecnico Rilevatore e Installatore</p>
+                    <p class="mb-0">
+                        Effettua sopralluoghi, rilievi precisi e si occupa dell’installazione degli infissi con
+                        competenza
+                        tecnica e attenzione ai dettagli.
+                    </p>
+                </div>
             </div>
+
         </div>
     </div>
 

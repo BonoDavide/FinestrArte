@@ -463,3 +463,23 @@
 .swiper-gallery-main .swiper-pagination-bullet-active {
     opacity: 1;
 }
+
+.team-card {
+    padding: 32px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.team-role {
+    color: #6c757d;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
