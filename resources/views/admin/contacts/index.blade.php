@@ -1,6 +1,13 @@
 <x-layout>
     <div class="container py-5">
-        <h1 class="mb-4">Messaggi ricevuti dal sito</h1>
+
+        <div class="mt-4 pt-5">
+            <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">
+                Torna alla Dashboard
+            </a>
+        </div>
+
+        <h1 class="mb-4 pt-5">Messaggi ricevuti</h1>
 
         @if ($messages->count())
             <div class="table-responsive">

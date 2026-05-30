@@ -483,3 +483,44 @@
     font-size: 0.95rem;
     font-weight: 500;
 }
+
+.category-card {
+    min-height: 230px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.category-card-img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-card-img {
+    transform: scale(1.05);
+}
+
+.category-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.05)
+    );
+}
+
+.category-card-content {
+    z-index: 2;
+}
+
+.category-card-content h5 {
+    font-weight: 600;
+}

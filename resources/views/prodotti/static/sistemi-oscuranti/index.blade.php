@@ -84,27 +84,58 @@
 
     {{-- Sottocategorie --}}
     <div class="container py-5">
-        <h3 class="text-center pb-3 pt-5 pb-5 underline-thin">Seleziona il materiale</h3>
 
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-7">
+                <h3 class="mb-3 underline-thin">
+                    Seleziona il materiale
+                </h3>
+
+                <p class="text-muted mb-0">
+                    Scegli la soluzione più adatta alle tue esigenze.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
             @foreach ($sottocategorie as $sottocategoria)
-                <div class="col-6">
-                    <div class="card h-100 text-white border-0 position-relative overflow-hidden">
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+
+                    <div
+                        class="card category-card h-100 text-white border-0 position-relative overflow-hidden shadow-sm">
+
                         <img src="{{ $sottocategoria->image
                             ? asset('img/' . $sottocategoria->image) . '?v=' . $sottocategoria->updated_at->timestamp
-                            : 'https://picsum.photos/seed/' . $categoria->slug . '-' . $sottocategoria->slug . '/400/180' }}"
-                            class="w-100" style="height: 180px; object-fit: cover;"
-                            alt="{{ $sottocategoria->name }} — materiale {{ $sottocategoria->name }}" loading="lazy">
+                            : 'https://picsum.photos/seed/' . $categoria->slug . '-' . $sottocategoria->slug . '/500/320' }}"
+                            class="category-card-img" alt="{{ $sottocategoria->name }}" loading="lazy">
 
-                        <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50 text-center py-2">
-                            <h5 class="mb-0">{{ $sottocategoria->name }}</h5>
+                        <div class="category-card-overlay"></div>
+
+                        <div class="category-card-content position-absolute bottom-0 start-0 w-100 p-3">
+                            <h5 class="mb-1">
+                                {{ $sottocategoria->name }}
+                            </h5>
+
+                            <span class="small">
+                                Scopri i prodotti →
+                            </span>
                         </div>
-                        <a href="{{ route('prodotti.sottocategoria', ['categoria' => $categoria->slug, 'sottocategoria' => $sottocategoria->slug]) }}"
-                            class="stretched-link" aria-label="Apri sottocategoria {{ $sottocategoria->name }}"></a>
+
+                        <a href="{{ route('prodotti.sottocategoria', [
+                            'categoria' => $categoria->slug,
+                            'sottocategoria' => $sottocategoria->slug,
+                        ]) }}"
+                            class="stretched-link" aria-label="Apri sottocategoria {{ $sottocategoria->name }}">
+                        </a>
+
                     </div>
+
                 </div>
             @endforeach
+
         </div>
+
     </div>
 
 </x-layout>

@@ -1,56 +1,119 @@
 <x-layout>
-    <div class="container py-5">
-        <h1 class="mb-4">Benvenuto, {{ Auth::user()->name }} 👋</h1>
-        <p class="text-muted mb-5">Questa è la tua area riservata. Usa i link rapidi qui sotto per gestire il sito.</p>
+    <section class="py-5 bg-light border-bottom">
+        <div class="container">
 
-        <div class="row g-4">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8 pt-5 my-5">
 
-            <div class="col-md-6 col-lg-4">
-                <a href="{{ route('admin.contacts.index') }}" class="text-decoration-none">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Contatti Ricevuti</h5>
-                            <p class="card-text text-muted">Consulta le richieste inviate dal form contatti.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    <p class="text-uppercase text-muted small mb-2">
+                        Area riservata
+                    </p>
 
-            <div class="col-md-6 col-lg-4">
-                <a href="{{ route('admin.categories') }}" class="text-decoration-none">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Gestione Categorie</h5>
-                            <p class="card-text text-muted">Crea, modifica o elimina le categorie di prodotto.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    <h1 class="mb-3">
+                        Benvenuto, {{ Auth::user()->name }}
+                    </h1>
 
-            <div class="col-md-6 col-lg-4">
-                <a href="{{ route('admin.subcategories') }}" class="text-decoration-none">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Gestione Sottocategorie</h5>
-                            <p class="card-text text-muted">Collega e gestisci le sottocategorie associate alle
-                                categorie.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    <p class="text-muted mb-0">
+                        Da questa sezione puoi gestire i contenuti principali del sito FinestrArte 3.0.
+                    </p>
 
-            <div class="col-md-6 col-lg-4">
-                <a href="#" class="text-decoration-none">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Impostazioni</h5>
-                            <p class="card-text text-muted">Configura informazioni generali del sito (prossimamente).
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                </div>
             </div>
 
         </div>
-    </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+
+            <div class="row mb-4 justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="h4 mb-1">Gestione sito</h2>
+                    <p class="text-muted mb-0">
+                        Usa i collegamenti rapidi per accedere alle sezioni amministrative.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-xl-4">
+                    <a href="{{ route('admin.contacts.index') }}" class="text-decoration-none">
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-body p-4">
+
+                                <div class="d-flex align-items-center mb-3">
+
+                                    <h5 class="card-title mb-0 text-dark">
+                                        Contatti ricevuti
+                                    </h5>
+                                </div>
+
+                                <p class="card-text text-muted mb-4">
+                                    Consulta le richieste inviate dagli utenti tramite il form contatti.
+                                </p>
+
+                                <span class="fw-semibold text-dark">
+                                    Apri sezione →
+                                </span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <a href="{{ route('admin.categories') }}" class="text-decoration-none">
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-body p-4">
+
+                                <div class="d-flex align-items-center mb-3">
+
+                                    <h5 class="card-title mb-0 text-dark">
+                                        Gestione categorie
+                                    </h5>
+                                </div>
+
+                                <p class="card-text text-muted mb-4">
+                                    Crea, modifica o nascondi le categorie principali dei prodotti.
+                                </p>
+
+                                <span class="fw-semibold text-dark">
+                                    Apri sezione →
+                                </span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-xl-4">
+                    <a href="{{ route('admin.subcategories') }}" class="text-decoration-none">
+                        <div class="card h-100 shadow border-0">
+                            <div class="card-body p-4">
+
+                                <div class="d-flex align-items-center mb-3">
+
+                                    <h5 class="card-title mb-0 text-dark">
+                                        Gestione sottocategorie
+                                    </h5>
+                                </div>
+
+                                <p class="card-text text-muted mb-4">
+                                    Collega le sottocategorie alle categorie e gestiscine la visibilità.
+                                </p>
+
+                                <span class="fw-semibold text-dark">
+                                    Apri sezione →
+                                </span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 </x-layout>

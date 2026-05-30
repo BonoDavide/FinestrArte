@@ -64,30 +64,50 @@
     <x-banner />
 
     <div class="container py-5">
-        <h3 class="text-center pb-3 underline-thin pb-5">Seleziona una categoria</h3>
 
-        <div class="row g-4 justify-content-center">
-            <div class="row g-4 justify-content-center">
-                @forelse ($categorie as $categoria)
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card h-100 text-white border-0 position-relative overflow-hidden">
-                            <img src="{{ $categoria->image
-                                ? asset('img/' . $categoria->image) . '?v=' . $categoria->updated_at->timestamp
-                                : 'https://picsum.photos/seed/' . $categoria->slug . '/400/180' }}"
-                                class="w-100" style="height: 180px; object-fit: cover;" alt="{{ $categoria->name }}"
-                                loading="lazy">
-                            <div
-                                class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50 text-center py-2">
-                                <h5 class="mb-0">{{ $categoria->name }}</h5>
-                            </div>
-                            <a href="{{ route('prodotti.categoria', $categoria->slug) }}" class="stretched-link"
-                                aria-label="Apri categoria {{ $categoria->name }}"></a>
-                        </div>
-                    </div>
-                @empty
-                    <p class="text-center">Nessuna categoria disponibile.</p>
-                @endforelse
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-7">
+                <h2 class="mb-3 underline-thin">Seleziona una categoria</h2>
+                <p class="text-muted mb-0">
+                    Scegli la tipologia di prodotto e scopri le soluzioni più adatte alla tua casa.
+                </p>
             </div>
         </div>
+
+        <div class="row g-4 justify-content-center">
+
+            @forelse ($categorie as $categoria)
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <div
+                        class="card category-card h-100 text-white border-0 position-relative overflow-hidden shadow-sm">
+
+                        <img src="{{ $categoria->image
+                            ? asset('img/' . $categoria->image) . '?v=' . $categoria->updated_at->timestamp
+                            : 'https://picsum.photos/seed/' . $categoria->slug . '/500/320' }}"
+                            class="category-card-img" alt="{{ $categoria->name }}" loading="lazy">
+
+                        <div class="category-card-overlay"></div>
+
+                        <div class="category-card-content position-absolute bottom-0 start-0 w-100 p-3">
+                            <h5 class="mb-1">{{ $categoria->name }}</h5>
+                            <span class="small">Scopri la categoria →</span>
+                        </div>
+
+                        <a href="{{ route('prodotti.categoria', $categoria->slug) }}" class="stretched-link"
+                            aria-label="Apri categoria {{ $categoria->name }}">
+                        </a>
+
+                    </div>
+                </div>
+            @empty
+                <div class="col-12">
+                    <p class="text-center text-muted mb-0">
+                        Nessuna categoria disponibile.
+                    </p>
+                </div>
+            @endforelse
+
+        </div>
+
     </div>
 </x-layout>

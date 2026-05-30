@@ -1,4 +1,11 @@
 <div class="container py-4 pt-5 mt-5">
+
+    <div class="mt-4 pb-5">
+        <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">
+            Torna alla Dashboard
+        </a>
+    </div>
+
     <h2 class="mb-4">Gestione Sottocategorie</h2>
 
     <form wire:submit.prevent="save" class="mb-4" enctype="multipart/form-data">
