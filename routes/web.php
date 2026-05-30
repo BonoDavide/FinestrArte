@@ -21,6 +21,7 @@ Route::get('/contatti', [PublicController::class, 'contact'])->name('contact');
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/contatti', [AdminContactController::class, 'index'])->name('admin.contacts.index');
+    Route::get('/contatti/{message}', [AdminContactController::class, 'show'])->name('admin.contacts.show');
     Route::get('/categorie', [AdminController::class, 'categories'])->name('admin.categories');
     Route::get('/sottocategorie', [AdminController::class, 'subcategories'])->name('admin.subcategories');
 });

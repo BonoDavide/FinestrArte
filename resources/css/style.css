@@ -524,3 +524,7 @@
 .category-card-content h5 {
     font-weight: 600;
 }
+
+.message-text {
+    white-space: pre-line;
+}

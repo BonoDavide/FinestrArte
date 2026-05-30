@@ -11,4 +11,9 @@ class AdminContactController extends Controller
         $messages = ContactMessage::latest()->paginate(10);
         return view('admin.contacts.index', compact('messages'));
     }
+
+    public function show(ContactMessage $message)
+    {
+        return view('admin.contacts.show', compact('message'));
+    }
 }
