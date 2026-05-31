@@ -1,37 +1,50 @@
-FINESTRARTE 3.0 WEBSITE
+FINESTRARTE 3.0
 
-Descrizione:
+Sito web sviluppato per FinestrArte, azienda specializzata in infissi e serramenti su misura.
 
-Questo progetto consiste nello sviluppo del sito web per Finestrarte, un’azienda di infissi con sede a Roma.
+- OBIETTIVO DEL PROGETTO
 
-Obiettivo:
+Realizzare una piattaforma moderna, intuitiva e facilmente gestibile che permetta di:
 
-* presentare l’azienda in modo chiaro e professionale
-* mostrare i prodotti disponibili
-* migliorare la visibilità online e facilitare il contatto con potenziali clienti
+* presentare l'azienda e i suoi servizi;
+* organizzare il catalogo prodotti in categorie e sottocategorie;
+* fornire documentazione tecnica scaricabile;
+* facilitare il contatto con i clienti;
+* consentire la gestione dei contenuti tramite pannello amministrativo.
 
-Funzionalità principali:
+- FUNZIONALITA' PRINCIPALI
 
-* Presentazione dell’azienda e dei servizi
-* Catalogo prodotti strutturato
-* Layout responsive ottimizzato per mobile
-* Struttura modulare pensata per aggiornamenti futuri
+* Catalogo prodotti organizzato per categorie e sottocategorie
+* Schede prodotto con specifiche tecniche e documentazione PDF
+* Gestione amministrativa di categorie e sottocategorie
+* Gestione immagini e visibilità dei contenuti
+* Form di contatto
+* Layout responsive ottimizzato per smartphone, tablet e desktop
 
-Stack Tecnologico:
-  
+- Tecnologie utilizzate
+
 * Laravel
 * Livewire
 * PHP
 * MySQL
-* HTML5
-* CSS
 * JavaScript
-* Bootstrap
+* HTML5
+* CSS3
+* Bootstrap 5
+* Git
+* GitHub
 
-Stato del progetto:
+- DEPLOY
 
-Il progetto è completato e attualmente in uso, con aggiornamenti continui basati sulle esigenze del cliente.
+L'applicazione è stata distribuita in ambiente di produzione utilizzando:
 
-Note:
+* Laravel Forge
+* DigitalOcean
 
-Progetto sviluppato per un cliente reale, con focus su semplicità, chiarezza e facilità di gestione nel tempo.
+- STATO DEL PROGETTO
+
+Progetto completato e attualmente utilizzato dal cliente.
+
+- NOTE
+
+Questo progetto è stato sviluppato per un cliente reale con particolare attenzione a semplicità d'uso, manutenzione e possibilità di espansione futura.
